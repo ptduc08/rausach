@@ -1,0 +1,28 @@
+<div class="col-md-9">
+	<!-- *********************************** Tai lieu ***************************** -->
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="top-margin">Tải về tài liệu</h3>
+			
+			<?php
+				$documentList = $this->documentList;
+				if (!empty($documentList)) {
+					foreach ($documentList as $key=>$val) {
+						$document_name = $val['name'];
+						$document_link = FILES_URL . '/documents/' . $val['filename'];
+			?>
+				<div class="row document-download">
+					<div class="col-md-12">
+						<a href="<?php echo $document_link; ?>" class="list-group-item">
+							<span class="glyphicon glyphicon-file"></span> <?php echo $document_name; ?>
+						</a>
+					</div>
+				</div>
+			<?php
+					}
+				}
+			?>
+			
+		</div>
+	</div>
+</div>

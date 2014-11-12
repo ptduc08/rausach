@@ -1,0 +1,91 @@
+<?php 
+	//----- kiem tra mang lock status. Neu ton tai 1 page trang thai bi khoa (lock_status == 1) thi canh bao
+	//----- va redirect trang quay lai trang index
+	if (isset($this->lockStatus) && !empty($this->lockStatus)) {
+		$lockStatus = $this->lockStatus;
+	} else {
+		$lockStatus = array();
+	}
+	foreach ($lockStatus as $key=>$val) {
+		if ($val['lock_status'] == 1) {
+			$alertLockStatus = $this->translate('admin-contact-deletemulti-lockalert');
+			echo "<script>alert('" . $alertLockStatus ."'); window.location = '" . $this->actionMain . "'</script>";
+		}
+	}
+?>
+
+<form name="appForm" method="post" action="">
+	<?php echo $this->render('/admin-contact/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php echo $this->render('/admin-contact/sublink/index.php'); ?>
+	<?php 
+		if (isset($this->cid)) {
+			foreach ($this->cid as $key=>$val) {
+				echo $this->formHidden('cid[]',$val); //----- de truyen nguoc lai trang multi-delete
+			}
+ 			echo $this->formHidden('delConfirm',true); //----- de xac nhan du lieu nay duoc gui tu nut Accept
+		}
+	?>
+
+	<!--------------------------------------- BEGIN: CONTENT ----------------------------------->
+	<div id="element-box">
+		<div class="t">
+			<div class="t">
+				<div class="t"></div>
+			</div>
+		</div>
+		<div class="m">
+
+	<!--------------------------------------- form ----------------------------------->
+			<div id="adminfieldset">
+				<div class="adminheader">Detail</div>
+				
+				<div id = "errors">
+					<?php echo $this->translate('admin-cp-confirm-multidelete'); ?>
+				</div>
+				
+				<?php 
+					foreach ($this->Items as $key=>$value) {
+						$value = $this->cmsReplaceString($value);
+						$contact_name 	= $value['contact_name'];
+						$contact_email = $value['email'];
+						$contact_mobile = $value['mobile'];
+						$contact_content = $value['contact_content'];
+						$post_time	= date('d-m-Y H:m:s',strtotime($value['post_time']));
+				?>
+				<div id="row">
+					<div class="label"><?php echo $this->translate('admin-contact-index-col-contactname'); ?></div>
+					<div style="font-size: 15pt;"><?php echo $contact_name; ?></div>
+				</div>
+				<div id="row">
+					<div class="label"><?php echo $this->translate('admin-cw-email'); ?></div>
+					<div><?php echo $contact_email; ?></div>
+				</div>
+				<div id="row">
+					<div class="label"><?php echo $this->translate('admin-cw-mobile'); ?></div>
+					<div><?php echo $contact_mobile; ?></div>
+				</div>
+				<div id="row">
+					<div class="label"><?php echo $this->translate('admin-cw-content'); ?></div>
+					<div><?php echo $contact_content; ?></div>
+				</div>
+				<div id="row" class="delete-row">
+					<div class="label"><?php echo $this->translate('admin-cp-posttime'); ?></div>
+					<div><?php echo $post_time; ?></div>
+				</div>
+
+				<?php
+					}
+				?>
+				
+			</div>
+			<div class="clr"></div>
+		</div>
+		<div class="b">
+			<div class="b">
+				<div class="b"></div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------- END: CONTENT ----------------------------------->
+</form>

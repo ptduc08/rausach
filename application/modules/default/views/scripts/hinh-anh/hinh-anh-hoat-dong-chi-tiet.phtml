@@ -1,0 +1,107 @@
+<?php 
+	$imageList = $this->Items;
+	
+	if (count($imageList) > 0) {
+		$gallery_name = ' > ' . $this->cmsReplaceString($imageList[0]['gallery_name']);
+	} else {
+		$gallery_name = '';
+	}
+?>
+
+<div class="right right_intro">
+	<h4 class="title_intro dotkep">ALBUM ảnh <?php echo $gallery_name; ?></h4>
+	<div id="sliderFrame">
+		<div id="ribbon"></div>
+		
+		<div id='wrapper_slide'>
+		<?php 
+			if (count($imageList) > 0) {
+		?>
+			<div id="bigPic">
+				<?php									
+					foreach ($imageList as $key=>$val){
+					
+						$gallery_image = FILES_URL .'/gallery/gallery-images/large/'.$val['gallery_image'];
+				?>
+						<img src="<?php echo $gallery_image;?>" alt="" />
+								
+				<?php 	
+					}
+				?>
+			</div>
+                            
+			<ul id="thumbs">
+				<?php
+					$firstImage = $imageList[0];
+					$src_img = FILES_URL . '/gallery/gallery-images/medium/' . $firstImage['gallery_image'];
+				?>
+					<li class='active' rel='1'><img src="<?php echo $src_img; ?>" alt="" /></li>
+												
+				<?php
+					//$dem=1;
+					for ($dem=1;$dem < count($imageList);$dem++){
+						$image = $imageList[$dem];
+						$src_img = FILES_URL . '/gallery/gallery-images/medium/' . $image['gallery_image'];
+						//$link='/index/sanpham/id/'.$key['product_id'];
+						$link='#'.$dem;
+				?>
+						<li rel='<?php echo $dem+1; ?>'><img src="<?php echo $src_img; ?>" alt="" /></li>
+				<?php 	
+					}
+				?>
+			</ul>
+		<?php 
+			} else {
+				echo "Không có hình ảnh nào trong album này!";
+			}
+		?>  
+		</div>
+		
+		<script type="text/javascript">
+                    var currentImage;
+                    var currentIndex = -1;
+                    var interval;
+                    function showImage(index){
+                        if(index < $('#bigPic img').length){
+                            var indexImage = $('#bigPic img')[index]
+                            if(currentImage){   
+                                if(currentImage != indexImage ){
+                                    $(currentImage).css('z-index',2);
+                                    clearTimeout(myTimer);
+                                    $(currentImage).fadeOut(250, function() {
+                                        myTimer = setTimeout("showNext()", 3000);
+                                        $(this).css({'display':'none','z-index':1})
+                                    });
+                                }
+                            }
+                            $(indexImage).css({'display':'block', 'opacity':1});
+                            currentImage = indexImage;
+                            currentIndex = index;
+                            $('#thumbs li').removeClass('active');
+                            $($('#thumbs li')[index]).addClass('active');
+                        }
+                    }
+                    
+                    function showNext(){
+                        var len = $('#bigPic img').length;
+                        var next = currentIndex < (len-1) ? currentIndex + 1 : 0;
+                        showImage(next);
+                    }
+                    
+                    var myTimer;
+                    
+                    $(document).ready(function() {
+                        myTimer = setTimeout("showNext()", 3000);
+                        showNext(); //loads first image
+                        $('#thumbs li').bind('click',function(e){
+                            var count = $(this).attr('rel');
+                            showImage(parseInt(count)-1);
+                        });
+                    });
+                    
+                    
+		</script>
+		
+	</div>
+
+</div>

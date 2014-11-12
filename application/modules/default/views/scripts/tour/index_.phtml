@@ -1,0 +1,69 @@
+<div class="right right_intro">
+            <h2 class="heading-title dotkep">Tin tức</h2>
+            <div class="content">
+            
+            	<?php 
+					$arrArticleList = $this->Items;
+					if (count($arrArticleList) > 0) {
+						foreach ($arrArticleList as $key=>$val) {
+							$val = $this->cmsReplaceString($val);
+							$article_id = $val['id'];
+							$article_title = $val['article_title'];
+							$article_brief = $val['article_brief'];
+							$cover_image = FILES_URL . '/news/cover-images/medium/' . $val['cover_image'];
+							
+							//----- chuyen publish_time tu dang Y-m-d sang d-m-Y de hien thi ra view
+							$publish_time = date('d-m-Y',strtotime($val['publish_time']));
+							
+							$filter = new Zend_Filter();
+							$multiFilter = $filter->addFilter(new Zend_Filter_StringToLower(array('encoding'=>'UTF-8')))
+												  ->addFilter(new Zend_Filter_StringTrim())
+												  ->addFilter(new Zend_Filter_Alnum(true))
+												  ->addFilter(new Zendvn_Filter_RemoveCircumflex())
+												  ->addFilter(new Zend_Filter_Word_SeparatorToDash(' '));
+							
+							$articleUrlOptions = array('module'=>'default','controller'=>'index','action'=>'tin-tuc-chi-tiet',
+													   'title'=>$multiFilter->filter($article_title),'id'=>$article_id);
+							
+							$article_link = $this->url($articleUrlOptions,'news-router');
+				?>
+				
+	              	<div class="maintintuc dotngang">
+	                    <a href="<?php echo $article_link; ?>" title="">
+	                    	<img src="<?php echo $cover_image; ?>">
+	                    </a>
+	                    <a href="<?php echo $article_link; ?>" title=""><?php echo $article_title; ?></a>
+	                    <p><?php echo $article_brief; ?></p>
+	                    <span class="maintin_date"><?php echo $publish_time; ?></span>
+	                    <div class="clear"></div>
+	            	</div>
+                
+                <?php	
+						}
+					}
+				?>
+            
+                <div class="paging">
+                    <!--------------------------------------- BEGIN: PAGINATION (FOOT) --------------------------------------->
+						<tfoot>
+							<tr>
+								<td colspan="9">
+									<div class="container">
+										<div class="pagination">
+											<div class="limit">
+												<?php $currentUrl = $this->baseUrl($this->currentController . '/index'); ?>
+												<?php echo $this->paginationControl($this->paginator,'Sliding','pagination.phtml',array('currentUrl'=>$currentUrl)); ?>
+											</div>
+											<div class="limit"></div>
+										</div>
+									</div>
+								</td>
+							</tr>					
+						</tfoot>				
+					<!--------------------------------------- END: PAGINATION (FOOT) --------------------------------------->	
+                </div>
+            
+            </div>
+</div>
+
+

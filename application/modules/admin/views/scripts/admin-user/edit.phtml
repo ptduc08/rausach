@@ -1,0 +1,136 @@
+<?php
+	//----- INPUT ELEMENT ---------------------------------------
+	//----- Lay du lieu truyen tu controller sang dua vao cac input cua form
+	//----- neu chua co thi tu khoi tao du lieu cho cac input cua form
+	$formdata = $this->FormData;
+	$formstyle = $this->FormStyle;
+	if ($formdata == null) {
+		$formdata['user_name'] = '';
+		$formdata['group_id'] = 0;
+		$formdata['user_avatar'] = '';
+		$formdata['current_user_avatar'] = '';
+		$formdata['email'] = '';
+		$formdata['first_name'] = '';
+		$formdata['last_name'] = '';
+		$formdata['birthday'] = '';
+		$formdata['status'] = 1;
+		$formdata['sign'] = '';
+	} else {
+		$formdata = $this->cmsReplaceString($formdata);
+	}
+	//----- Lay dinh dang truyen tu controller sang dua vao cac input cua form
+	//----- neu chua co thi tu khoi tao dinh dang cho cac input cua form
+	if ($formstyle == null) {
+		$formstyle['user_name'] = '';
+		$formstyle['password'] = '';
+		$formstyle['re_password'] = '';
+		$formstyle['group_id'] = 'min-width: 200px';
+		$formstyle['email'] = '';
+		$formstyle['first_name'] = '';
+		$formstyle['last_name'] = '';
+		$formstyle['birthday'] = '';
+		$formstyle['status'] = '';
+		$formstyle['sign'] = '';
+	}
+	/* $user_name 		= $this->formText('user_name',$formdata['user_name'],
+					array('class'=>'txtmedium','style'=>$formstyle['user_name'],readonly=>true))
+					. $this->translate('admin-edituser-editform-label-username-detail'); */
+	$user_name_text 	= $formdata['user_name'];
+	$user_name 			= $formdata['user_name'] . $this->formHidden('user_name',$formdata['user_name']);
+	if (!empty($formdata['user_avatar'])) {
+		$user_avatar 	= FILES_URL . '/users/user-avatar/small/' . $formdata['user_avatar'];
+		$user_avatar	= '<img src="' . $user_avatar .'"/><br/>';
+		$current_user_avatar = $this->formHidden('current_user_avatar',$formdata['user_avatar']);
+	} else {
+		$user_avatar	= FILES_URL . '/users/user-avatar/small/' . $formdata['current_user_avatar'];
+		$user_avatar	= '<img src="' . $user_avatar .'"/><br/>';
+		$current_user_avatar = $this->formHidden('current_user_avatar',$formdata['current_user_avatar']);
+	}
+	$user_avatar   .= $this->formFile('user_avatar',array('style'=>'width:250px;')) . $this->translate('admin-edituser-editform-label-avatar-detail')
+						. $current_user_avatar;
+	
+	$password		= $this->formPassword('password','',array('class'=>'txtmedium','style'=>$formstyle['password']));
+	$re_password	= $this->formPassword('re_password','',array('class'=>'txtmedium','style'=>$formstyle['re_password']));
+	$email	 		= $this->formText('email',$formdata['email'],array('class'=>'txtmedium','style'=>$formstyle['email']));
+	$first_name 	= $this->formText('first_name',$formdata['first_name'],array('class'=>'txtmedium','style'=>$formstyle['first_name']));
+	$last_name 		= $this->formText('last_name',$formdata['last_name'],array('class'=>'txtmedium','style'=>$formstyle['last_name']));
+	//----- chuyen birthday tu dang Y-m-d sang d-m-Y de hien thi ra view
+	$current_birthday = date('d-m-Y',strtotime($formdata['birthday']));
+	$birthday		= $this->cmsDatePicker('birthday',$current_birthday,array('class'=>'txtmedium','style'=>$formstyle['birthday']))
+						. ' (dd-mm-yyyy)';
+	
+	//----- CREATE: status option --------------------------
+	$options = array($this->translate('admin-userinfo-inactive'),$this->translate('admin-userinfo-active'));
+	
+	if (!isset($formdata['status'])) {
+		$this->Item['status'] = 1;
+	}
+	$status = $this->formRadio('status',$formdata['status'],null,$options, ' ');
+	
+	//----- CREATE: GROUP SELECT BOX --------------------------
+	$options = $this->slbGroup;
+	$slbGroup = $this->formSelect('group_id',$formdata['group_id'],array('style'=>$formstyle['group_id']),$options);
+	
+	$sign = $this->cmsEditor('sign',$formdata['sign'],array('toolbar'=>'BasicToolbar'),array('style'=>'margin-left: 175px;'));
+	
+	$arrInput = array(
+					array('label'=>$this->translate('admin-adduser-addform-label-group'),'input'=>$slbGroup),
+					array('label'=>$this->translate('admin-adduser-addform-label-username'),'input'=>$user_name,'style'=>'font-size: 15pt;'),
+					array('label'=>$this->translate('admin-adduser-addform-label-password'),'input'=>$password),
+					array('label'=>$this->translate('admin-adduser-addform-label-repassword'),'input'=>$re_password),
+					array('label'=>$this->translate('admin-adduser-addform-label-avatar'),'input'=>$user_avatar),
+					array('label'=>$this->translate('admin-adduser-addform-label-email'),'input'=>$email),
+					array('label'=>$this->translate('admin-adduser-addform-label-firstname'),'input'=>$first_name),
+					array('label'=>$this->translate('admin-adduser-addform-label-lastname'),'input'=>$last_name),
+					array('label'=>$this->translate('admin-adduser-addform-label-birthday'),'input'=>$birthday),
+					array('label'=>$this->translate('admin-adduser-addform-label-status'),'input'=>$status),
+					array('label'=>$this->translate('admin-adduser-addform-label-sign'),'input'=>$sign),
+			);
+	
+	//----- thong bao loi -----
+	$errors = '';
+	if (count($this->messageError) > 0) {
+		$errors = $this->formErrors($this->messageError,array('id'=>'errors'));
+	}
+	
+	
+?>
+
+<form name="appForm" method="post" action="" enctype="multipart/form-data">
+	<?php echo $this->render('/admin-user/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php //echo $this->render('/admin-user/sublink/index.php'); ?>
+
+	<?php
+		if(!empty($errors)) {
+	?>
+		<div class="alert alert-danger"><?php echo $errors; ?></div>
+	<?php 
+		}
+	?>
+	
+	<!--------------------------------------- BEGIN: CONTENT ----------------------------------->
+	<div id="element-box">
+		<div class="t">
+			<div class="t">
+				<div class="t"></div>
+			</div>
+		</div>
+		<div class="m">
+
+	<!--------------------------------------- form add group ----------------------------------->
+			<div id="adminfieldset">
+				
+				<?php echo $this->partialLoop('row.php',$arrInput); ?>
+				
+			</div>
+			<div class="clr"></div>
+		</div>
+		<div class="b">
+			<div class="b">
+				<div class="b"></div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------- END: CONTENT ----------------------------------->
+</form>

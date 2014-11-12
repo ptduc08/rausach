@@ -1,0 +1,62 @@
+<?php echo $this->doctype(Zend_View_Helper_Doctype::HTML5); ?>
+<html lang="en">
+<head>
+	<?php echo $this->headTitle(); ?>
+	<?php echo $this->headMeta(); ?>
+	<?php echo $this->headLink(); ?>
+	<?php echo $this->headScript(); ?>
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type='text/javascript' src="/public/templates/cnt/system/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="img/computer.ico">
+</head>
+<body>
+	
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<?php $active = 3; include("includes/header.php"); ?>
+		</div>
+	</div>
+	
+	<div class="row banner-slide">
+		<div class="col-md-12">
+			<img src="<?php echo $this->imgUrl; ?>/dich-vu-banner.png" class="introduce-image"/>
+		</div>
+	</div>
+	
+	<!-- ***************************** Tin tuc *************************** -->
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 service">
+			<div class="row">
+				
+				<?php echo $this->layout()->content; ?>
+				
+				<div class="col-md-4">
+					<?php echo $this->blkMostViewArticle(); ?>
+				</div>				
+			</div>
+		</div>
+	</div>
+	<!-- ***************************** End Tin tuc *************************** -->
+	
+	
+	<!-- ***************************** Doi tac- Khach hang *************************** -->
+	<div class="row partner">
+		<div class="col-md-12">
+			<?php include("includes/partner.php"); ?>
+		</div>
+	</div> <!-- ***************************** End Doi tac- Khach hang *************************** -->
+	
+	<?php include("includes/footer.php"); ?>
+	
+</body>
+</html>

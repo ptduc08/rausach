@@ -1,0 +1,37 @@
+<?php echo $this->doctype(Zend_View_Helper_Doctype::HTML5); ?>
+<html lang="en">
+<head>
+	<?php echo $this->headTitle(); ?>
+	<?php echo $this->headMeta(); ?>
+	<?php echo $this->headLink(); ?>
+	<?php echo $this->headScript(); ?>
+</head>
+
+<body>
+
+    <div id="wrapper">
+		<!-- -------------------------- toan bo khu vuc navigation --------------------------- -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+			<!-- ----------------- toan bo dong header ------------------- -->
+			<?php include('html/header.php'); ?>
+
+			<!-- ----------------- menu chinh - doc ben tay trai ---------- -->
+			<?php include('html/menu-main-vertical.php'); ?>
+            <!-- ----------------- end menu chinh - doc ------------------- -->
+        </nav>
+		
+		<!-- --------------------- toan bo noi dung cua Admin Dashboard --- -->
+        <div id="page-wrapper">
+            <div class="row">
+            	<div class="col-lg-12">
+                	<?php echo $this->layout()->content; ?>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /#wrapper -->
+
+</body>
+
+</html>

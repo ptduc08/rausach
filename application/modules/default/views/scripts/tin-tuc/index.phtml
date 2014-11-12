@@ -1,0 +1,113 @@
+      <div class="row">
+        <ol class="breadcrumb">
+          <li>
+            <a href="/index">Trang chủ</a>
+          </li>
+          <li>
+            <a href="/default/tin-tuc">Tin tức</a>
+          </li>
+          <li class="active">Tin mới</li>
+        </ol>
+      </div>
+
+
+
+      <div class="row">
+
+        <div id="list-news" class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <?php 
+            $dem=0;
+            $articleList = $this->articleList;
+              if (!empty($articleList)) {
+                foreach ($articleList as $key=>$val) {//var_dump($val);
+                  $dem++;
+                  $val = $this->cmsReplaceString($val);
+                  $article_id = $val['id'];
+                  $category_id = $val['category_id'];
+                  $category_name= $val['category_name'];
+                  $article_title = $val['article_title'];
+                  $article_brief = $val['article_brief'];
+                  $article_content = $val['article_content'];
+                  $created_time = date('d/m/Y',strtotime($val['created_time']));
+                  $view_counter = $val['view_counter'];
+                  $cover_image = FILES_URL . '/news/cover-images/medium/' . $val['cover_image'];
+                  $filter = new Zend_Filter();
+                  $multiFilter = $filter->addFilter(new Zend_Filter_StringToLower(array('encoding'=>'UTF-8')))
+                              ->addFilter(new Zend_Filter_StringTrim())
+                              ->addFilter(new Zend_Filter_Alnum(true))
+                              ->addFilter(new Zendvn_Filter_RemoveCircumflex())
+                              ->addFilter(new Zend_Filter_Word_SeparatorToDash(' '));
+                    
+                  $articleUrlOptions = array('module'=>'default','controller'=>'tin-tuc','action'=>'tin-tuc-chi-tiet',
+                      'title'=>$multiFilter->filter($article_title),'id'=>$article_id,'category_id'=>$category_id);
+                    
+                  $article_link = $this->url($articleUrlOptions,'news-detail');
+           ?>
+           <?php if($dem!=1){ ?>
+            <hr/>
+            <?php } ?>
+            <div class="item">
+              <div class="item-details">
+                <a href="#">
+                  <div class="item-img"><img src="<?php echo $cover_image; ?>" class="img-responsive" alt=""></div>
+                </a>
+                <div>
+                  <a href="<?php echo $article_link; ?>">
+                    <span class="item-title"><?php echo $article_title; ?></span>
+                  </a><br />
+                  <span class="item-date"><?php echo $created_time; ?> &nbsp; | &nbsp;  
+                    <?php echo $view_counter;?> views &nbsp; | &nbsp;<?php echo $category_name;?></span>
+                  <p><?php echo $article_brief; ?></p>
+                  <a role="button" href="<?php echo $article_link; ?>" class="btn btn-primary btn_g">Xem thêm</a>
+                </div>
+              </div>
+            </div>
+
+              <?php
+               }
+             }else {
+              ?>
+              <div class="row">
+                <div class="col-md-12 news-block">
+                  <div class="alert alert-danger">Không có tin tức nào thuộc mục này!</div>
+                </div>
+              </div>  
+              <?php
+              }
+               ?>
+  
+            <div class="item2">
+                      <!-- ********************************** phan trang **************************************-->
+  <?php 
+    $paginator = $this->paginator;
+    if(!empty($paginator) && ($paginator->count()) > 1) {
+  ?>
+  
+    <?php $currentUrl = $this->baseUrl($this->currentController . '/index'); ?>
+    <?php echo $this->paginationControl($this->paginator,'Sliding','pagination.phtml',array('currentUrl'=>$currentUrl)); ?>
+
+  <?php } ?>
+  <!-- ********************************** End phan trang **********************************-->
+             
+            </div>
+
+        </div>
+
+
+        <div id="right-news" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
+          <div class="news">
+            <?php echo $this->blkNewsCategory(); ?>
+           
+            <?php echo $this->blkRelativeArticle(); ?>
+
+          </div>
+
+          <div id="adv">
+            <a href="news-details.html">
+              <img src="<?php echo $this->imgUrl; ?>/news17.jpg" class="img-responsive" alt="">
+            </a>
+          </div>
+
+        </div>
+
+      </div>

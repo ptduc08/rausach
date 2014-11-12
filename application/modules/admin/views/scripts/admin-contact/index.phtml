@@ -1,0 +1,162 @@
+<?php
+	$ssFilter = $this->arrParam['ssFilter'];
+	$action_link 	= $this->baseUrl($this->currentController . '/filter/type/order');
+	$curControllerLink = $this->baseUrl($this->currentController);
+	
+	$lblContactName = $this->cmsSortLink('c.contact_name',$this->arrParam,$this->translate('admin-contact-index-col-contactname'),$this->imgUrl,$action_link);
+	$lblContactEmail = $this->cmsSortLink('c.email',$this->arrParam,$this->translate('admin-cw-email'),$this->imgUrl,$action_link);
+	$lblContactMobile = $this->cmsSortLink('c.mobile',$this->arrParam,$this->translate('admin-cw-mobile'),$this->imgUrl,$action_link);
+	$lblContactContent = $this->cmsSortLink('c.content',$this->arrParam,$this->translate('admin-cw-content'),$this->imgUrl,$action_link);
+	$lblContactPublish = $this->cmsSortLink('c.publish',$this->arrParam,$this->translate('admin-cw-publish'),$this->imgUrl,$action_link);
+	$lblContactPostTime = $this->cmsSortLink('c.post_time',$this->arrParam,$this->translate('admin-cp-posttime'),$this->imgUrl,$action_link);
+	
+	$lblContactID = $this->cmsSortLink('c.id',$this->arrParam,'ID',$this->imgUrl,$action_link);
+	$lblContactLockStatus = $this->cmsSortLink('c.lock_status',$this->arrParam,$this->translate('admin-cp-lockstatus'),$this->imgUrl,$action_link);
+	
+	//--------------------------------------- CREATE: SEARCH AREA -------------------------------
+	$keywords 		= $this->formText('keywords',$ssFilter['keywords'],array('class'=>'txtshort'));
+	$linkSearch 	= $this->baseUrl($this->currentController . '/filter/type/search/key/1');
+	
+	$btnSearch 		= $this->formButton('search-now','Search',
+									array('onclick'=>"OnSubmitForm('" .$linkSearch ."');"));
+	$linkResetSearch = $this->baseUrl($this->currentController . '/filter/type/search/key/0');
+	$btnResetSearch = $this->formButton('clear-keywords','Clear',
+									array('onclick'=>"OnSubmitForm('" .$linkResetSearch ."');"));
+	$strSearch = $keywords . ' ' . $btnSearch . ' ' .$btnResetSearch ;
+	
+?>
+
+<form name="appForm" method="post" action="">
+	<?php echo $this->render('/admin-contact/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php echo $this->render('/admin-contact/sublink/index.php'); ?>
+
+	<!--------------------------------------- BEGIN: CONTENT ----------------------------------->
+	<div id="element-box">
+		<div class="t">
+			<div class="t">
+				<div class="t"></div>
+			</div>
+		</div>
+		<div class="m">
+		<!--------------------------------------- BEGIN: ELEMENT BOX ----------------------------------->
+			<div id="filters">
+				<div style="float: left">
+					<?php echo $strSearch; ?>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+		<!--------------------------------------- Area 4: In du lieu lay tu database ------------------->
+		<table class="adminlist">
+			<thead>
+				<tr>
+					<th class="col_cid">
+						<input type="checkbox" name="checkbox" id="checkbox" onclick="checkedAll()">
+					</th>
+					<th class="col_name"><?php echo $lblContactName; ?></th>
+					<th class="col_email"><?php echo $lblContactEmail; ?></th>
+					<th class="col_mobile"><?php echo $lblContactMobile; ?></th>
+					<th><?php echo $lblContactContent; ?></th>
+					<th class="col_post_time"><?php echo $lblContactPostTime; ?></th>
+					<th class="col_publish"><?php echo $lblContactPublish; ?></th>
+					<th class="col_control">Control</th>
+					<th class="col_id"><?php echo $lblContactID; ?></th>
+					<th class="col_lock_status"><?php echo $lblContactLockStatus; ?></th>
+				</tr>
+			</thead>
+			
+			<?php 
+				foreach ($this->Items as $key => $value) {
+					$value = $this->cmsReplaceString($value);
+					$id = $value['id'];
+					$contact_name = $value['contact_name'];
+					$contact_email = $value['email'];
+					$contact_mobile = $value['mobile'];
+					$contact_content = $value['contact_content'];
+					
+					//----- lay thong so publish
+					$publish = $value['publish'];
+					if ($publish == 1) {
+						$linkPublish = $this->baseUrl($this->currentController .'/publish/type/inactive/id/' .$id);
+						$publish = $this->cmsIconButton('Stop Publish this Contact',$this->imgUrl .'/icon/active.png',$linkPublish);
+					} else {
+						$linkPublish = $this->baseUrl($this->currentController .'/publish/type/active/id/' .$id);
+						$publish = $this->cmsIconButton('Publish this Contact',$this->imgUrl .'/icon/inactive.png',$linkPublish);
+					}
+					$post_time	= date('d/m/Y H:i:s',strtotime($value['post_time']));
+					//----- lay thong so lock_status
+					$lock_status = $value['lock_status'];
+					if ($lock_status == 1) {
+						$linkLockStatus = $this->baseUrl($this->currentController .'/change-lock-status/type/inactive/id/' .$id);
+						$lock_status = $this->cmsIconButton('Unlock this Contact',$this->imgUrl .'/icon/lockpage.png',$linkLockStatus);
+					} else {
+						$linkLockStatus = $this->baseUrl($this->currentController .'/change-lock-status/type/active/id/' .$id);
+						$lock_status = $this->cmsIconButton('Lock this Contact',$this->imgUrl .'/icon/unlockpage-black.png',$linkLockStatus);
+					}
+								
+					/* $linkInfo = $this->baseUrl($this->currentController . '/info/id/' .$id);
+					$btnInfo = $this->cmsIconButton('View information',$this->imgUrl .'/icon_info.png',$linkInfo);
+					$linkEdit = $this->baseUrl($this->currentController . '/edit/id/' .$id);
+					$btnEdit = $this->cmsIconButton('Edit Item',$this->imgUrl .'/icon_edit.png',$linkEdit); */
+					$linkDelete = $this->baseUrl($this->currentController . '/delete/id/' .$id);
+					$btnDelete = $this->cmsIconButton('Delete Item',$this->imgUrl .'/icon/icon_del.png',$linkDelete);
+					$strControlIconButton = $btnDelete;
+					
+					$cid = $this->formCheckbox('cid[]',$value['id']);
+			?>
+			
+			<tr class="even">						
+					<td align="center"><?php echo $cid; ?></td>
+					<td align="left"><?php echo $contact_name; ?></td>
+					<td align="center"><?php echo $contact_email; ?></td>
+					<td align="center"><?php echo $contact_mobile; ?></td>
+					<td align="center"><?php echo $contact_content; ?></td>
+					<td align="center"><?php echo $post_time; ?></td>
+					<td align="center"><?php echo $publish; ?></td>
+					<td align="center">
+						<?php echo $strControlIconButton; ?>
+					</td>
+					<td align="center"><?php echo $id; ?></td>
+					<td align="center"><?php echo $lock_status; ?></td>
+			</tr>
+			
+			<?php 
+				} // ------------- dong vong lap foreach ----------------
+			?>
+	<!--------------------------------------- BEGIN: PAGINATION (FOOT) --------------------------------------->
+			<tfoot>
+				<tr>
+					<td colspan="10">
+						<div class="container">
+							<div class="pagination">
+								<div class="limit">Display #
+									<select onchange="submitform();" size="1" class="inputbox" id="limit" name="limit">
+										<option value="5">5</option>
+									</select>
+								</div>
+								<div class="limit">
+									<?php $currentUrl = $this->baseUrl($this->currentController . '/index'); ?>
+									<?php echo $this->paginationControl($this->paginator,'Sliding','pagination.phtml',array('currentUrl'=>$currentUrl)); ?>
+								</div>
+								<div class="limit"></div>
+							</div>
+						</div>
+					</td>
+				</tr>					
+			</tfoot>				
+	<!--------------------------------------- END: PAGINATION (FOOT) --------------------------------------->
+		</table>
+	<!--------------------------------------- END Area 4: In du lieu lay tu database ------------------->		                                
+
+	<!--------------------------------------- END: ELEMENT BOX ----------------------------------->
+                              <div class="clr"></div>
+		</div>
+		<div class="b">
+			<div class="b">
+				<div class="b"></div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------- END: CONTENT ----------------------------------->
+</form>

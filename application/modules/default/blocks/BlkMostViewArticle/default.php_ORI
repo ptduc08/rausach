@@ -1,0 +1,34 @@
+<h3>Tin xem nhiều nhất</h3>
+<hr/>
+<?php 
+		foreach($newestArticles as $key=>$val) {
+			$val = $blockView->cmsReplaceString($val);
+			$article_id = $val['id'];
+			$article_title = $val['article_title'];
+			//$publish_time = $val['publish_time'];
+			//----- chuyen publish_time tu dang Y-m-d sang d-m-Y de hien thi ra view
+			$publish_time = date('d-m-Y',strtotime($val['publish_time']));
+			$cover_image = $val['cover_image'];
+			$cover_image_link = $imgUrl . $cover_image;
+			
+			$filter = new Zend_Filter();
+			$multiFilter = $filter->addFilter(new Zend_Filter_StringToLower(array('encoding'=>'UTF-8')))
+								  ->addFilter(new Zend_Filter_StringTrim())
+								  ->addFilter(new Zend_Filter_Alnum(true))
+								  ->addFilter(new Zendvn_Filter_RemoveCircumflex())
+								  ->addFilter(new Zend_Filter_Word_SeparatorToDash(' '));
+				
+			$articleUrlOptions = array('module'=>'default','controller'=>'index','action'=>'tin-tuc-chi-tiet',
+					'title'=>$multiFilter->filter($article_title),'id'=>$article_id);
+				
+			$article_link = $blockView->url($articleUrlOptions,'news-router');
+	?>
+            	
+	<div class="homepage-news">
+		<img class="news-image-thumbs" src="<?php echo $cover_image_link; ?>">
+		<a href="<?php echo $article_link; ?>" title=""><?php echo $article_title ?></a>
+		<h6 class="publish_date"><?php echo $publish_time; ?></h6>
+	</div>
+	<?php 
+		}
+	?>

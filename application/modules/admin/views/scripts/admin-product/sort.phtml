@@ -1,0 +1,180 @@
+<?php
+	$ssFilter = $this->arrParam['ssFilter'];
+	$action_link 	= $this->baseUrl($this->currentController . '/filter/type/order');
+	$curControllerLink = $this->baseUrl($this->currentController);
+	
+	$lblProductName = $this->cmsSortLink('p.product_name',$this->arrParam,$this->translate('admin-product-add-label-productname'),$this->imgUrl,$action_link);
+	$lblProductCoverImage = $this->translate('admin-cp-cover-image');
+	
+	$lblProductPublish = $this->cmsSortLink('p.publish',$this->arrParam,$this->translate('admin-cw-publish'),$this->imgUrl,$action_link);
+	$lblProductPublishTime = $this->cmsSortLink('p.publish_time',$this->arrParam,$this->translate('admin-cp-publishtime'),$this->imgUrl,$action_link);
+	
+	$lblProductOrder = $this->cmsSortLink('p.order',$this->arrParam,$this->translate('admin-cw-order'),$this->imgUrl,$action_link);
+	
+	$lblProductCategory = $this->cmsSortLink('pc.category_name',$this->arrParam,$this->translate('admin-product-add-label-categoryname'),$this->imgUrl,$action_link);
+	$lblProductID = $this->cmsSortLink('p.id',$this->arrParam,'ID',$this->imgUrl,$action_link);
+	$lblProductLockStatus = $this->cmsSortLink('p.lock_status',$this->arrParam,$this->translate('admin-cp-lockstatus'),$this->imgUrl,$action_link);
+	
+	//--------------------------------------- CREATE: PRODUCT CATEGORY SELECT BOX --------------------------
+	$options = $this->slbProCat;
+	$linkSearch = $this->baseUrl($this->currentController . '/filter/type/productcategory');
+	$slbProCat = $this->formSelect('product_category_id',$ssFilter['product_category_id'],
+							array('onchange'=>"OnSubmitForm('" .$linkSearch ."')"),$options);
+	$selectGroup = 'Product Category: ' . $slbProCat;
+	
+	//--------------------------------------- CREATE: SEARCH AREA -------------------------------
+	$keywords 		= $this->formText('keywords',$ssFilter['keywords'],array('class'=>'txtshort'));
+	$linkSearch 	= $this->baseUrl($this->currentController . '/filter/type/search/key/1');
+	
+	$btnSearch 		= $this->formButton('search-now','Search',
+									array('onclick'=>"OnSubmitForm('" .$linkSearch ."');"));
+	$linkResetSearch = $this->baseUrl($this->currentController . '/filter/type/search/key/0');
+	$btnResetSearch = $this->formButton('clear-keywords','Clear',
+									array('onclick'=>"OnSubmitForm('" .$linkResetSearch ."');"));
+	$strSearch = $keywords . ' ' . $btnSearch . ' ' .$btnResetSearch ;
+	
+	//----- thong bao loi -----
+	$errors = '';
+	if (count($this->messageError) > 0) {
+		$errors = $this->formErrors($this->messageError,array('id'=>'errors'));
+	}
+	
+	//----- INPUT ELEMENT ---------------------------------------
+	//----- Lay du lieu truyen tu controller sang dua vao cac input cua form
+	//----- neu chua co thi tu khoi tao du lieu cho cac input cua form
+	$formdata = $this->FormData;
+	$formstyle = $this->FormStyle;
+	$formOrderData = array();
+	$formOrderStyle = array();
+	if (isset($formdata['order'])) {
+		$formOrderData = $formdata['order'];
+	}
+	if (isset($formstyle['order'])) {
+		$formOrderStyle = $formstyle['order'];
+	}
+?>
+
+<form name="appForm" method="post" action="">
+	<?php echo $this->render('/admin-product/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php //echo $this->render('/admin-product/sublink/index.php'); ?>
+
+	<!-- ------------------------------------ table Admin verion 2 ------------------------- -->
+	<div class="panel panel-default adminlist">
+		<!-- /.panel-heading -->
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover" id="dataTables-object">
+					<thead>
+						<tr>
+							<th class="col_cid">
+								<input type="checkbox" name="checkbox" id="checkbox" onclick="checkedAll()">
+							</th>
+							<th><?php echo $this->translate('admin-product-add-label-productname'); ?></th>
+							<th class="col_coverimage"><?php echo $this->translate('admin-cp-cover-image'); ?></th>
+							<th class="col_procat_name"><?php echo $this->translate('admin-product-add-label-categoryname'); ?></th>
+							<th class="col_order"><?php echo $this->translate('admin-cw-order'); ?></th>
+							<th class="col_publish"><?php echo $this->translate('admin-cw-publish'); ?></th>
+							<th class="col_publish_time"><?php echo $this->translate('admin-cp-publishtime'); ?></th>
+							<th class="col_control">Control</th>
+							<th class="col_lock_status"><?php echo $this->translate('admin-cw-lock'); ?></th>
+						</tr>
+					</thead>
+					<tbody>
+                                    
+					<?php 
+						foreach ($this->Items as $key => $value) {
+							$value = $this->cmsReplaceString($value);
+							$id = $value['id'];
+							$product_name = $value['product_name'];
+							$cover_image = FILES_URL . '/products/cover-images/small/' . $value['cover_image'];
+							$cover_image = '<img src="' . $cover_image . '"/>';
+							
+							//----- lay thong so publish
+							$publish = $value['publish'];
+							if ($publish == 1) {
+								$linkPublish = $this->baseUrl($this->currentController .'/publish/type/inactive/id/' .$id);
+								$publish = $this->cmsIconButton('Stop Publish this Product','fa fa-check',$linkPublish,'css');
+							} else {
+								$linkPublish = $this->baseUrl($this->currentController .'/publish/type/active/id/' .$id);
+								$publish = $this->cmsIconButton('Publish this Product','fa fa-minus-circle',$linkPublish,'css');
+							}
+							$publish_time	= date('d/m/Y H:i:s',strtotime($value['publish_time']));
+							
+							//----- lay thong so lock_status
+							$lock_status = $value['lock_status'];
+							if ($lock_status == 1) {
+								$linkLockStatus = $this->baseUrl($this->currentController .'/change-lock-status/type/inactive/id/' .$id);
+								$lock_status = $this->cmsIconButton('Unlock this Product','fa fa-lock',$linkLockStatus,'css');
+							} else {
+								$linkLockStatus = $this->baseUrl($this->currentController .'/change-lock-status/type/active/id/' .$id);
+								$lock_status = $this->cmsIconButton('Lock this Product','fa fa-unlock',$linkLockStatus,'css');
+							}
+							
+							$orderStyle = 'width: 30px; text-align: center;';
+							if (!empty($formOrderStyle[$value['id']])) {
+								$orderStyle .= $formOrderStyle[$value['id']];
+							}
+							$orderValue = $value['order'];
+							if (isset($formOrderData[$value['id']])) {
+								$orderValue = $formOrderData[$value['id']];
+							}
+							//----- neu doi tuong bi khoa thi vo hieu hoa o textbox order
+							if ($value['lock_status'] == 0) {
+								$order = $this->formText('order[' .$value['id'] .']',$orderValue,
+										array('style'=> $orderStyle));
+							} else if ($value['lock_status'] == 1) {
+								$order = $this->formText('order[' .$value['id'] .']',$orderValue,
+										array('style'=> $orderStyle,'disabled'=>true));
+							}
+										
+							$category_id = $value['product_category_id'];
+							$categoryLink = $this->baseUrl('/admin/admin-product-category/info/id/' . $category_id);
+							$category_name = $value['category_name'];
+							$strProductCategory = '<a href="' . $categoryLink . '">' . $category_name . '</a>';
+							
+							$linkInfo = $this->baseUrl($this->currentController . '/info/id/' .$id);
+							$btnInfo = $this->cmsIconButton('View information','fa fa-info-circle fa-lg',$linkInfo,'css');
+							$linkEdit = $this->baseUrl($this->currentController . '/edit/id/' .$id);
+							$btnEdit = $this->cmsIconButton('Edit Item','fa fa-edit fa-lg',$linkEdit,'css');
+							$linkDelete = $this->baseUrl($this->currentController . '/delete/id/' .$id);
+							$btnDelete = $this->cmsIconButton('Delete Item','fa fa-times-circle fa-lg',$linkDelete,'css');
+							$strControlIconButton = $btnInfo . ' ' . $btnEdit . ' ' .$btnDelete;
+							
+							$cid = $this->formCheckbox('cid[]',$value['id']);
+					?>
+					
+					<tr class="odd gradeX even">						
+						<td align="center"><?php echo $cid; ?></td>
+						<td align="left"><?php echo $product_name; ?></td>
+						<td align="center"><?php echo $cover_image; ?></td>
+						<td align="center"><?php echo $strProductCategory; ?></td>
+						<td align="center"><?php echo $order; ?></td>
+						<td align="center"><?php echo $publish; ?></td>
+						<td align="center"><?php echo $publish_time; ?></td>
+						<td align="center">
+							<?php echo $strControlIconButton; ?>
+						</td>
+						<td align="center"><?php echo $lock_status; ?></td>
+					</tr>
+			
+                <?php 
+				} // ------------- dong vong lap foreach ----------------
+			?>                    
+                                        
+					</tbody>
+				</table>
+			</div> <!-- /.table-responsive -->
+		</div> <!-- /.panel-body -->
+	</div>
+	<!-- -------------------------------- End table Admin verion 2 ------------------------- -->
+	
+	
+</form>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script>
+    $(document).ready(function() {
+        $('#dataTables-object').dataTable();
+    });
+</script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+  	      <?php echo $this->headTitle(); ?>
+  <?php echo $this->headMeta(); ?>
+  <?php echo $this->headLink(); ?>
+   <?php echo $this->headScript(); ?>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ngọc Phương Shop</title>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+
+    <div class="container">
+
+    <?php include ("includes/header.php"); ?>
+
+      
+      <div id="topmenu" class="row">
+        
+        <?php echo $this->blkProductCategory(); ?>
+        
+      </div>
+
+  <?php echo $this->layout()->content; ?>
+
+  <?php include("includes/footer.php"); ?>
+
+  <!-- jQuery -->
+ 
+  <script type="text/javascript">
+    $(document).ready(function()
+    {
+      $( "#details div.details-thumb" ).hover(
+        function() {
+          //in
+          $("#details_img_temp").attr( 'src', $("#details div.details-img > img").attr('src') );
+          $("#details div.details-img > img").attr( 'src', $(this).find('img').attr('src') );
+        },
+        function() {
+          //out
+          $("#details div.details-img > img").attr( 'src', $("#details_img_temp").attr('src') );
+        }
+      );
+
+      $( "#details div.details-thumb" ).click(
+        function(event) {
+          var _src = $(this).find('img').attr('src');
+          $("#details div.details-img > img").attr( 'src', _src );
+          $("#details_img_temp").attr( 'src', _src );
+        }
+      );
+
+      $( "ul.tab a.tab-link" ).click(
+        function(event) {
+          $( "ul.tab li" ).removeClass('active');
+          $( this ).parent().addClass('active');
+
+          var id = $(this).attr('id');
+          $( "div.tab-cnt" ).css('display','none');
+          $( "#"+id+"-content").css('display','');
+
+          $(this).blur();
+          return false;
+        }
+      );
+    }); //ready
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<?php 
+	$linkStart = $this->currentUrl . '/page/' . $this->first;
+	$linkPrevious = "#";
+	if (isset($this->previous)) {
+		$linkPrevious = $this->currentUrl . '/page/' . $this->previous;
+	}
+	$linkNext = "#";
+	if (isset($this->next)) {
+		$linkNext = $this->currentUrl . '/page/' . $this->next;
+	}
+	$linkEnd = $this->currentUrl . '/page/' . $this->last;
+	$strPage = '';
+	foreach ($this->pagesInRange as $key=>$value) {
+		if ($this->current == $key) {
+			//----- khong co link
+			$strPage .= '<span style="font-size: 13pt; padding: 4px;">' . $key .'</span>';	
+		} else {
+			//----- co link
+			$linkPage = $this->currentUrl . '/page/' .$key;
+			$strPage .= '<a href="' .$linkPage . '" style="font-size: 13pt; padding: 4px;">' .$key .'</a>';
+		}
+	}
+	
+	$page = 'Page ' .$this->current .' of ' .$this->last;
+?>
+
+<a href="<?php echo $linkStart;?>" title="Start">Start</a>		
+<a href="<?php echo $linkPrevious;?>" title="Prev" >Prev</a>
+<?php echo $strPage;?>
+<a href="<?php echo $linkNext;?>" title="Next" >Next</a>
+<a href="<?php echo $linkEnd;?>" title="End" >End</a>

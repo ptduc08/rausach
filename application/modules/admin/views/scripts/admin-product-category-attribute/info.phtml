@@ -1,0 +1,116 @@
+<?php
+	//----- Lay du lieu thong tin product category truyen tu controller sang
+	//----- neu chua co thi tu khoi tao du lieu thong tin product category
+	$formdata = $this->Item;
+	
+	if ($formdata == null) {
+		$formdata['product_category_id'] = 0;
+		$formdata['product_category_name'] = '';
+		$formdata['attribute_name'] = '';
+		$formdata['attribute_description'] = 0;
+		$formdata['lock_status'] = 1;
+		$formdata['publish'] = 1;
+		$formdata['order'] = 0;
+		$formdata['created_id'] = 0;
+		$formdata['created_name'] = '';
+		$formdata['created_time'] = '0000-00-00 00:00:00';
+		$formdata['last_modified_id'] = 0;
+		$formdata['last_modified_name'] = '';
+		$formdata['last_modified_time'] = '0000-00-00 00:00:00';
+		$formdata['publisher_id'] = 0;
+		$formdata['publisher_name'] = '';
+		$formdata['publish_time'] = '0000-00-00 00:00:00';
+	} else {
+		$formdata = $this->cmsReplaceString($formdata);
+	}
+	
+	$product_category_name = $formdata['product_category_name'];
+	$product_category_id = $formdata['product_category_id'];
+	$product_category_name = '<a href="' .$this->baseUrl('/admin/admin-product-category/info/id/' . $product_category_id)
+								.'">' .$product_category_name .'</a>';
+	
+	$attribute_name 	= $formdata['attribute_name'];
+	$description 	= $formdata['attribute_description'];
+	$order			= $formdata['order'];
+	
+	//----- thong tin public
+	$publish		= $formdata['publish'];
+	if ($publish == 0) {
+		$publish = $this->translate('admin-cw-nopublish');
+	} else {
+		$publish = $this->translate('admin-cw-publish');
+	}
+	
+	//----- thong tin lock status
+	$lock_status	= $formdata['lock_status'];
+	if ($lock_status == 0) {
+		$lock_status = $this->translate('admin-cw-unlock');
+	} else {
+		$lock_status = $this->translate('admin-cw-lock');
+	}
+	
+	$created_name	= '<a href="' .$this->baseUrl('/admin/admin-user/info/id/' .$formdata['created_id']) . '">' . $formdata['created_name'] . '</a>';
+	//----- chuyen created time tu dang Y-m-d sang d-m-Y de hien thi ra view
+	$created_time	= date('d/m/Y H:i:s',strtotime($formdata['created_time']));
+	
+	$last_modified_name	= '<a href="' .$this->baseUrl('/admin/admin-user/info/id/' .$formdata['last_modified_id']) . '">' . $formdata['last_modified_name'] . '</a>';
+	//----- chuyen created time tu dang Y-m-d sang d-m-Y de hien thi ra view
+	$last_modified_time	= date('d/m/Y H:i:s',strtotime($formdata['last_modified_time']));
+	
+	//----- thong tin nguoi publish, ngay gio publish
+	if ($formdata['publisher_id'] != 0) {
+		$publisher_name	= '<a href="' .$this->baseUrl('/admin/admin-user/info/id/' .$formdata['publisher_id']) . '">' . $formdata['publisher_name'] . '</a>';
+		$publish_time	= date('d/m/Y H:m:s',strtotime($formdata['publish_time']));
+	} else {
+		$publisher_name	= '';
+		$publish_time	= '';
+	}
+	
+	$arrInput = array(
+					array('label'=>$this->translate('admin-productcategoryattribute-add-label-attributename'),'input'=>$attribute_name,'style'=>'font-size: 15pt;'),
+					array('label'=>$this->translate('admin-productcategoryattribute-add-label-productcategory'),'input'=>$product_category_name),
+					array('label'=>$this->translate('admin-cw-description'),'input'=>$description),
+					array('label'=>$this->translate('admin-cw-order'),'input'=>$order),
+					array('label'=>$this->translate('admin-cw-publish'),'input'=>$publish),
+					array('label'=>$this->translate('admin-cp-lockstatus'),'input'=>$lock_status),
+					array('label'=>$this->translate('admin-cp-createdby'),'input'=>$created_name),
+					array('label'=>$this->translate('admin-cp-createdtime'),'input'=>$created_time),
+					array('label'=>$this->translate('admin-cp-lastmodifiedby'),'input'=>$last_modified_name),
+					array('label'=>$this->translate('admin-cp-lastmodifiedtime'),'input'=>$last_modified_time),
+					array('label'=>$this->translate('admin-cp-publishedby'),'input'=>$publisher_name),
+					array('label'=>$this->translate('admin-cp-publishedtime'),'input'=>$publish_time),
+			);	
+	
+?>
+
+<form name="appForm" method="post" action="" enctype="multipart/form-data">
+	<?php echo $this->render('/admin-product-category/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php echo $this->render('/admin-product-category/sublink/index.php'); ?>
+	
+	<!--------------------------------------- BEGIN: CONTENT ----------------------------------->
+	<div id="element-box">
+		<div class="t">
+			<div class="t">
+				<div class="t"></div>
+			</div>
+		</div>
+		<div class="m">
+
+	<!--------------------------------------- form add group ----------------------------------->
+			<div id="adminfieldset">
+				<div class="adminheader">Detail</div>
+				
+				<?php echo $this->partialLoop('row.php',$arrInput); ?>
+				
+			</div>
+			<div class="clr"></div>
+		</div>
+		<div class="b">
+			<div class="b">
+				<div class="b"></div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------- END: CONTENT ----------------------------------->
+</form>

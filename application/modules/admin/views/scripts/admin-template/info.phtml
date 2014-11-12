@@ -1,0 +1,116 @@
+<?php
+	//----- Lay du lieu thong tin user truyen tu controller sang
+	//----- neu chua co thi tu khoi tao du lieu thong tin user
+	$formdata = $this->Item;
+
+	if ($formdata == null) {
+		$formdata['gallery_name'] = '';
+		$formdata['description'] = '';
+		$formdata['cover_image'] = '';
+		$formdata['publish'] = 1;
+		$formdata['lock_status'] = 1;
+		$formdata['order'] = 0;
+		$formdata['created_by'] = '';
+		$formdata['created_time'] = '0000-00-00 00:00:00';
+		$formdata['last_modified_by'] = '';
+		$formdata['last_modified_time'] = '0000-00-00 00:00:00';
+		$formdata['publish_by'] = '';
+		$formdata['publish_time'] = '0000-00-00 00:00:00';
+		$formdata['hit_counter'] = 0;
+	}
+	
+	$gallery_name 	= $formdata['gallery_name'];
+	$description	= $formdata['description'];
+	
+	//----- CREATE: publish option --------------------------
+	$publish		= $formdata['publish'];
+	if ($publish == 0) {
+		$publish = $this->translate('admin-cw-publish');
+	} else {
+		$publish = $this->translate('admin-cw-nopublish');
+	}
+	
+	//----- CREATE: lock status option --------------------------
+	$lock_status	= $formdata['lock_status'];
+	if ($lock_status == 0) {
+		$lock_status = $this->translate('admin-cw-unlock');
+	} else {
+		$lock_status = $this->translate('admin-cw-lock');
+	}
+	
+	$order 	= $formdata['order'];
+	
+	//----- CREATE: cover image option --------------------------
+	$cover_image 	= FILES_URL . '/gallery/cover-images/medium/' . $formdata['cover_image'];
+	$cover_image	= '<img src="' . $cover_image .'"/><br/>';
+	
+	//----- thong tin nguoi tao, ngay gio tao
+	$created_name	= '<a href="' .$this->baseUrl('/admin/admin-user/info/id/' .$formdata['created_id']) . '">' . $formdata['created_name'] . '</a>';
+	$created_time	= date('d-m-Y H:m:s',strtotime($formdata['created_time']));
+	
+	//----- thong tin nguoi, ngay, gio chinh sua cuoi cung
+	if ($formdata['last_modified_id'] != 0) {
+		$last_modified_name	= '<a href="' .$this->baseUrl('/admin/admin-user/info/id/' .$formdata['last_modified_id']) . '">' . $formdata['last_modified_name'] . '</a>';
+		$last_modified_time	= date('d-m-Y H:m:s',strtotime($formdata['created_time']));
+	} else {
+		$last_modified_name	= '';
+		$last_modified_time	= '';
+	}
+	
+	//----- thong tin nguoi publish, ngay gio publish
+	if ($formdata['publisher_id'] != 0) {
+		$publisher_name	= '<a href="' .$this->baseUrl('/admin/admin-user/info/id/' .$formdata['publisher_id']) . '">' . $formdata['publisher_name'] . '</a>';
+		$publish_time	= date('d-m-Y H:m:s',strtotime($formdata['publish_time']));
+	} else {
+		$publisher_name	= '';
+		$publish_time	= '';
+	}
+	
+	$arrInput = array(
+					array('label'=>$this->translate('admin-gallery-add-label-galleryname'),'input'=>$gallery_name,'style'=>'font-size: 15pt;'),
+					array('label'=>$this->translate('admin-gallery-add-label-description'),'input'=>$description),
+					array('label'=>$this->translate('admin-gallery-add-label-coverimage'),'input'=>$cover_image),
+					array('label'=>$this->translate('admin-cw-order'),'input'=>$order),
+					array('label'=>$this->translate('admin-gallery-add-label-publish'),'input'=>$publish),
+					array('label'=>$this->translate('admin-gallery-add-label-lockstatus'),'input'=>$lock_status),
+					array('label'=>$this->translate('admin-cp-createdby'),'input'=>$created_name),
+					array('label'=>$this->translate('admin-cp-createdtime'),'input'=>$created_time),
+					array('label'=>$this->translate('admin-cp-lastmodifiedby'),'input'=>$last_modified_name),
+					array('label'=>$this->translate('admin-cp-lastmodifiedtime'),'input'=>$last_modified_time),
+					array('label'=>$this->translate('admin-cp-publishedby'),'input'=>$publisher_name),
+					array('label'=>$this->translate('admin-cp-publishedtime'),'input'=>$publish_time),
+	);
+	
+?>
+
+<form name="appForm" method="post" action="" enctype="multipart/form-data">
+	<?php echo $this->render('/admin-gallery/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php echo $this->render('/admin-gallery/sublink/index.php'); ?>
+	
+	<!--------------------------------------- BEGIN: CONTENT ----------------------------------->
+	<div id="element-box">
+		<div class="t">
+			<div class="t">
+				<div class="t"></div>
+			</div>
+		</div>
+		<div class="m">
+
+	<!--------------------------------------- form add group ----------------------------------->
+			<div id="adminfieldset">
+				<div class="adminheader">Detail</div>
+				
+				<?php echo $this->partialLoop('row.php',$arrInput); ?>
+				
+			</div>
+			<div class="clr"></div>
+		</div>
+		<div class="b">
+			<div class="b">
+				<div class="b"></div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------- END: CONTENT ----------------------------------->
+</form>

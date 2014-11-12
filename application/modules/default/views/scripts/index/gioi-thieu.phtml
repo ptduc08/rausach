@@ -1,0 +1,32 @@
+      <div class="row">
+
+        <div id="news" class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <div class="item">
+	<?php
+		$thisPage = $this->Item;
+		if (!empty($thisPage)) {
+			$thisPage = $this->cmsReplaceString($thisPage);
+			$page_title = $thisPage['page_title'];
+			$page_content = $thisPage['page_content'];
+			$cover_image = FILES_URL . '/pages/cover-images/medium/' . $thisPage['cover_image'];
+		}
+	?>		  
+            <h3><?php echo $page_title; ?></h3>
+            <img src="<?php echo $cover_image; ?>" alt="" />
+            <p>
+			<?php echo $page_content; ?>
+			<p>
+          </div>
+        </div>
+
+<!-- blockaboutus -->
+        <div id="right-news" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
+        	<div class="news">
+
+			<?php echo $this->blkAboutUs(); ?>
+
+            <?php echo $this->blkRelativeArticle(); ?>
+
+        </div>
+      </div>
+    </div> 

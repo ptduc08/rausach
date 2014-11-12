@@ -1,0 +1,47 @@
+<div class="col-md-9">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="top-margin"></h3>
+			<?php
+				$arrProjectList = $this->Items;
+				if (count($arrProjectList) > 0) {
+				foreach ($arrProjectList as $key=>$val) {
+					$project_id = $val['id'];
+					$project_title = $this->cmsReplaceString($val['project_title']);
+					$project_brief = $this->cmsReplaceString($val['project_brief']);
+					$cover_image = FILES_URL . '/projects/cover-images/large/' . $val['cover_image'];
+						
+					$filter = new Zend_Filter();
+					$multiFilter = $filter->addFilter(new Zend_Filter_StringToLower(array('encoding'=>'UTF-8')))
+										  ->addFilter(new Zend_Filter_StringTrim())
+										  ->addFilter(new Zend_Filter_Alnum(true))
+										  ->addFilter(new Zendvn_Filter_RemoveCircumflex())
+										  ->addFilter(new Zend_Filter_Word_SeparatorToDash(' '));
+						
+					$projectUrlOptions = array('module'=>'default','controller'=>'du-an','action'=>'du-an-chi-tiet',
+							'title'=>$multiFilter->filter($project_title),'id'=>$project_id);
+						
+					$project_link = $this->url($projectUrlOptions,'projectdetail');
+			?>
+					<div class="row">
+						<div class="col-md-12">
+							<img src="<?php echo $cover_image ?>" alt="388ic du an" class="img-thumbnail project-image"/>
+							<div class="project">
+								<h4><a href="<?php echo $project_link; ?>"><?php echo $project_title; ?></a></h4>
+								<p><?php echo $project_brief; ?></p>
+							</div>
+						</div>
+					</div>
+			<?php 
+					} //---end foreach
+				}	  //---end if
+			?>
+			<!-- ********************************** phan trang **************************************-->
+			<ul class="pagination news-pagination">
+				<?php $currentUrl = $this->baseUrl($this->currentController . '/index'); ?>
+				<?php echo $this->paginationControl($this->paginator,'Sliding','pagination.phtml',array('currentUrl'=>$currentUrl)); ?>
+			</ul>	
+			<!-- ********************************** End phan trang **********************************-->
+		</div>					
+	</div>
+</div>

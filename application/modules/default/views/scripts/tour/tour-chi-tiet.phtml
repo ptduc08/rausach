@@ -1,0 +1,50 @@
+<div class="content _right">
+	<?php 
+	$thisItem = $this->cmsReplaceString($this->thisItem);
+	$category_name 		= $thisItem['category_name'];
+	$tour_id			= $thisItem['id'];
+	$tour_title 		= $thisItem['title'];
+	$tour_brief			= $thisItem['brief'];
+	$tour_content		= $thisItem['content'];
+	$tour_price 		= $thisItem['price'];
+	$tour_duration 		= $thisItem['duration'];
+	$tour_startlocation = $thisItem['start_location'];
+	$tour_starttime 	= $thisItem['start_time'];
+	$tour_path 			= $thisItem['tour_path'];
+	$cover_image 		= FILES_URL . '/tour/cover-images/medium/' . $thisItem['cover_image'];
+	?>
+	<h2 class="ti_cat"><?php echo $category_name; ?></h2>
+        <h3 class="ti_cat name_cat_tour"><?php echo $tour_title; ?></h3>
+        <div class="chitiettuor">
+        	<img src="<?php echo $cover_image; ?>" />
+            <div class="boxchitiettour _right">
+                <h4><span>Giá từ:</span><strong><?php echo $tour_price; ?></strong></h4>
+                <h4><span>Thời gian: </span><small><?php echo $tour_duration; ?></small></h4>
+                <h4><span>Khởi hành từ:</span><small><?php echo $tour_startlocation; ?></small></h4>
+                <h4><span>Ngày khởi hành:</span><small><?php echo $tour_starttime; ?></small></h4>
+                <h4><span>Địa điểm tham quan:</span><small><?php echo $tour_path; ?></small></h4>
+                <a href="/default/tour/dat-tour/id/<?php echo $tour_id; ?>" class="btndattour">Đặt Tour</a>
+            </div>
+            <div class="clear"></div>
+            <p class="tomtattour">
+            	<?php echo $tour_brief; ?>
+            </p>
+            <p class="thoigiantour">
+            	Chương trình khởi hành vào: <?php echo $tour_starttime; ?>
+            </p>
+        </div>
+        
+        <h1 class="title_tour title_new" id="tabbed">
+        	<ul>
+            	<li><a href="camnang">THÔNG TIN TOUR</a></li>
+                
+                <div class="clear"></div>
+            </ul>
+        </h1>
+        <!-- khung hien thi noi dung -->
+
+        <div id="tabbed_camnang" class="contents">
+        	<?php echo $tour_content; ?> 
+        </div>
+        
+    </div>

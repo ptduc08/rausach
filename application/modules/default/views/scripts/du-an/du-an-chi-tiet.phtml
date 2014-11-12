@@ -1,0 +1,31 @@
+<div class="col-md-9">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="top-margin"></h3>
+			<div class="row">
+				<div class="col-md-12">
+					<?php
+						if(!empty($this->Item)) {
+							$thisProject = $this->cmsReplaceString($this->Item);
+							$project_id = $thisProject['id'];
+							$project_title = $thisProject['project_title'];
+							$project_content = $thisProject['project_content'];
+							$cover_image = FILES_URL . '/projects/cover-images/medium/' . $thisProject['cover_image'];
+						
+					?>
+						<img src="<?php echo $cover_image; ?>" alt="388ic du an" class="img-thumbnail project-image"/>
+						<div class="project">
+							<h4><a href="#"><?php echo $project_title; ?></a></h4>
+							<p><?php echo $project_content; ?></p>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+				
+			<hr/>
+			<!-- ************ cac du an khac ************ -->
+			<?php echo $this->blkRelativeProject(0,$project_id); ?>
+							
+		</div>
+	</div>
+</div>

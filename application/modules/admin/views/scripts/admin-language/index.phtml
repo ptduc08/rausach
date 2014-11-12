@@ -1,0 +1,118 @@
+<?php 
+	
+	$curControllerLink = $this->baseUrl($this->currentController);
+	$linkOrderLanguageName = '';
+	$linkOrderID = '';
+	$linkOrderStatus = '';
+	$linkOrderDefault = '';
+	$linkOrderOrder = '';
+	
+?>
+
+<form name="appForm" method="post" action="">
+	<?php echo $this->render('/admin-language/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php echo $this->render('/admin-language/sublink/index.php'); ?>
+
+	<!--------------------------------------- BEGIN: CONTENT ----------------------------------->
+	<div id="element-box">
+		<div class="t">
+			<div class="t">
+				<div class="t"></div>
+			</div>
+		</div>
+		<div class="m">
+		
+		<!--------------------------------------- Area 4: In du lieu lay tu database ------------------->
+		<table class="adminlist">
+			<thead>
+				<tr>
+					<th width="43" >
+						<input type="checkbox" name="checkbox" id="checkbox" onclick="checkedAll()">
+					</th>
+					<th>
+						Language
+					</th>
+					<th width="89" title='Trạng thái'>Status</th>
+					<th width="86">Default</th>
+					<th width="90">Control</th>
+					<th width="34">ID</th>
+				</tr>
+			</thead>
+			
+			<?php
+			$id = 1;
+			$linkInfo = $this->baseUrl($this->currentController . '/info/id/' .$id);
+			$btnInfo = $this->cmsIconButton('View information',$this->imgUrl .'/icon_info.png',$linkInfo);
+			$linkEdit = $this->baseUrl($this->currentController . '/edit/id/' .$id);
+			$btnEdit = $this->cmsIconButton('Edit Item',$this->imgUrl .'/icon_edit.png',$linkEdit);
+			$linkDelete = $this->baseUrl($this->currentController . '/delete/id/' .$id);
+			$btnDelete = $this->cmsIconButton('Delete Item',$this->imgUrl .'/icon_del.png',$linkDelete);
+			$strControlIconButton = $btnInfo . ' ' . $btnEdit . ' ' .$btnDelete;
+			
+			$cid = $this->formCheckbox('cid[]',0);
+			
+			$linkChangeLangVi = $this->baseUrl($this->currentController .'/change-language/lang/vi');
+			$linkChangeLangEn = $this->baseUrl($this->currentController .'/change-language/lang/en');
+			?>
+			
+			<tr class="even">
+					<td align="center"><?php echo $cid; ?></td>					
+					<td align="center">English</td>
+					<td align="left">
+						<a href="<?php echo $linkChangeLangEn; ?>">Enable</a>
+					</td>
+					<td align="center">Default</td>
+					<td align="center">
+						
+					</td>
+					<td align="center">1</td>
+			</tr>
+			<tr class="even">
+					<td align="center"><?php echo $cid; ?></td>					
+					<td align="center">Vietnam</td>
+					<td align="left">
+						<a href="<?php echo $linkChangeLangVi; ?>">Enable</a>
+					</td>
+					<td align="center">Default</td>
+					<td align="center">
+						
+					</td>
+					<td align="center">1</td>
+			</tr>
+
+	<!--------------------------------------- BEGIN: PAGINATION (FOOT) --------------------------------------->
+			<tfoot>
+				<tr>
+					<td colspan="9">
+						<div class="container">
+							<div class="pagination">
+								<div class="limit">Display #
+									<select onchange="submitform();" size="1" class="inputbox" id="limit" name="limit">
+										<option value="5">5</option>
+									</select>
+								</div>
+								<div class="limit">
+									
+								</div>
+								<div class="limit"></div>
+							</div>
+						</div>
+					</td>
+				</tr>					
+			</tfoot>				
+	<!--------------------------------------- END: PAGINATION (FOOT) --------------------------------------->
+		</table>
+	<!--------------------------------------- END Area 4: In du lieu lay tu database ------------------->		                                
+
+	<!--------------------------------------- END: ELEMENT BOX ----------------------------------->
+                              <div class="clr"></div>
+		</div>
+		<div class="b">
+			<div class="b">
+				<div class="b"></div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------- END: CONTENT ----------------------------------->
+</form>

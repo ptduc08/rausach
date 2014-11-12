@@ -1,0 +1,55 @@
+<?php
+	//----- kiem tra lock status. Neu trang thai bi khoa (lock_status == 1) thi canh bao
+	//----- va redirect trang quay lai trang index
+	$lockStatus = $this->lockStatus;
+	if ($lockStatus == 1) {
+		$alertLockStatus = $this->translate('admin-galleryimage-delete-lockalert');
+		echo "<script>alert('" . $alertLockStatus ."'); window.location = '" . $this->actionMain . "'</script>";
+	}
+	$image_title 	= $this->cmsReplaceString($this->Item['image_title']);
+	$gallery_image = FILES_URL . '/gallery/gallery-images/large/' . $this->Item['gallery_image'];
+	$gallery_image = '<img src="' . $gallery_image . '"/>';
+?>
+
+<form name="appForm" method="post" action="">
+	<?php echo $this->render('/admin-gallery-image/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php echo $this->render('/admin-gallery-image/sublink/index.php'); ?>
+
+	<!--------------------------------------- BEGIN: CONTENT ----------------------------------->
+	<div id="element-box">
+		<div class="t">
+			<div class="t">
+				<div class="t"></div>
+			</div>
+		</div>
+		<div class="m">
+
+	<!--------------------------------------- form add group ----------------------------------->
+			<div id="adminfieldset">
+				<div class="adminheader">Detail</div>
+				
+				<div id = "errors">
+					<?php echo $this->translate('admin-cp-confirm-delete'); ?>
+				</div>
+				
+				<div id="row">
+					<div class="label"><?php echo $this->translate('admin-galleryimage-add-label-imagetitle'); ?></div>
+					<div style="font-size: 15pt;"><?php echo $image_title; ?></div>
+				</div>
+				<div id="row">
+					<div class="label"><?php echo $this->translate('admin-cp-gallery-image'); ?></div>
+					<div style="font-size: 15pt;"><?php echo $gallery_image; ?></div>
+				</div>
+				
+			</div>
+			<div class="clr"></div>
+		</div>
+		<div class="b">
+			<div class="b">
+				<div class="b"></div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------- END: CONTENT ----------------------------------->
+</form>

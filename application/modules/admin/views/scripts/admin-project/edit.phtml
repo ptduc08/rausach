@@ -1,0 +1,136 @@
+<?php
+	//----- kiem tra lock status. Neu trang thai bi khoa (lock_status == 1) thi canh bao
+	//----- va redirect trang quay lai trang index
+	$lockStatus = $this->lockStatus;
+	if ($lockStatus == 1) {
+		$alertLockStatus = $this->translate('admin-project-edit-lockalert');
+		echo "<script>alert('" . $alertLockStatus ."'); window.location = '" . $this->actionMain . "'</script>";
+	}
+
+	//----- INPUT ELEMENT ---------------------------------------
+	//----- Lay du lieu truyen tu controller sang dua vao cac input cua form
+	//----- neu chua co thi tu khoi tao du lieu cho cac input cua form
+	$formdata = $this->FormData;
+	$formstyle = $this->FormStyle;
+	if ($formdata == null) {
+		$formdata['project_category_id'] = 0;
+		$formdata['project_title'] = '';
+		$formdata['project_brief'] = '';
+		$formdata['project_content'] = '';
+		$formdata['cover_image'] = '';
+		$formdata['publish'] = 0;
+		$formdata['order'] = 0;
+	} else {
+		$formdata = $this->cmsReplaceString($formdata);
+	}
+	
+	//----- Lay dinh dang truyen tu controller sang dua vao cac input cua form
+	//----- neu chua co thi tu khoi tao dinh dang cho cac input cua form
+	if ($formstyle == null) {
+		$formstyle['project_title'] = '';
+		$formstyle['project_brief'] = '';
+		$formstyle['project_content'] = '';
+		$formstyle['project_category_id'] = 'min-width: 200px';
+		$formstyle['cover_image'] = '';
+		$formstyle['order'] = '';
+	}	
+	
+	//----- CREATE: PROJECT CATEGORY SELECT BOX --------------------------
+	$sourceArr = $this->slbProjectCat;
+	$slbProjectCat = $this->cmsRecursiveSelectBox($sourceArr, array('parent'=>0,'level'=>1),array('name'=>'project_category_id',
+							'style'=>$formstyle['project_category_id'],'value'=>$formdata['project_category_id']));
+	
+	$project_title 	= $this->formText('project_title',$formdata['project_title'],array('class'=>'form-control','style'=>$formstyle['project_title']));
+	$project_brief 	= $this->formText('project_brief',$formdata['project_brief'],array('class'=>'form-control','style'=>$formstyle['project_brief']));
+	$project_content = $this->cmsEditor('project_content',$formdata['project_content'],array('toolbar'=>'FullToolbar'),array('class'=>'form-control'));
+	
+	//----- CREATE: publish option --------------------------
+	$info = new Zend_Session_Namespace('info');
+	if (!empty($info->acl['privileges'])) {
+		$arrAcl = $info->acl['privileges'];
+	} else {
+		$arrAcl = array();
+	}
+	if (in_array('admin_admin-project_publish', $arrAcl) || $info->group['permission'] == 'Full Access') {
+		$options = array($this->translate('admin-cw-nopublish'),$this->translate('admin-cw-publish'));
+		if (!isset($formdata['publish'])) {
+			$this->Item['publish'] = 0;
+		}
+		$publish = $this->formRadio('publish',$formdata['publish'],null,$options, ' ');
+	} else {
+		$publish = $this->translate('admin-project-add-warning') . $this->formHidden('publish',0);
+	}
+	
+	$order 	= $this->formText('order',$formdata['order'],array('class'=>'txtshort','style'=>$formstyle['order']));
+	//----- CREATE: cover image option --------------------------
+	if (!empty($formdata['cover_image'])) {
+		$cover_image 	= FILES_URL . '/projects/cover-images/small/' . $formdata['cover_image'];
+		$cover_image	= '<img src="' . $cover_image .'"/><br/>';
+		$current_cover_image = $this->formHidden('current_cover_image',$formdata['cover_image']);
+	} else {
+		$cover_image	= FILES_URL . '/projects/cover-images/small/' . $formdata['current_cover_image'];
+		$cover_image	= '<img src="' . $cover_image .'"/><br/>';
+		$current_cover_image = $this->formHidden('current_cover_image',$formdata['current_cover_image']);
+	}
+	$imageSize = $this->imageSize('production','project_cover_image_large');
+	$strRecommendSize = ' (recommend image size: ' .$imageSize['width'] .'px-' .$imageSize['height'] .'px)';
+	$cover_image   .= $this->formFile('cover_image',array('style'=>'')) . $this->translate('admin-project-edit-coverimage-detail')
+										. '<br/>' . $strRecommendSize . $current_cover_image;
+	
+	$arrInput = array(
+					array('label'=>$this->translate('admin-project-add-label-projectcategory'),'input'=>$slbProjectCat),
+					array('label'=>$this->translate('admin-project-add-label-projecttitle'),'input'=>$project_title),
+					array('label'=>$this->translate('admin-project-add-label-projectbrief'),'input'=>$project_brief),
+					array('label'=>$this->translate('admin-project-add-label-projectcontent'),'input'=>$project_content),
+					array('label'=>$this->translate('admin-project-add-label-projectcoverimage'),'input'=>$cover_image),
+					array('label'=>$this->translate('admin-cw-order'),'input'=>$order),
+					array('label'=>$this->translate('admin-project-add-label-projectpublish'),'input'=>$publish),		
+			);
+	
+	//----- thong bao loi -----
+	$errors = '';
+	if (count($this->messageError) > 0) {
+		$errors = $this->formErrors($this->messageError,array('id'=>'errors'));
+	}
+	
+	
+?>
+
+<form name="appForm" method="post" action="" enctype="multipart/form-data">
+	<?php echo $this->render('/admin-project/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php //echo $this->render('/admin-project/sublink/index.php'); ?>
+
+	<?php
+		if(!empty($errors)) {
+	?>
+		<div class="alert alert-danger"><?php echo $errors; ?></div>
+	<?php 
+		}
+	?>
+	
+	<!--------------------------------------- BEGIN: CONTENT ----------------------------------->
+	<div id="element-box">
+		<div class="t">
+			<div class="t">
+				<div class="t"></div>
+			</div>
+		</div>
+		<div class="m">
+
+	<!--------------------------------------- form add group ----------------------------------->
+			<div id="adminfieldset">
+				
+				<?php echo $this->partialLoop('row.php',$arrInput); ?>
+				
+			</div>
+			<div class="clr"></div>
+		</div>
+		<div class="b">
+			<div class="b">
+				<div class="b"></div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------- END: CONTENT ----------------------------------->
+</form>

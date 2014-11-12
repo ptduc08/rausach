@@ -1,0 +1,58 @@
+<div class="right_pro">
+	<h4 class="title_intro dotkep title_pro">ALBUM ảnh hoạt động</h4>
+		<div class="content">
+		
+			<?php 
+			$arrGallerytList = $this->Items;
+			if (count($arrGallerytList) > 0) {
+				foreach ($arrGallerytList as $key=>$val) {
+					$gallery_id = $val['id'];
+					$gallery_name = $this->cmsReplaceString($val['gallery_name']);
+					$cover_image = FILES_URL . '/gallery/cover-images/medium/' . $val['cover_image'];
+						
+					$filter = new Zend_Filter();
+					$multiFilter = $filter->addFilter(new Zend_Filter_StringToLower(array('encoding'=>'UTF-8')))
+										  ->addFilter(new Zend_Filter_StringTrim())
+										  ->addFilter(new Zend_Filter_Alnum(true))
+										  ->addFilter(new Zendvn_Filter_RemoveCircumflex())
+										  ->addFilter(new Zend_Filter_Word_SeparatorToDash(' '));
+						
+					$galleryUrlOptions = array('module'=>'default','controller'=>'hinh-anh','action'=>'hinh-anh-hoat-dong-chi-tiet',
+							'title'=>$multiFilter->filter($gallery_name),'gallery_id'=>$gallery_id);
+						
+					$gallery_link = $this->url($galleryUrlOptions,'gallery-detail');
+			?>
+		
+			<div class="product_box album_box">
+ 				<a  href="<?php echo $gallery_link; ?>" ><img src="<?php echo $cover_image; ?>" /></a>
+				<a class="chitiet" href="<?php echo $gallery_link; ?>" ><?php echo $gallery_name; ?></a>
+			</div>
+			
+			<?php 
+					}
+				} 
+			?>
+			
+			<div class="clear"></div>
+			<div class="paging">
+				<!--------------------------------------- BEGIN: PAGINATION (FOOT) --------------------------------------->
+				<tfoot>
+				<tr>
+								<td colspan="9">
+									<div class="container">
+										<div class="pagination">
+											<div class="limit">
+												<?php $currentUrl = $this->baseUrl($this->currentController . '/index'); ?>
+												<?php echo $this->paginationControl($this->paginator,'Sliding','pagination.phtml',array('currentUrl'=>$currentUrl)); ?>
+											</div>
+											<div class="limit"></div>
+										</div>
+									</div>
+								</td>
+				</tr>					
+				</tfoot>
+				<!--------------------------------------- END: PAGINATION (FOOT) --------------------------------------->                   
+			</div>
+		</div>
+			
+</div>

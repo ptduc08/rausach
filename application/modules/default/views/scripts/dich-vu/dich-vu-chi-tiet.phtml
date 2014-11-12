@@ -1,0 +1,43 @@
+<div class="col-md-8">
+	<?php
+		if (!empty($this->Item)) {
+			$thisService = $this->cmsReplaceString($this->Item);
+			$service_id = $thisService['id'];
+			$category_id = $thisService['category_id'];
+			$category_name = $thisService['category_name'];
+			$service_title = $thisService['service_title'];
+			$service_content = $thisService['service_content'];
+			$cover_image = FILES_URL . '/services/cover-images/medium/' .$thisService['cover_image'];
+			
+			$filter = new Zend_Filter();
+			$multiFilter = $filter->addFilter(new Zend_Filter_StringToLower(array('encoding'=>'UTF-8')))
+								  ->addFilter(new Zend_Filter_StringTrim())
+								  ->addFilter(new Zend_Filter_Alnum(true))
+								  ->addFilter(new Zendvn_Filter_RemoveCircumflex())
+								  ->addFilter(new Zend_Filter_Word_SeparatorToDash(' '));
+			
+			$categoryUrlOptions = array('module'=>'default','controller'=>'dich-vu','action'=>'index',
+					'title'=>$multiFilter->filter($category_name),'id'=>$category_id);
+			$category_link = $this->url($categoryUrlOptions,'service-category');
+		}
+	?> 
+	<h3 class="news-heading"><a><?php echo $service_title; ?></a></h3>
+	<hr/>
+	<div class="row">
+		<div class="col-md-12 news-block">
+			<img src="<?php echo $cover_image; ?>" alt="cnt dich vu 1" class="img-thumbnail news-thumb-large"/>
+			<div class="news-introduce">
+				<p class="news-brief"><?php echo $service_content; ?></p>
+			</div>
+			<hr/>
+			<!-- ***************************** cac dich vu khac ************************** -->
+			<div class="news-other">
+				<h4><span class="label label-primary">Các dịch vụ khác</span></h4>
+				<ul class="other-news">
+					<?php echo $this->blkRelativeService($category_id,$service_id); ?>
+				</ul>
+			</div>
+			<!-- ***************************** End cac tin khac ********************** -->
+		</div>
+	</div>									
+</div>

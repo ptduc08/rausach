@@ -1,0 +1,10 @@
+<div class="right right_intro">
+	<?php 
+		$thisArticle = $this->cmsReplaceString($this->Item);
+		$article_title = $thisArticle['article_title'];
+		$article_content = $thisArticle['article_content'];
+	?>
+
+	<h4 class="heading-title dotkep"><?php echo $article_title ?></h4>
+	<div class="content"><?php echo $article_content; ?></div>
+</div>

@@ -1,0 +1,36 @@
+<?php 
+	$linkStart = $this->currentUrl . '/page/' . $this->first;
+	$linkPrevious = "#";
+	if (isset($this->previous)) {
+		$linkPrevious = $this->currentUrl . '/page/' . $this->previous;
+	}
+	$linkNext = "#";
+	if (isset($this->next)) {
+		$linkNext = $this->currentUrl . '/page/' . $this->next;
+	}
+	$linkEnd = $this->currentUrl . '/page/' . $this->last;
+	$strPage = '';
+	foreach ($this->pagesInRange as $key=>$value) {
+		if ($this->current == $key) {
+			//----- khong co link
+			$strPage .= '<li class="active"><a>' . $key .'</a></li>';	
+		} else {
+			//----- co link
+			$linkPage = $this->currentUrl . '/page/' .$key;
+			$strPage .= '<li><a href="' .$linkPage . '">' .$key .'</a></li>';
+		}
+	}
+	
+	$page = 'Page ' .$this->current .' of ' .$this->last;
+?>
+ <ul class="pagination">
+
+<?php echo $strPage;?>
+
+</ul>
+          
+ <ul class="pagination pager2 pull-right">
+ 	<li><a href="<?php echo $linkPrevious;?>"> < </a></li>
+      <li><a href="<?php echo $linkNext;?>"> > </a></li>
+    
+ </ul>

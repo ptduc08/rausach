@@ -1,0 +1,79 @@
+      <div class="row">
+        <ol class="breadcrumb">
+          <li>
+            <a href="/index">Trang chủ</a>
+          </li>
+          <li>
+            <a href="/default/lien-he">Liên hệ</a>
+          </li>
+          <li class="active">NgocPhuong Shop</li>
+        </ol>
+      </div>
+
+
+
+      <div class="row">
+
+        <div id="contact" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+<form role="form" class="contact-form" method="post" action="">
+          <div class="item">
+            <h3>Gửi thông tin liên hệ</h3>
+            <hr/>
+          <?php
+          $errors = '';
+  if (count($this->messageError) > 0) {
+    $errors = $this->formErrors($this->messageError,array('id'=>'contact_errors'));
+  }
+              if(!empty($errors)) {
+                if($this->validateResult == "error") {
+          ?>
+                  <div class="alert alert-danger"><?php echo $errors; ?></div>
+          <?php } else if($this->validateResult == "success") { 
+          ?>
+                  <div class="alert alert-success"><?php echo $errors; ?></div>
+          <?php 
+                }
+              } 
+          ?>
+            <div class="fields">
+              <label class="required" for="Contact_name">Tên <span class="required">(*)</span></label>
+              <input type="text" id="Contact_name" name="contact_name" maxlength="255" size="60">
+            </div>
+
+            <div class="fields">
+              <label class="required" for="Contact_email">Email <span class="required">(*)</span></label>
+              <input type="text" id="Contact_email" name="contact_email" maxlength="255" size="60">
+            </div>
+
+            <div class="fields">
+              <label class="required" for="Contact_phone">Điện thoại <span class="required">(*)</span></label>
+              <input type="text" id="Contact_phone" name="contact_mobile" maxlength="255" size="60">
+            </div>
+
+            <div class="fields">
+              <label class="required" for="Contact_body">Nội dung <span class="required">(*)</span></label>
+              <textarea name="contact_content" rows="8" cols="40" id="Contact_body"></textarea>
+            </div>
+
+            <div class="buttons">
+              <input type="submit" value="Gửi đi" class="btn btn-primary btn_g">
+            </div>
+          </div>
+</form>
+        </div>
+
+
+        <div id="right-contact" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
+          <div>
+            <a href="<?php echo $this->imgUrl; ?>/map.jpg" target="_blank"><img class="map" src="<?php echo $this->imgUrl; ?>/map.jpg" alt=""></a>
+            <img class="bg" src="<?php echo $this->imgUrl; ?>/contact_bg_icon.png" alt="">
+
+            <h3 class="company">Công ty tin học máy tính Ngọc Phương</h3>
+            <span><strong>Add:</strong> Số 86 Lạch Tray - Ngô Quyền - Hải Phòng</span><br />
+            <span><strong>Tel:</strong> 0935.565.586 - 0935.565.586</span><br />
+            <span><strong>Email:</strong> <a href="mailto:info@domainname.com">info@domainname.com</a></span><br />
+          </div>
+
+        </div>
+
+      </div>

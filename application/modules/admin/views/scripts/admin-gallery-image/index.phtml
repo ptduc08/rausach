@@ -1,0 +1,166 @@
+<?php
+	$ssFilter = $this->arrParam['ssFilter'];
+	$action_link 	= $this->baseUrl($this->currentController . '/filter/type/order');
+	$curControllerLink = $this->baseUrl($this->currentController);
+	
+	$lblImageTitle = $this->cmsSortLink('gi.image_title',$this->arrParam,$this->translate('admin-galleryimage-add-label-imagetitle'),$this->imgUrl,$action_link);
+	$lblImage = $this->translate('admin-cw-image');
+	
+	$lblImagePublish = $this->cmsSortLink('gi.publish',$this->arrParam,$this->translate('admin-cw-publish'),$this->imgUrl,$action_link);
+	$lblImagePublishTime = $this->cmsSortLink('gi.publish_time',$this->arrParam,$this->translate('admin-cp-publishtime'),$this->imgUrl,$action_link);
+	
+	$lblImageOrder = $this->cmsSortLink('gi.order',$this->arrParam,$this->translate('admin-cw-order'),$this->imgUrl,$action_link);
+	
+	$lblImageGallery = $this->cmsSortLink('g.gallery_name',$this->arrParam,$this->translate('admin-gallery-add-label-galleryname'),$this->imgUrl,$action_link);
+	$lblImageID = $this->cmsSortLink('gi.id',$this->arrParam,'ID',$this->imgUrl,$action_link);
+	
+	//--------------------------------------- CREATE: GALLERY SELECT BOX --------------------------
+	$options = $this->slbGallery;
+	$linkSearch = $this->baseUrl($this->currentController . '/filter/type/gallery');
+	$slbGallery = $this->formSelect('gallery_id',$ssFilter['gallery_id'],
+							array('onchange'=>"OnSubmitForm('" .$linkSearch ."')"),$options);
+	$selectGallery = 'Gallery: ' . $slbGallery;
+	
+	//--------------------------------------- CREATE: SEARCH AREA -------------------------------
+	$keywords 		= $this->formText('keywords',$ssFilter['keywords'],array('class'=>'txtshort'));
+	$linkSearch 	= $this->baseUrl($this->currentController . '/filter/type/search/key/1');
+	
+	$btnSearch 		= $this->formButton('search-now','Search',
+									array('onclick'=>"OnSubmitForm('" .$linkSearch ."');"));
+	$linkResetSearch = $this->baseUrl($this->currentController . '/filter/type/search/key/0');
+	$btnResetSearch = $this->formButton('clear-keywords','Clear',
+									array('onclick'=>"OnSubmitForm('" .$linkResetSearch ."');"));
+	$strSearch = $keywords . ' ' . $btnSearch . ' ' .$btnResetSearch ;
+	
+?>
+
+<form name="appForm" method="post" action="">
+	<?php echo $this->render('/admin-gallery-image/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php echo $this->render('/admin-gallery-image/sublink/index.php'); ?>
+
+	<!--------------------------------------- BEGIN: CONTENT ----------------------------------->
+	<div id="element-box">
+		<div class="t">
+			<div class="t">
+				<div class="t"></div>
+			</div>
+		</div>
+		<div class="m">
+		<!--------------------------------------- BEGIN: ELEMENT BOX ----------------------------------->
+			<div id="filters">
+				<div style="float: left">
+					<?php echo $strSearch; ?>
+				</div>
+				<div style="float: right">
+					<?php echo $selectGallery; ?>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+		<!--------------------------------------- Area 4: In du lieu lay tu database ------------------->
+		<table class="adminlist">
+			<thead>
+				<tr>
+					<th class="col_cid">
+						<input type="checkbox" name="checkbox" id="checkbox" onclick="checkedAll()">
+					</th>
+					<th><?php echo $lblImageTitle; ?></th>
+					<th class="col_coverimage"><?php echo $lblImage; ?></th>
+					<th class="col_gallery_name"><?php echo $lblImageGallery; ?></th>
+					<th class="col_order"><?php echo $lblImageOrder; ?></th>
+					<th class="col_publish"><?php echo $lblImagePublish; ?></th>
+					<th class="col_publish_time"><?php echo $lblImagePublishTime; ?></th>
+					<th class="col_control">Control</th>
+					<th class="col_id"><?php echo $lblImageID; ?></th>
+				</tr>
+			</thead>
+			
+			<?php 
+				foreach ($this->Items as $key => $value) {
+					$value = $this->cmsReplaceString($value);
+					$id = $value['id'];
+					$image_title = $value['image_title'];
+					$image = FILES_URL . '/gallery/gallery-images/medium/' . $value['gallery_image'];
+					$image = '<img src="' . $image . '"/>';
+					//----- lay thong so publish
+					$publish = $value['publish'];
+					if ($publish == 1) {
+						$linkPublish = $this->baseUrl($this->currentController .'/publish/type/inactive/id/' .$id);
+						$publish = $this->cmsIconButton('Stop Publish this Product',$this->imgUrl .'/icon/active.png',$linkPublish);
+					} else {
+						$linkPublish = $this->baseUrl($this->currentController .'/publish/type/active/id/' .$id);
+						$publish = $this->cmsIconButton('Publish this Product',$this->imgUrl .'/icon/inactive.png',$linkPublish);
+					}
+					$publish_time	= date('d-m-Y H:m:s',strtotime($value['publish_time']));
+					
+					$order = $this->formText('order[' .$value['id'] .']',$value['order'],
+											array('style'=> 'width: 30px; text-align: center;','disabled'=>true));
+								
+					$gallery_id = $value['gallery_id'];
+					$galleryLink = $this->baseUrl('/admin/admin-gallery/info/id/' . $gallery_id);
+					$gallery_name = $value['gallery_name'];
+					$strGallery = '<a href="' . $galleryLink . '">' . $gallery_name . '</a>';
+					
+					/* $linkInfo = $this->baseUrl($this->currentController . '/info/id/' .$id);
+					$btnInfo = $this->cmsIconButton('View information',$this->imgUrl .'/icon_info.png',$linkInfo);
+					$linkEdit = $this->baseUrl($this->currentController . '/edit/id/' .$id);
+					$btnEdit = $this->cmsIconButton('Edit Item',$this->imgUrl .'/icon_edit.png',$linkEdit); */
+					$linkDelete = $this->baseUrl($this->currentController . '/delete/id/' .$id);
+					$btnDelete = $this->cmsIconButton('Delete Item',$this->imgUrl .'/icon/icon_del.png',$linkDelete);
+					$strControlIconButton = $btnDelete;
+					
+					$cid = $this->formCheckbox('cid[]',$value['id']);
+			?>
+			
+			<tr class="even">						
+					<td align="center"><?php echo $cid; ?></td>
+					<td align="left"><?php echo $image_title; ?></td>
+					<td align="center"><?php echo $image; ?></td>
+					<td align="center"><?php echo $strGallery; ?></td>
+					<td align="center"><?php echo $order; ?></td>
+					<td align="center"><?php echo $publish; ?></td>
+					<td align="center"><?php echo $publish_time; ?></td>
+					<td align="center"><?php echo $strControlIconButton; ?></td>
+					<td align="center"><?php echo $id; ?></td>
+			</tr>
+			
+			<?php 
+				} // ------------- dong vong lap foreach ----------------
+			?>
+	<!--------------------------------------- BEGIN: PAGINATION (FOOT) --------------------------------------->
+			<tfoot>
+				<tr>
+					<td colspan="9">
+						<div class="container">
+							<div class="pagination">
+								<div class="limit">Display #
+									<select onchange="submitform();" size="1" class="inputbox" id="limit" name="limit">
+										<option value="5">5</option>
+									</select>
+								</div>
+								<div class="limit">
+									<?php $currentUrl = $this->baseUrl($this->currentController . '/index'); ?>
+									<?php echo $this->paginationControl($this->paginator,'Sliding','pagination.phtml',array('currentUrl'=>$currentUrl)); ?>
+								</div>
+								<div class="limit"></div>
+							</div>
+						</div>
+					</td>
+				</tr>					
+			</tfoot>				
+	<!--------------------------------------- END: PAGINATION (FOOT) --------------------------------------->
+		</table>
+	<!--------------------------------------- END Area 4: In du lieu lay tu database ------------------->		                                
+
+	<!--------------------------------------- END: ELEMENT BOX ----------------------------------->
+                              <div class="clr"></div>
+		</div>
+		<div class="b">
+			<div class="b">
+				<div class="b"></div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------- END: CONTENT ----------------------------------->
+</form>

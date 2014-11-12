@@ -1,0 +1,71 @@
+<?php
+	$thisCategory = $this->cmsReplaceString($this->thisCategory);
+	$category_name = $thisCategory['category_name']; 
+	$description = $thisCategory['description'];	
+?>
+
+<h2 class="ti_cat"><?php echo $category_name; ?></h2>
+<p><?php echo $description; ?></p>
+	<?php 
+	$tourList = $this->tourList;
+	if (count($tourList) > 0) {
+		foreach ($tourList as $key=>$val) {
+			$val = $this->cmsReplaceString($val);
+			$tour_id 			= $val['id'];
+			$category_id		= $val['category_id'];
+			$tour_title			= $val['title'];
+			$tour_price 		= $val['price'];
+			$tour_duration 		= $val['duration'];
+			$tour_startlocation = $val['start_location'];
+			$tour_starttime 	= $val['start_time'];
+			$tour_path 			= $val['tour_path'];
+			$cover_image 		= FILES_URL . '/tour/cover-images/medium/' . $val['cover_image'];
+				
+			$filter = new Zend_Filter();
+			$multiFilter = $filter->addFilter(new Zend_Filter_StringToLower(array('encoding'=>'UTF-8')))
+								 ->addFilter(new Zend_Filter_StringTrim())
+								 ->addFilter(new Zend_Filter_Alnum(true))
+								 ->addFilter(new Zendvn_Filter_RemoveCircumflex())
+								 ->addFilter(new Zend_Filter_Word_SeparatorToDash(' '));
+				
+			$tourUrlOptions = array('module'=>'default','controller'=>'tour','action'=>'tour-chi-tiet',
+					'title'=>$multiFilter->filter($tour_title),'id'=>$tour_id);
+				
+			$tour_link = $this->url($tourUrlOptions,'tour-router');
+	?>
+		<div class="chitiettuor tour_box">
+        	<img src="<?php echo $cover_image; ?>" />
+            <div class="boxchitiettour _right">
+            	<a href="<?php echo $tour_link ?>" title="chi tiet"><?php echo $tour_title; ?></a>
+                <h4><span>Giá từ:</span> <strong><?php echo $tour_price; ?></strong></h4>
+                <h4><span>Thời gian: </span><small><?php echo $tour_duration; ?></small></h4>
+                <h4><span>Khởi hành từ:</span><small><?php echo $tour_starttime; ?></small></h4>
+                <h4><span>Ngày khởi hành:</span><small><?php echo $tour_startlocation; ?></small></h4>
+                <h4><span>Địa điểm tham quan:</span><small><?php echo $tour_path; ?></small></h4>
+            </div>
+            <div class="clear"></div>
+        </div>
+	<?php
+		}
+	}
+	
+	?>
+<div class="paging">
+                    <!--------------------------------------- BEGIN: PAGINATION (FOOT) --------------------------------------->
+						<tfoot>
+							<tr>
+								<td colspan="9">
+									<div class="container">
+										<div class="pagination">
+											<div class="limit" style="float: right;">
+												<?php $currentUrl = $this->baseUrl($this->currentController . '/du-lich-trong-nuoc'); ?>
+												<?php echo $this->paginationControl($this->paginator,'Sliding','pagination.phtml',array('currentUrl'=>$currentUrl)); ?>
+											</div>
+											<div class="limit"></div>
+										</div>
+									</div>
+								</td>
+							</tr>					
+						</tfoot>				
+					<!--------------------------------------- END: PAGINATION (FOOT) --------------------------------------->	
+</div>

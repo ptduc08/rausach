@@ -1,0 +1,1991 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+	<header creationtoolversion="1.0.0" datatype="winres" segtype="sentence"
+         adminlang="en-us" srclang="de-at" o-tmf="abc"
+         creationtool="XYZTool" >
+	</header>
+<body>
+//******************************** ENGLISH ************************************************
+//
+//******************************** COMMON WORD, PHRASE ************************************************
+<tu tuid='admin-cw-active'>
+	<tuv xml:lang="en"><seg>Active</seg></tuv>
+</tu>
+<tu tuid='admin-cw-inactive'>
+	<tuv xml:lang="en"><seg>Inactive</seg></tuv>
+</tu>
+<tu tuid='admin-cw-yes'>
+	<tuv xml:lang="en"><seg>Yes</seg></tuv>
+</tu>
+<tu tuid='admin-cw-no'>
+	<tuv xml:lang="en"><seg>No</seg></tuv>
+</tu>
+<tu tuid='admin-cw-status'>
+	<tuv xml:lang="en"><seg>Status</seg></tuv>
+</tu>
+<tu tuid='admin-cw-publish'>
+	<tuv xml:lang="en"><seg>Publish</seg></tuv>
+</tu>
+<tu tuid='admin-cw-nopublish'>
+	<tuv xml:lang="en"><seg>No Publish</seg></tuv>
+</tu>
+<tu tuid='admin-cw-lock'>
+	<tuv xml:lang="en"><seg>Lock</seg></tuv>
+</tu>
+<tu tuid='admin-cw-unlock'>
+	<tuv xml:lang="en"><seg>UnLock</seg></tuv>
+</tu>
+<tu tuid='admin-cw-group'>
+	<tuv xml:lang="en"><seg>Group</seg></tuv>
+</tu>
+<tu tuid='admin-cw-image'>
+	<tuv xml:lang="en"><seg>Image</seg></tuv>
+</tu>
+<tu tuid='admin-cw-privilege'>
+	<tuv xml:lang="en"><seg>Privilege</seg></tuv>
+</tu>
+<tu tuid='admin-cw-mobile'>
+	<tuv xml:lang="en"><seg>Mobile</seg></tuv>
+</tu>
+<tu tuid='admin-cw-email'>
+	<tuv xml:lang="en"><seg>Email</seg></tuv>
+</tu>
+<tu tuid='admin-cw-content'>
+	<tuv xml:lang="en"><seg>Content</seg></tuv>
+</tu>
+<tu tuid='admin-cw-fullaccess'>
+	<tuv xml:lang="en"><seg>Full Access</seg></tuv>
+</tu>
+<tu tuid='admin-cw-limitaccess'>
+	<tuv xml:lang="en"><seg>Limit Access</seg></tuv>
+</tu>
+<tu tuid='admin-cw-permission'>
+	<tuv xml:lang="en"><seg>Permission</seg></tuv>
+</tu>
+<tu tuid='admin-cw-order'>
+	<tuv xml:lang="en"><seg>Order</seg></tuv>
+</tu>
+<tu tuid='admin-cw-description'>
+	<tuv xml:lang="en"><seg>Description</seg></tuv>
+</tu>
+<tu tuid='admin-cw-warning'>
+	<tuv xml:lang="en"><seg>Warning</seg></tuv>
+</tu>
+<tu tuid='admin-cp-confirm-delete'>
+	<tuv xml:lang="en"><seg>Are you sure to delete this item ?</seg></tuv>
+</tu>
+<tu tuid='admin-cp-confirm-multidelete'>
+	<tuv xml:lang="en"><seg>Are you sure to delete these items ?</seg></tuv>
+</tu>
+<tu tuid='admin-cp-uploadnewcoverimage'>
+	<tuv xml:lang="en"><seg>Browse to upload a new cover image</seg></tuv>
+</tu>
+<tu tuid='admin-cp-directly-assigned'>
+	<tuv xml:lang="en"><seg>Directly assigned </seg></tuv>
+</tu>
+<tu tuid='admin-cp-inherit-from'>
+	<tuv xml:lang="en"><seg>Inherited from </seg></tuv>
+</tu>
+<tu tuid='admin-cp-cover-image'>
+	<tuv xml:lang="en"><seg>Cover Image </seg></tuv>
+</tu>
+<tu tuid='admin-cp-gallery-image'>
+	<tuv xml:lang="en"><seg>Gallery Image </seg></tuv>
+</tu>
+<tu tuid='admin-cp-createdby'>
+	<tuv xml:lang="en"><seg>Created by</seg></tuv>
+</tu>
+<tu tuid='admin-cp-createdtime'>
+	<tuv xml:lang="en"><seg>Created Time</seg></tuv>
+</tu>
+<tu tuid='admin-cp-lastmodifiedby'>
+	<tuv xml:lang="en"><seg>Last modified by</seg></tuv>
+</tu>
+<tu tuid='admin-cp-lastmodifiedtime'>
+	<tuv xml:lang="en"><seg>Last modified time</seg></tuv>
+</tu>
+<tu tuid='admin-cp-publishedby'>
+	<tuv xml:lang="en"><seg>Published By</seg></tuv>
+</tu>
+<tu tuid='admin-cp-publishedtime'>
+	<tuv xml:lang="en"><seg>Published Time</seg></tuv>
+</tu>
+<tu tuid='admin-cp-publishtime'>
+	<tuv xml:lang="en"><seg>Publish/UnPublish Time</seg></tuv>
+</tu>
+<tu tuid='admin-cp-posttime'>
+	<tuv xml:lang="en"><seg>Post Time</seg></tuv>
+</tu>
+<tu tuid='admin-cp-lockstatus'>
+	<tuv xml:lang="en"><seg>Lock Status</seg></tuv>
+</tu>
+<tu tuid='admin-cp-search'>
+	<tuv xml:lang="en"><seg>Search...</seg></tuv>
+</tu>
+
+//******************************** HEADER ************************************************
+<tu tuid='header-title'>
+	<tuv xml:lang="en"><seg>WEBSITE ADMIN CONTROL PANEL</seg></tuv>
+</tu>
+<tu tuid='header-version'>
+	<tuv xml:lang="en"><seg>Version 1.0</seg></tuv>
+</tu>
+<tu tuid='header-logout'>
+	<tuv xml:lang="en"><seg>Logout</seg></tuv>
+</tu>
+
+//******************************** FOOTER ************************************************
+<tu tuid='footer-copyright'>
+	<tuv xml:lang="en"><seg>Copyright © 2013 A WEB DESIGN CO. All Rights Reserved</seg></tuv>
+</tu>
+
+//******************************** HE THONG MENU ************************************************
+<tu tuid='menu-main'>
+	<tuv xml:lang="en"><seg>Main</seg></tuv>
+</tu>
+<tu tuid='menu-dashboard'>
+	<tuv xml:lang="en"><seg>Dashboard</seg></tuv>
+</tu>
+<tu tuid='menu-main-frontend'>
+	<tuv xml:lang="en"><seg>Front End</seg></tuv>
+</tu>
+<tu tuid='menu-main-backend'>
+	<tuv xml:lang="en"><seg>Back End</seg></tuv>
+</tu>
+//--------------------- menu Pages ---------------------------
+<tu tuid='menu-pages'>
+	<tuv xml:lang="en"><seg>Pages</seg></tuv>
+</tu>
+//--------------------- menu News ---------------------------
+<tu tuid='menu-news'>
+	<tuv xml:lang="en"><seg>News</seg></tuv>
+</tu>
+<tu tuid='menu-news-category'>
+	<tuv xml:lang="en"><seg>News Category</seg></tuv>
+</tu>
+<tu tuid='menu-news-article'>
+	<tuv xml:lang="en"><seg>News Article</seg></tuv>
+</tu>
+//--------------------- menu Services ---------------------------
+<tu tuid='menu-services'>
+	<tuv xml:lang="en"><seg>Services</seg></tuv>
+</tu>
+<tu tuid='menu-services-category'>
+	<tuv xml:lang="en"><seg>Service Category</seg></tuv>
+</tu>
+<tu tuid='menu-services-manager'>
+	<tuv xml:lang="en"><seg>Services Manager</seg></tuv>
+</tu>
+//--------------------- menu Products ---------------------------
+<tu tuid='menu-products'>
+	<tuv xml:lang="en"><seg>Products</seg></tuv>
+</tu>
+<tu tuid='menu-product-manager'>
+	<tuv xml:lang="en"><seg>Product Manager</seg></tuv>
+</tu>
+<tu tuid='menu-product-category'>
+	<tuv xml:lang="en"><seg>Product Category</seg></tuv>
+</tu>
+<tu tuid='menu-product-category-attribute'>
+	<tuv xml:lang="en"><seg>Product Category Attributes</seg></tuv>
+</tu>
+//--------------------- menu Projects ---------------------------
+<tu tuid='menu-projects'>
+	<tuv xml:lang="en"><seg>Projects</seg></tuv>
+</tu>
+<tu tuid='menu-project-manager'>
+	<tuv xml:lang="en"><seg>Project Manager</seg></tuv>
+</tu>
+<tu tuid='menu-project-category'>
+	<tuv xml:lang="en"><seg>Project Category</seg></tuv>
+</tu>
+//--------------------- menu Tours ---------------------------
+<tu tuid='menu-tours'>
+	<tuv xml:lang="en"><seg>Tours</seg></tuv>
+</tu>
+<tu tuid='menu-tour-manager'>
+	<tuv xml:lang="en"><seg>Tour Manager</seg></tuv>
+</tu>
+<tu tuid='menu-tour-category'>
+	<tuv xml:lang="en"><seg>Tour Category</seg></tuv>
+</tu>
+//--------------------- menu Gallery ---------------------------
+<tu tuid='menu-gallery'>
+	<tuv xml:lang="en"><seg>Gallery</seg></tuv>
+</tu>
+<tu tuid='menu-gallery-manager'>
+	<tuv xml:lang="en"><seg>Gallery Manager</seg></tuv>
+</tu>
+<tu tuid='menu-galleryimage-manager'>
+	<tuv xml:lang="en"><seg>Image Manager</seg></tuv>
+</tu>
+//--------------------- menu Contact ---------------------------
+<tu tuid='menu-contact'>
+	<tuv xml:lang="en"><seg>Contact</seg></tuv>
+</tu>
+//--------------------- menu Member ---------------------------
+<tu tuid='menu-member'>
+	<tuv xml:lang="en"><seg>Member</seg></tuv>
+</tu>
+<tu tuid='menu-member-groupmanager'>
+	<tuv xml:lang="en"><seg>Group Manager</seg></tuv>
+</tu>
+<tu tuid='menu-member-usermanager'>
+	<tuv xml:lang="en"><seg>User Manager</seg></tuv>
+</tu>
+<tu tuid='menu-member-permission'>
+	<tuv xml:lang="en"><seg>Permission</seg></tuv>
+</tu>
+//--------------------- menu System ---------------------------
+<tu tuid='menu-system'>
+	<tuv xml:lang="en"><seg>System</seg></tuv>
+</tu>
+<tu tuid='menu-system-languagemanager'>
+	<tuv xml:lang="en"><seg>Language Manager</seg></tuv>
+</tu>
+<tu tuid='menu-system-templatemanager'>
+	<tuv xml:lang="en"><seg>Template Manager</seg></tuv>
+</tu>
+<tu tuid='menu-system-bannerslidemanager'>
+	<tuv xml:lang="en"><seg>Banner Slide Manager</seg></tuv>
+</tu>
+<tu tuid='menu-system-companymapmanager'>
+	<tuv xml:lang="en"><seg>Company Map Image</seg></tuv>
+</tu>
+<tu tuid='menu-system-companylogomanager'>
+	<tuv xml:lang="en"><seg>Company Logo</seg></tuv>
+</tu>
+<tu tuid='menu-system-homepagevideo'>
+	<tuv xml:lang="en"><seg>Homepage Video</seg></tuv>
+</tu>
+<tu tuid='menu-system-advertiseimage'>
+	<tuv xml:lang="en"><seg>Advertise Images</seg></tuv>
+</tu>
+<tu tuid='menu-system-documents'>
+	<tuv xml:lang="en"><seg>Manage Documents</seg></tuv>
+</tu>
+
+//******************************** HE THONG NUT CHUC NANG ************************************************
+<tu tuid='button-add'>
+	<tuv xml:lang="en"><seg>Add</seg></tuv>
+</tu>
+<tu tuid='button-edit'>
+	<tuv xml:lang="en"><seg>Edit</seg></tuv>
+</tu>
+<tu tuid='button-delete'>
+	<tuv xml:lang="en"><seg>Delete Items</seg></tuv>
+</tu>
+<tu tuid='button-sort'>
+	<tuv xml:lang="en"><seg>Sort Items</seg></tuv>
+</tu>
+<tu tuid='button-active'>
+	<tuv xml:lang="en"><seg>Active Items</seg></tuv>
+</tu>
+<tu tuid='button-inactive'>
+	<tuv xml:lang="en"><seg>Inactive Items</seg></tuv>
+</tu>
+<tu tuid='button-publish'>
+	<tuv xml:lang="en"><seg>Publish Items</seg></tuv>
+</tu>
+<tu tuid='button-lock'>
+	<tuv xml:lang="en"><seg>Lock Items</seg></tuv>
+</tu>
+<tu tuid='button-unlock'>
+	<tuv xml:lang="en"><seg>UnLock Items</seg></tuv>
+</tu>
+<tu tuid='button-featured-service'>
+	<tuv xml:lang="en"><seg>Featured Services</seg></tuv>
+</tu>
+<tu tuid='button-unfeatured-service'>
+	<tuv xml:lang="en"><seg>UnFeatured Services</seg></tuv>
+</tu>
+<tu tuid='button-unpublish'>
+	<tuv xml:lang="en"><seg>UnPublish Items</seg></tuv>
+</tu>
+<tu tuid='button-save'>
+	<tuv xml:lang="en"><seg>Save</seg></tuv>
+</tu>
+<tu tuid='button-accept'>
+	<tuv xml:lang="en"><seg>Accept</seg></tuv>
+</tu>
+<tu tuid='button-cancel'>
+	<tuv xml:lang="en"><seg>Cancel</seg></tuv>
+</tu>
+<tu tuid='button-back'>
+	<tuv xml:lang="en"><seg>Back</seg></tuv>
+</tu>
+<tu tuid='button-upload'>
+	<tuv xml:lang="en"><seg>Upload</seg></tuv>
+</tu>
+<tu tuid='button-article-manager'>
+	<tuv xml:lang="en"><seg>Article Manager</seg></tuv>
+</tu>
+<tu tuid='button-article-add'>
+	<tuv xml:lang="en"><seg>Add Article</seg></tuv>
+</tu>
+<tu tuid='button-user-manager'>
+	<tuv xml:lang="en"><seg>User Manager</seg></tuv>
+</tu>
+<tu tuid='button-language-manager'>
+	<tuv xml:lang="en"><seg>Language Manager</seg></tuv>
+</tu>
+<tu tuid='button-template-manager'>
+	<tuv xml:lang="en"><seg>Template Manager</seg></tuv>
+</tu>
+<tu tuid='button-service-manager'>
+	<tuv xml:lang="en"><seg>Service Manager</seg></tuv>
+</tu>
+<tu tuid='button-service-add'>
+	<tuv xml:lang="en"><seg>Add Service</seg></tuv>
+</tu>
+<tu tuid='button-product-manager'>
+	<tuv xml:lang="en"><seg>Product Manager</seg></tuv>
+</tu>
+<tu tuid='button-product-add'>
+	<tuv xml:lang="en"><seg>Add Product</seg></tuv>
+</tu>
+<tu tuid='button-tour-manager'>
+	<tuv xml:lang="en"><seg>Tour Manager</seg></tuv>
+</tu>
+<tu tuid='button-tour-add'>
+	<tuv xml:lang="en"><seg>Add Tour</seg></tuv>
+</tu>
+
+//******************************** HE THONG SUB LINK ************************************************
+<tu tuid='sublink-groupmanager'>
+	<tuv xml:lang="en"><seg>Group Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-usermanager'>
+	<tuv xml:lang="en"><seg>User Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-permission'>
+	<tuv xml:lang="en"><seg>Permission</seg></tuv>
+</tu>
+<tu tuid='sublink-newscategory'>
+	<tuv xml:lang="en"><seg>News Category Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-newsarticle'>
+	<tuv xml:lang="en"><seg>News Article Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-projectcategory'>
+	<tuv xml:lang="en"><seg>Project Category Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-project'>
+	<tuv xml:lang="en"><seg>Project Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-productcategory'>
+	<tuv xml:lang="en"><seg>Product Category Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-productcategoryattribute'>
+	<tuv xml:lang="en"><seg>Product Category Attributes</seg></tuv>
+</tu>
+<tu tuid='sublink-product'>
+	<tuv xml:lang="en"><seg>Product Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-tourcategory'>
+	<tuv xml:lang="en"><seg>Tour Category Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-tour'>
+	<tuv xml:lang="en"><seg>Tour Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-pagelist'>
+	<tuv xml:lang="en"><seg>List all pages</seg></tuv>
+</tu>
+<tu tuid='sublink-servicecategory'>
+	<tuv xml:lang="en"><seg>Service Category Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-service'>
+	<tuv xml:lang="en"><seg>Service Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-servicelist'>
+	<tuv xml:lang="en"><seg>List all services</seg></tuv>
+</tu>
+<tu tuid='sublink-contactlist'>
+	<tuv xml:lang="en"><seg>List all contacts</seg></tuv>
+</tu>
+<tu tuid='sublink-gallery'>
+	<tuv xml:lang="en"><seg>Gallery Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-gallery-image'>
+	<tuv xml:lang="en"><seg>Image Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-template-banner'>
+	<tuv xml:lang="en"><seg>Banner Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-template-logo'>
+	<tuv xml:lang="en"><seg>Logo Manager</seg></tuv>
+</tu>
+<tu tuid='sublink-template-map'>
+	<tuv xml:lang="en"><seg>Company Map</seg></tuv>
+</tu>
+<tu tuid='sublink-template-video'>
+	<tuv xml:lang="en"><seg>Video</seg></tuv>
+</tu>
+<tu tuid='sublink-template-advertise'>
+	<tuv xml:lang="en"><seg>Advertise</seg></tuv>
+</tu>
+<tu tuid='sublink-template-documents'>
+	<tuv xml:lang="en"><seg>Documents</seg></tuv>
+</tu>
+
+//******************************** PUBLIC CONTROLLER ************************************************
+<tu tuid='admin-public-error-title'>
+	<tuv xml:lang="en"><seg>Message :: Error!</seg></tuv>
+</tu>
+<tu tuid='admin-public-noacess-title'>
+	<tuv xml:lang="en"><seg>Message :: Access Deny!</seg></tuv>
+</tu>
+<tu tuid='admin-public-login-title'>
+	<tuv xml:lang="en"><seg>Message :: Login to CMS</seg></tuv>
+</tu>
+<tu tuid='admin-public-logout-title'>
+	<tuv xml:lang="en"><seg>Message :: Logout</seg></tuv>
+</tu>
+<tu tuid='admin-public-signin'>
+	<tuv xml:lang="en"><seg>Sign In</seg></tuv>
+</tu>
+
+//******************************** ADMIN INDEX CONTROLLER ************************************************
+//---------- INDEX --------------------
+<tu tuid='admin-index-title'>
+	<tuv xml:lang="en"><seg>ACP :: DASHBOARD</seg></tuv>
+</tu>
+
+//******************************** ADMIN GROUP CONTROLLER ************************************************
+//----------LIST GROUP--------------------
+<tu tuid='admin-admingroup-index-title'>
+	<tuv xml:lang="en"><seg>Member :: Group Manager :: List</seg></tuv>
+</tu>
+<tu tuid='admin-admingroup-col-groupname'>
+	<tuv xml:lang="en"><seg>Group Name</seg></tuv>
+</tu>
+<tu tuid='admin-admingroup-col-status'>
+	<tuv xml:lang="en"><seg>Status</seg></tuv>
+</tu>
+<tu tuid='admin-admingroup-col-acp'>
+	<tuv xml:lang="en"><seg>ACP</seg></tuv>
+</tu>
+<tu tuid='admin-admingroup-col-status'>
+	<tuv xml:lang="en"><seg>Status</seg></tuv>
+</tu>
+<tu tuid='admin-admingroup-col-order'>
+	<tuv xml:lang="en"><seg>Order</seg></tuv>
+</tu>
+<tu tuid='admin-admingroup-col-members'>
+	<tuv xml:lang="en"><seg>Members</seg></tuv>
+</tu>
+//----------ADD GROUP--------------------
+<tu tuid='admin-group-add-title'>
+	<tuv xml:lang="en"><seg>Member :: Group Manager :: Add Group</seg></tuv>
+</tu>
+<tu tuid='admin-addgroup-addform-label-groupname'>
+	<tuv xml:lang="en"><seg>Group Name</seg></tuv>
+</tu>
+<tu tuid='admin-addgroup-addform-label-inherit'>
+	<tuv xml:lang="en"><seg>Inherited Permission From</seg></tuv>
+</tu>
+<tu tuid='admin-addgroup-addform-label-groupacp'>
+	<tuv xml:lang="en"><seg>Access Admin Control Panel</seg></tuv>
+</tu>
+<tu tuid='admin-addgroup-addform-label-groupdefault'>
+	<tuv xml:lang="en"><seg>Default Group</seg></tuv>
+</tu>
+<tu tuid='admin-addgroup-addform-label-status'>
+	<tuv xml:lang="en"><seg>Status</seg></tuv>
+</tu>
+<tu tuid='admin-addgroup-addform-label-order'>
+	<tuv xml:lang="en"><seg>Order</seg></tuv>
+</tu>
+<tu tuid='admin-addgroup-addform-label-permission'>
+	<tuv xml:lang="en"><seg>Permission</seg></tuv>
+</tu>
+//----------GROUP INFO--------------------
+<tu tuid='admin-group-info-title'>
+	<tuv xml:lang="en"><seg>Member :: Group Manager :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-group-info-label-createddate'>
+	<tuv xml:lang="en"><seg>Created Date</seg></tuv>
+</tu>
+<tu tuid='admin-group-info-label-createdby'>
+	<tuv xml:lang="en"><seg>Created By</seg></tuv>
+</tu>
+<tu tuid='admin-group-info-label-membercount'>
+	<tuv xml:lang="en"><seg>Member Count</seg></tuv>
+</tu>
+//----------DELETE GROUP--------------------
+<tu tuid='admin-group-delete-title'>
+	<tuv xml:lang="en"><seg>Member :: Group Manager :: Delete Group</seg></tuv>
+</tu>
+//----------MULTI DELETE GROUP--------------------
+<tu tuid='admin-group-multidelete-index-title'>
+	<tuv xml:lang="en"><seg>Member :: Group Manager :: Delete Multi Group</seg></tuv>
+</tu>
+//----------EDIT GROUP--------------------
+<tu tuid='admin-group-edit-index-title'>
+	<tuv xml:lang="en"><seg>Member :: Group Manager :: Edit Group</seg></tuv>
+</tu>
+
+//******************************** ADMIN USER CONTROLLER ********************************************
+//----------LIST USER--------------------
+<tu tuid='admin-adminuser-index-title'>
+	<tuv xml:lang="en"><seg>Member :: User Manager :: List</seg></tuv>
+</tu>
+<tu tuid='admin-adminuser-col-username'>
+	<tuv xml:lang="en"><seg>Username</seg></tuv>
+</tu>
+<tu tuid='admin-adminuser-col-status'>
+	<tuv xml:lang="en"><seg>Status</seg></tuv>
+</tu>
+<tu tuid='admin-adminuser-col-email'>
+	<tuv xml:lang="en"><seg>Email</seg></tuv>
+</tu>
+<tu tuid='admin-adminuser-col-regdate'>
+	<tuv xml:lang="en"><seg>Register Date</seg></tuv>
+</tu>
+<tu tuid='admin-adminuser-col-group'>
+	<tuv xml:lang="en"><seg>Group</seg></tuv>
+</tu>
+//----------ADD USER--------------------
+<tu tuid='admin-adduser-index-title'>
+	<tuv xml:lang="en"><seg>Member :: User Manager :: Add</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-group'>
+	<tuv xml:lang="en"><seg>Group</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-username'>
+	<tuv xml:lang="en"><seg>Username</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-password'>
+	<tuv xml:lang="en"><seg>Password</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-repassword'>
+	<tuv xml:lang="en"><seg>Confirm Password</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-avatar'>
+	<tuv xml:lang="en"><seg>Avatar</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-email'>
+	<tuv xml:lang="en"><seg>Email</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-firstname'>
+	<tuv xml:lang="en"><seg>First Name</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-lastname'>
+	<tuv xml:lang="en"><seg>Last Name</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-birthday'>
+	<tuv xml:lang="en"><seg>Birthday</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-status'>
+	<tuv xml:lang="en"><seg>Status</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-sign'>
+	<tuv xml:lang="en"><seg>Signiture</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-registerdate'>
+	<tuv xml:lang="en"><seg>Register Date</seg></tuv>
+</tu>
+//----------INFO USER--------------------
+<tu tuid='admin-userinfo-index-title'>
+	<tuv xml:lang="en"><seg>Member :: User Manager :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-userinfo-inactive'>
+	<tuv xml:lang="en"><seg>Inactive</seg></tuv>
+</tu>
+<tu tuid='admin-userinfo-active'>
+	<tuv xml:lang="en"><seg>Active</seg></tuv>
+</tu>
+//----------INFO CURRENT USER--------------------
+<tu tuid='admin-currentuserinfo-index-title'>
+	<tuv xml:lang="en"><seg>Member :: User Manager :: Your Information</seg></tuv>
+</tu>
+//----------EDIT USER--------------------
+<tu tuid='admin-edituser-index-title'>
+	<tuv xml:lang="en"><seg>Member :: User Manager :: Edit</seg></tuv>
+</tu>
+<tu tuid='admin-edituser-editform-label-username-detail'>
+	<tuv xml:lang="en"><seg> (You can't change username)</seg></tuv>
+</tu>
+<tu tuid='admin-edituser-editform-label-avatar-detail'>
+	<tuv xml:lang="en"><seg> (Browse to upload a new avatar)</seg></tuv>
+</tu>
+//----------DELETE USER--------------------
+<tu tuid='admin-deleteuser-index-title'>
+	<tuv xml:lang="en"><seg>Member :: User Manager :: Delete User</seg></tuv>
+</tu>
+<tu tuid='admin-deleteuser-confirm-question'>
+	<tuv xml:lang="en"><seg>Are you sure to delete this item ?</seg></tuv>
+</tu>
+//----------MULTI DELETE USER--------------------
+<tu tuid='admin-multideleteuser-index-title'>
+	<tuv xml:lang="en"><seg>Member :: User Manager :: Multi Delete User</seg></tuv>
+</tu>
+<tu tuid='admin-deletemultiuser-confirm-question'>
+	<tuv xml:lang="en"><seg>Are you sure to delete these items ?</seg></tuv>
+</tu>
+
+//******************************** ADMIN PRIVILEGES CONTROLLER ************************************************
+//----------LIST PRIVILEGES--------------------
+<tu tuid='admin-privilege-index-title'>
+	<tuv xml:lang="en"><seg>Member :: Privilege Manager :: List Privilege</seg></tuv>
+</tu>
+<tu tuid='admin-privilege-col-privilegename'>
+	<tuv xml:lang="en"><seg>Privilege Name</seg></tuv>
+</tu>
+//----------ADD PRIVILEGE--------------------
+<tu tuid='admin-privilege-add-title'>
+	<tuv xml:lang="en"><seg>Member :: Privilege Manager :: Add Privilege</seg></tuv>
+</tu>
+//----------DELETE PRIVILEGE--------------------
+<tu tuid='admin-privilege-delete-title'>
+	<tuv xml:lang="en"><seg>Member :: Privilege Manager :: Delete Privilege</seg></tuv>
+</tu>
+<tu tuid='admin-privilege-delete-confirm'>
+	<tuv xml:lang="en"><seg>Are you sure to remove this privilege from group? </seg></tuv>
+</tu>
+//----------DELETE MULTI PRIVILEGE--------------------
+<tu tuid='admin-privilege-deletemulti-title'>
+	<tuv xml:lang="en"><seg>Member :: Privilege Manager :: Delete Multi Privilege</seg></tuv>
+</tu>
+<tu tuid='admin-privilege-deletemulti-confirm'>
+	<tuv xml:lang="en"><seg>Are you sure to remove these privileges from group? </seg></tuv>
+</tu>
+
+//******************************** AdminLanguage controller ****************
+<tu tuid='admin-changeLanguage-index-title'>
+	<tuv xml:lang="en"><seg>System :: Language Manager :: List</seg></tuv>
+</tu>
+
+//******************************** ADMIN NEWS CATEGORY CONTROLLER ************************************************
+//----------LIST NEWS CATEGORY--------------------
+<tu tuid='admin-newscategory-index-title'>
+	<tuv xml:lang="en"><seg>News :: Category Manager :: List</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-col-categoryname'>
+	<tuv xml:lang="en"><seg>Category Name</seg></tuv>
+</tu>
+//----------ADD NEWS CATEGORY--------------------
+<tu tuid='admin-newscategory-add-title'>
+	<tuv xml:lang="en"><seg>News :: Category Manager :: Add Category</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-addform-label-categoryname'>
+	<tuv xml:lang="en"><seg>Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-addform-label-parentcategory'>
+	<tuv xml:lang="en"><seg>Parent Category</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-addform-label-publish'>
+	<tuv xml:lang="en"><seg>Publish this News Category</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-addform-label-lockstatus'>
+	<tuv xml:lang="en"><seg>News Category Lock Status</seg></tuv>
+</tu>
+//----------EDIT NEWS CATEGORY--------------------
+<tu tuid='admin-newscategory-edut-title'>
+	<tuv xml:lang="en"><seg>News :: Category Manager :: Edit</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-edit-lockalert'>
+	<tuv xml:lang="en"><seg>This news category is locked. You cannot edit a locked news category. Please unlock news category to edit it!</seg></tuv>
+</tu>
+//----------DELETE NEWS CATEGORY--------------------
+<tu tuid='admin-newscategory-delete-title'>
+	<tuv xml:lang="en"><seg>News :: Category Manager :: Delete Category</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-addform-label-categoryname'>
+	<tuv xml:lang="en"><seg>Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This news category is locked. You cannot delete a locked news category. Please unlock news category to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI NEWS CATEGORY--------------------
+<tu tuid='admin-newscategory-deletemulti-title'>
+	<tuv xml:lang="en"><seg>News :: Category Manager :: Delete Multi Category</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-delform-label-categoryname'>
+	<tuv xml:lang="en"><seg>News Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked news categories. You cannot delete a locked news categories. Please unlock all news categories to delete multiple news categories!</seg></tuv>
+</tu>
+//----------SORT NEWS CATEGORY--------------------
+<tu tuid='admin-newscategory-sort-title'>
+	<tuv xml:lang="en"><seg>News :: Category Manager :: Sort News Category</seg></tuv>
+</tu>
+//----------INFO NEWS CATEGORY--------------------
+<tu tuid='admin-newscategory-info-title'>
+	<tuv xml:lang="en"><seg>News :: Category Manager :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-info-nonews'>
+	<tuv xml:lang="en"><seg>There're no news in this category</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-info-havenews'>
+	<tuv xml:lang="en"><seg> news in this category</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-info-totalnews'>
+	<tuv xml:lang="en"><seg>Total News</seg></tuv>
+</tu>
+//----------PUBLISH NEWS CATEGORY--------------------
+<tu tuid='admin-newscategory-publish-warning'>
+	<tuv xml:lang="en"><seg>This news category is locked. You cannot publish/unpublish it. Please unlock news category to publish/unpublish it!</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-publishmulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked news categories. You cannot publish/unpublish a locked news categories. Please unlock all news categories to publish/unpublish multiple news categories!</seg></tuv>
+</tu>
+
+//******************************** ADMIN NEWS ARTICLE CONTROLLER ************************************************
+//----------LIST NEWS ARTICLE--------------------
+<tu tuid='admin-newsarticle-index-title'>
+	<tuv xml:lang="en"><seg>News :: Article Manager :: List</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-col-artitletitle'>
+	<tuv xml:lang="en"><seg>Article Title</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-col-articlecategory'>
+	<tuv xml:lang="en"><seg>Article Category</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-col-publishtime'>
+	<tuv xml:lang="en"><seg>Publish/UnPublish Time</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-col-viewcounter'>
+	<tuv xml:lang="en"><seg>View Counter</seg></tuv>
+</tu>
+//----------ADD NEWS ARTICLE--------------------
+<tu tuid='admin-newsarticle-add-title'>
+	<tuv xml:lang="en"><seg>News :: Article Manager :: Add Article</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-add-label-newscategory'>
+	<tuv xml:lang="en"><seg>Article Category</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-add-label-newstitle'>
+	<tuv xml:lang="en"><seg>Article Title</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-add-label-newsbrief'>
+	<tuv xml:lang="en"><seg>Article Brief</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-add-label-newscontent'>
+	<tuv xml:lang="en"><seg>Article Content</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-add-label-newscoverimage'>
+	<tuv xml:lang="en"><seg>Article Cover Image</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-add-label-newspublish'>
+	<tuv xml:lang="en"><seg>Publish this article</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-add-label-newspublish'>
+	<tuv xml:lang="en"><seg>Publish this article</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-add-label-lockstatus'>
+	<tuv xml:lang="en"><seg>News Article Lock Status</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-add-warning-lockstatus'>
+	<tuv xml:lang="en"><seg>This user can not lock/unlock news article</seg></tuv>
+</tu>
+//----------DELETE NEWS ARTICLE--------------------
+<tu tuid='admin-newsarticle-delete-title'>
+	<tuv xml:lang="en"><seg>News :: Article Manager :: Delete Article</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-add-label-newscategory'>
+	<tuv xml:lang="en"><seg>News Category</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This news article is locked. You cannot delete it. Please unlock news article to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI NEWS ARTICLE--------------------
+<tu tuid='admin-newsarticle-multidelete-title'>
+	<tuv xml:lang="en"><seg>News :: Article Manager :: Delete Multi Article</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-add-label-newscategory'>
+	<tuv xml:lang="en"><seg>News Category</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-deletemulti-warning'>
+	<tuv xml:lang="en"><seg>There are some locked news articles. You cannot delete a locked news article. Please unlock all news articles to delete multiple news articles!</seg></tuv>
+</tu>
+//----------EDIT NEWS ARTICLE--------------------
+<tu tuid='admin-newsarticle-edit-title'>
+	<tuv xml:lang="en"><seg>News :: Article Manager :: Edit Article</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-edit-coverimage-detail'>
+	<tuv xml:lang="en"><seg> (Browse to upload a new cover image)</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-edit-lockalert'>
+	<tuv xml:lang="en"><seg>This news article is locked. You cannot edit it. Please unlock news article to edit it!</seg></tuv>
+</tu>
+//----------INFO NEWS ARTICLE--------------------
+<tu tuid='admin-newsarticle-info-title'>
+	<tuv xml:lang="en"><seg>News :: Article Manager :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-newscategory-info-nonews'>
+	<tuv xml:lang="en"><seg>There're no news in this category</seg></tuv>
+</tu>
+//----------PUBLISH NEWS ARTICLE--------------------
+<tu tuid='admin-newsarticle-publish-warning'>
+	<tuv xml:lang="en"><seg>This news article is locked. You cannot publish/unpublish it. Please unlock news article to publish/unpublish it!</seg></tuv>
+</tu>
+<tu tuid='admin-newsarticle-publishmulti-warning'>
+	<tuv xml:lang="en"><seg>There are some locked news articles. You cannot publish/unpublish a locked news article. Please unlock all news articles to publish/unpublish multiple news articles!</seg></tuv>
+</tu>
+
+//******************************** ADMIN PAGES CONTROLLER ************************************************
+//----------LIST PAGES --------------------
+<tu tuid='admin-pages-index-title'>
+	<tuv xml:lang="en"><seg>Pages :: Pages Manager :: List</seg></tuv>
+</tu>
+<tu tuid='admin-pages-col-pagetitle'>
+	<tuv xml:lang="en"><seg>Page Title</seg></tuv>
+</tu>
+<tu tuid='admin-pages-col-coverimage'>
+	<tuv xml:lang="en"><seg>Page Cover Image</seg></tuv>
+</tu>
+<tu tuid='admin-pages-col-lock'>
+	<tuv xml:lang="en"><seg>Lock Status</seg></tuv>
+</tu>
+<tu tuid='admin-pages-col-createdtime'>
+	<tuv xml:lang="en"><seg>Created Time</seg></tuv>
+</tu>
+<tu tuid='admin-pages-col-systempage'>
+	<tuv xml:lang="en"><seg>System Page</seg></tuv>
+</tu>
+//----------ADD PAGE--------------------
+<tu tuid='admin-page-add-title'>
+	<tuv xml:lang="en"><seg>Pages :: Pages Manager :: Add Page</seg></tuv>
+</tu>
+<tu tuid='admin-pages-add-label-pagetitle'>
+	<tuv xml:lang="en"><seg>Page Title</seg></tuv>
+</tu>
+<tu tuid='admin-pages-add-label-pagebrief'>
+	<tuv xml:lang="en"><seg>Page Brief</seg></tuv>
+</tu>
+<tu tuid='admin-pages-add-label-pagecontent'>
+	<tuv xml:lang="en"><seg>Page Content</seg></tuv>
+</tu>
+<tu tuid='admin-pages-add-label-pagecoverimage'>
+	<tuv xml:lang="en"><seg>Page Cover Image</seg></tuv>
+</tu>
+<tu tuid='admin-pages-add-label-publish'>
+	<tuv xml:lang="en"><seg>Publish this page</seg></tuv>
+</tu>
+<tu tuid='admin-pages-add-label-pagelockstatus'>
+	<tuv xml:lang="en"><seg>Page Lock Status</seg></tuv>
+</tu>
+<tu tuid='admin-pages-add-warning'>
+	<tuv xml:lang="en"><seg>This user can not lock/unlock pages</seg></tuv>
+</tu>
+<tu tuid='admin-pages-add-publish-warning'>
+	<tuv xml:lang="en"><seg>This user can not publish/unpublish pages</seg></tuv>
+</tu>
+//----------INFO PAGE--------------------
+<tu tuid='admin-page-info-title'>
+	<tuv xml:lang="en"><seg>Pages :: Pages Manager :: Infomartion</seg></tuv>
+</tu>
+<tu tuid='admin-pages-add-label-pagetitle'>
+	<tuv xml:lang="en"><seg>Page Title</seg></tuv>
+</tu>
+//----------EDIT PAGE--------------------
+<tu tuid='admin-page-edit-title'>
+	<tuv xml:lang="en"><seg>Pages :: Pages Manager :: Edit Page</seg></tuv>
+</tu>
+<tu tuid='admin-page-edit-lockalert'>
+	<tuv xml:lang="en"><seg>This page is locked. You cannot edit a locked page. Please unlock page to edit it!</seg></tuv>
+</tu>
+//----------DELETE PAGE--------------------
+<tu tuid='admin-page-delete-title'>
+	<tuv xml:lang="en"><seg>Pages :: Pages Manager :: Delete Page</seg></tuv>
+</tu>
+<tu tuid='admin-pages-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This page is locked. You cannot delete a locked page. Please unlock page to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI PAGE--------------------
+<tu tuid='admin-page-deletemulti-title'>
+	<tuv xml:lang="en"><seg>Pages :: Pages Manager :: Delete Multi Page</seg></tuv>
+</tu>
+<tu tuid='admin-page-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked pages. You cannot delete a locked page. Please unlock all page to delete multiple pages!</seg></tuv>
+</tu>
+//----------PUBLISH PAGES --------------------
+<tu tuid='admin-pages-publish-warning'>
+	<tuv xml:lang="en"><seg>This page is locked. You cannot publish/unpublish it. Please unlock page to publish/unpublish it!</seg></tuv>
+</tu>
+<tu tuid='admin-pages-publishmulti-warning'>
+	<tuv xml:lang="en"><seg>There are some locked pages. You cannot publish/unpublish a locked page. Please unlock all pages to publish/unpublish multiple pages!</seg></tuv>
+</tu>
+//----------SORT PAGES--------------------
+<tu tuid='admin-pages-sort-title'>
+	<tuv xml:lang="en"><seg>Pages :: Pages Manager :: Sort Pages</seg></tuv>
+</tu>
+<tu tuid='admin-pages-sort-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>There are some locked pages. You cannot sort a locked page. Please unlock all pages to sort pages!</seg></tuv>
+</tu>
+
+//******************************** ADMIN SERVICE CATEGORY CONTROLLER ************************************************
+//----------LIST SERVICE CATEGORY--------------------
+<tu tuid='admin-servicecategory-index-title'>
+	<tuv xml:lang="en"><seg>Services :: Category Manager :: List</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-col-categoryname'>
+	<tuv xml:lang="en"><seg>Category Name</seg></tuv>
+</tu>
+//----------ADD SERVICE CATEGORY--------------------
+<tu tuid='admin-servicecategory-add-title'>
+	<tuv xml:lang="en"><seg>Services :: Category Manager :: Add Category</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-addform-label-categoryname'>
+	<tuv xml:lang="en"><seg>Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-addform-label-parentcategory'>
+	<tuv xml:lang="en"><seg>Parent Category</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-addform-label-publish'>
+	<tuv xml:lang="en"><seg>Publish this Service Category</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-addform-label-lockstatus'>
+	<tuv xml:lang="en"><seg>Service Category Lock Status</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-add-publish-warning'>
+	<tuv xml:lang="en"><seg>This user can not publish/unpublish Service Category</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-add-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This user can not lock/unlock Service Category</seg></tuv>
+</tu>
+//----------EDIT SERVICE CATEGORY--------------------
+<tu tuid='admin-servicecategory-edit-title'>
+	<tuv xml:lang="en"><seg>Services :: Category Manager :: Edit</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-edit-lockalert'>
+	<tuv xml:lang="en"><seg>This Service category is locked. You cannot edit a locked Service category. Please unlock Service category to edit it!</seg></tuv>
+</tu>
+//----------DELETE SERVICE CATEGORY--------------------
+<tu tuid='admin-servicecategory-delete-title'>
+	<tuv xml:lang="en"><seg>Services :: Category Manager :: Delete Category</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-addform-label-categoryname'>
+	<tuv xml:lang="en"><seg>Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This Service category is locked. You cannot delete a locked Service category. Please unlock Service category to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI SERVICE CATEGORY--------------------
+<tu tuid='admin-servicecategory-deletemulti-title'>
+	<tuv xml:lang="en"><seg>Services :: Category Manager :: Delete Multi Category</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-delform-label-categoryname'>
+	<tuv xml:lang="en"><seg>Service Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked Service categories. You cannot delete a locked Service categories. Please unlock all Service categories to delete multiple Service categories!</seg></tuv>
+</tu>
+//----------SORT SERVICE CATEGORY--------------------
+<tu tuid='admin-servicecategory-sort-title'>
+	<tuv xml:lang="en"><seg>Services :: Category Manager :: Sort Service Category</seg></tuv>
+</tu>
+//----------INFO SERVICE CATEGORY--------------------
+<tu tuid='admin-servicecategory-info-title'>
+	<tuv xml:lang="en"><seg>Services :: Category Manager :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-info-nonews'>
+	<tuv xml:lang="en"><seg>There're no Service in this category</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-info-havenews'>
+	<tuv xml:lang="en"><seg> Service in this category</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-info-nochild'>
+	<tuv xml:lang="en"><seg>There're no child in this category</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-info-havechild'>
+	<tuv xml:lang="en"><seg> child in this category</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-info-totaltour'>
+	<tuv xml:lang="en"><seg>Total Service</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-info-totalchild'>
+	<tuv xml:lang="en"><seg>Total Child Category</seg></tuv>
+</tu>
+//----------PUBLISH SERVICE CATEGORY--------------------
+<tu tuid='admin-servicecategory-publish-warning'>
+	<tuv xml:lang="en"><seg>This Service category is locked. You cannot publish/unpublish it. Please unlock Service category to publish/unpublish it!</seg></tuv>
+</tu>
+<tu tuid='admin-servicecategory-publishmulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked Services categories. You cannot publish/unpublish a locked Service categories. Please unlock all Service categories to publish/unpublish multiple Service categories!</seg></tuv>
+</tu>
+
+//******************************** ADMIN SERVICES CONTROLLER ************************************************
+//----------LIST SERVICE --------------------
+<tu tuid='admin-services-index-title'>
+	<tuv xml:lang="en"><seg>Services :: Services Manager :: List</seg></tuv>
+</tu>
+<tu tuid='admin-services-col-servicetitle'>
+	<tuv xml:lang="en"><seg>Service Title</seg></tuv>
+</tu>
+<tu tuid='admin-services-col-coverimage'>
+	<tuv xml:lang="en"><seg>Service Cover Image</seg></tuv>
+</tu>
+<tu tuid='admin-service-col-servicecategory'>
+	<tuv xml:lang="en"><seg>Service Category</seg></tuv>
+</tu>
+<tu tuid='admin-services-col-featuredservice'>
+	<tuv xml:lang="en"><seg>Featured Service</seg></tuv>
+</tu>
+//----------ADD SERVICE --------------------
+<tu tuid='admin-services-add-title'>
+	<tuv xml:lang="en"><seg>Services :: Services Manager :: Add Service</seg></tuv>
+</tu>
+<tu tuid='admin-services-add-label-servicecategory'>
+	<tuv xml:lang="en"><seg>Service Category</seg></tuv>
+</tu>
+<tu tuid='admin-services-add-label-servicetitle'>
+	<tuv xml:lang="en"><seg>Service Title</seg></tuv>
+</tu>
+<tu tuid='admin-services-add-label-servicebrief'>
+	<tuv xml:lang="en"><seg>Service Brief</seg></tuv>
+</tu>
+<tu tuid='admin-services-add-label-servicecontent'>
+	<tuv xml:lang="en"><seg>Service Content</seg></tuv>
+</tu>
+<tu tuid='admin-services-add-label-serviceprice'>
+	<tuv xml:lang="en"><seg>Service Price</seg></tuv>
+</tu>
+<tu tuid='admin-services-add-label-coverimage'>
+	<tuv xml:lang="en"><seg>Service Cover Image</seg></tuv>
+</tu>
+<tu tuid='admin-services-add-label-publish'>
+	<tuv xml:lang="en"><seg>Publish this service</seg></tuv>
+</tu>
+<tu tuid='admin-services-add-label-lockstatus'>
+	<tuv xml:lang="en"><seg>Service Lock Status</seg></tuv>
+</tu>
+<tu tuid='admin-services-add-label-featuredservice'>
+	<tuv xml:lang="en"><seg>Is this Featured Service?</seg></tuv>
+</tu>
+<tu tuid='admin-services-add-publish-warning'>
+	<tuv xml:lang="en"><seg>This user can not publish a service</seg></tuv>
+</tu>
+<tu tuid='admin-services-add-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This user can not lock/unlock a service</seg></tuv>
+</tu>
+<tu tuid='admin-services-add-featured-warning'>
+	<tuv xml:lang="en"><seg>This user can not make a featured/no-featured service</seg></tuv>
+</tu>
+//----------INFO SERVICE --------------------
+<tu tuid='admin-services-info-title'>
+	<tuv xml:lang="en"><seg>Services :: Services Manager :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-services-add-label-servicetitle'>
+	<tuv xml:lang="en"><seg>Service Title</seg></tuv>
+</tu>
+//----------EDIT SERVICE --------------------
+<tu tuid='admin-services-edit-title'>
+	<tuv xml:lang="en"><seg>Services :: Services Manager :: Edit Service</seg></tuv>
+</tu>
+<tu tuid='admin-services-edit-lockalert'>
+	<tuv xml:lang="en"><seg>This service is locked. You cannot edit a locked service. Please unlock service to edit it!</seg></tuv>
+</tu>
+//----------DELETE SERVICE --------------------
+<tu tuid='admin-services-delete-title'>
+	<tuv xml:lang="en"><seg>Services :: Services Manager :: Delete Service</seg></tuv>
+</tu>
+<tu tuid='admin-services-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This service is locked. You cannot delete a locked service. Please unlock service to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI SERVICE --------------------
+<tu tuid='admin-services-deletemulti-title'>
+	<tuv xml:lang="en"><seg>Services :: Services Manager :: Delete Multi Service</seg></tuv>
+</tu>
+<tu tuid='admin-services-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked services. You cannot delete a locked services. Please unlock all services to delete multiple services!</seg></tuv>
+</tu>
+//----------CHANGE FEATURED SERVICE PAGE--------------------
+<tu tuid='admin-services-changefeatured-warning'>
+	<tuv xml:lang="en"><seg>This service is locked. You cannot change featured service attribute. Please unlock service to change it!</seg></tuv>
+</tu>
+<tu tuid='admin-services-changefeaturedmulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked services. You cannot change featured attribute a locked services. Please unlock all services to change featured attribute multiple services!</seg></tuv>
+</tu>
+//----------PUBLISH SERVICE PAGE--------------------
+<tu tuid='admin-services-publish-warning'>
+	<tuv xml:lang="en"><seg>This service is locked. You cannot publish/unpublish it. Please unlock service to publish/unpublish it!</seg></tuv>
+</tu>
+<tu tuid='admin-services-publishmulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked services. You cannot publish/unpublish a locked services. Please unlock all services to publish/unpublish multiple services!</seg></tuv>
+</tu>
+//----------SORT SERVICE --------------------
+<tu tuid='admin-services-sort-title'>
+	<tuv xml:lang="en"><seg>Services :: Services Manager :: Sort Service</seg></tuv>
+</tu>
+
+//******************************** ADMIN PROJECT CATEGORY CONTROLLER ************************************************
+//----------LIST PROJECT CATEGORY--------------------
+<tu tuid='admin-projectcategory-index-title'>
+	<tuv xml:lang="en"><seg>Project :: Category Manager :: List</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-col-categoryname'>
+	<tuv xml:lang="en"><seg>Category Name</seg></tuv>
+</tu>
+//----------ADD PROJECT CATEGORY--------------------
+<tu tuid='admin-projectcategory-add-title'>
+	<tuv xml:lang="en"><seg>Project :: Category Manager :: Add Category</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-addform-label-categoryname'>
+	<tuv xml:lang="en"><seg>Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-addform-label-parentcategory'>
+	<tuv xml:lang="en"><seg>Parent Category</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-add-label-lockstatus'>
+	<tuv xml:lang="en"><seg>Category Lock Status</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-add-publish-warning'>
+	<tuv xml:lang="en"><seg>This user can not publish/unpublish project category</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-add-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This user can not lock/unlock project category</seg></tuv>
+</tu>
+//----------EDIT PROJECT CATEGORY--------------------
+<tu tuid='admin-projectcategory-edit-title'>
+	<tuv xml:lang="en"><seg>Project :: Category Manager :: Edit</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-edit-lockalert'>
+	<tuv xml:lang="en"><seg>This project category is locked. You cannot edit a locked project category. Please unlock project category to edit it!</seg></tuv>
+</tu>
+//----------DELETE PROJECT CATEGORY--------------------
+<tu tuid='admin-projectcategory-delete-title'>
+	<tuv xml:lang="en"><seg>Project :: Category Manager :: Delete Category</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-addform-label-categoryname'>
+	<tuv xml:lang="en"><seg>Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This project category is locked. You cannot delete a locked project category. Please unlock project category to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI PROJECT CATEGORY--------------------
+<tu tuid='admin-projectcategory-deletemulti-title'>
+	<tuv xml:lang="en"><seg>Project :: Category Manager :: Delete Multi Category</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-delform-label-categoryname'>
+	<tuv xml:lang="en"><seg>Project Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked project categories. You cannot delete a locked category. Please unlock all categories to delete multiple categories!</seg></tuv>
+</tu>
+//----------INFO PROJECT CATEGORY--------------------
+<tu tuid='admin-projectcategory-info-title'>
+	<tuv xml:lang="en"><seg>Project :: Category Manager :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-info-nonews'>
+	<tuv xml:lang="en"><seg>There're no project in this category</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-info-havenews'>
+	<tuv xml:lang="en"><seg> projects in this category</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-info-totalnews'>
+	<tuv xml:lang="en"><seg>Total Projects</seg></tuv>
+</tu>
+//----------PUBLISH PROJECT CATEGORY PAGE--------------------
+<tu tuid='admin-projectcategory-publish-warning'>
+	<tuv xml:lang="en"><seg>This project category is locked. You cannot publish/unpublish it. Please unlock project category to publish/unpublish it!</seg></tuv>
+</tu>
+<tu tuid='admin-projectcategory-publishmulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked project categories. You cannot publish/unpublish a locked project categories. Please unlock all project categories to publish/unpublish multiple project categories!</seg></tuv>
+</tu>
+//----------SORT PROJECT CATEGORY--------------------
+<tu tuid='admin-projectcategory-sort-title'>
+	<tuv xml:lang="en"><seg>Project :: Category Manager :: Sort Project Category</seg></tuv>
+</tu>
+
+//******************************** ADMIN PROJECT CONTROLLER ************************************************
+//----------LIST PROJECT--------------------
+<tu tuid='admin-project-index-title'>
+	<tuv xml:lang="en"><seg>Project :: Project Manager :: List</seg></tuv>
+</tu>
+<tu tuid='admin-project-col-projecttitle'>
+	<tuv xml:lang="en"><seg>Project Title</seg></tuv>
+</tu>
+<tu tuid='admin-project-col-projectcategory'>
+	<tuv xml:lang="en"><seg>Project Category</seg></tuv>
+</tu>
+<tu tuid='admin-project-col-publishtime'>
+	<tuv xml:lang="en"><seg>Publish/UnPublish Time</seg></tuv>
+</tu>
+<tu tuid='admin-project-col-viewcounter'>
+	<tuv xml:lang="en"><seg>View Counter</seg></tuv>
+</tu>
+//----------ADD PROJECT--------------------
+<tu tuid='admin-project-add-title'>
+	<tuv xml:lang="en"><seg>Project :: Project Manager :: Add Project</seg></tuv>
+</tu>
+<tu tuid='admin-project-add-label-projectcategory'>
+	<tuv xml:lang="en"><seg>Project Category</seg></tuv>
+</tu>
+<tu tuid='admin-project-add-label-projecttitle'>
+	<tuv xml:lang="en"><seg>Project Title</seg></tuv>
+</tu>
+<tu tuid='admin-project-add-label-projectbrief'>
+	<tuv xml:lang="en"><seg>Project Brief</seg></tuv>
+</tu>
+<tu tuid='admin-project-add-label-projectcontent'>
+	<tuv xml:lang="en"><seg>Project Content</seg></tuv>
+</tu>
+<tu tuid='admin-project-add-label-projectcoverimage'>
+	<tuv xml:lang="en"><seg>Project Cover Image</seg></tuv>
+</tu>
+<tu tuid='admin-project-add-label-projectpublish'>
+	<tuv xml:lang="en"><seg>Publish this Project</seg></tuv>
+</tu>
+<tu tuid='admin-project-add-label-lockstatus'>
+	<tuv xml:lang="en"><seg>Project Lock Status</seg></tuv>
+</tu>
+<tu tuid='admin-project-add-warning'>
+	<tuv xml:lang="en"><seg>This user can not publish Project</seg></tuv>
+</tu>
+//----------DELETE PROJECT--------------------
+<tu tuid='admin-project-delete-title'>
+	<tuv xml:lang="en"><seg>Project :: Project Manager :: Delete Article</seg></tuv>
+</tu>
+<tu tuid='admin-project-add-label-newscategory'>
+	<tuv xml:lang="en"><seg>News Category</seg></tuv>
+</tu>
+<tu tuid='admin-project-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This project is locked. You cannot delete a locked project. Please unlock project to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI PROJECT--------------------
+<tu tuid='admin-project-multidelete-title'>
+	<tuv xml:lang="en"><seg>Project :: Project Manager :: Delete Multi Article</seg></tuv>
+</tu>
+<tu tuid='admin-project-add-label-newscategory'>
+	<tuv xml:lang="en"><seg>News Category</seg></tuv>
+</tu>
+<tu tuid='admin-project-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked projects. You cannot delete a locked project. Please unlock all projects to delete multiple projects!</seg></tuv>
+</tu>
+//----------EDIT PROJECT--------------------
+<tu tuid='admin-project-edit-title'>
+	<tuv xml:lang="en"><seg>Project :: Project Manager :: Edit Project</seg></tuv>
+</tu>
+<tu tuid='admin-project-edit-coverimage-detail'>
+	<tuv xml:lang="en"><seg> (Browse to upload a new cover image)</seg></tuv>
+</tu>
+<tu tuid='admin-project-edit-lockalert'>
+	<tuv xml:lang="en"><seg>This project is locked. You cannot edit a locked project. Please unlock project to edit it!</seg></tuv>
+</tu>
+//----------INFO PROJECT--------------------
+<tu tuid='admin-project-info-title'>
+	<tuv xml:lang="en"><seg>Project :: Project Manager :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-project-info-nonews'>
+	<tuv xml:lang="en"><seg>There're no news in this category</seg></tuv>
+</tu>
+//----------PUBLISH PROJECT PAGE--------------------
+<tu tuid='admin-project-publish-warning'>
+	<tuv xml:lang="en"><seg>This project is locked. You cannot publish/unpublish it. Please unlock project to publish/unpublish it!</seg></tuv>
+</tu>
+<tu tuid='admin-project-publishmulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked projects. You cannot publish/unpublish a locked project. Please unlock all projects to publish/unpublish multiple projects!</seg></tuv>
+</tu>
+//----------SORT PROJECT--------------------
+<tu tuid='admin-project-sort-title'>
+	<tuv xml:lang="en"><seg>Project :: Category Manager :: Sort Project Category</seg></tuv>
+</tu>
+
+//******************************** ADMIN PRODUCT CATEGORY CONTROLLER ************************************************
+//----------LIST PRODUCT CATEGORY --------------------
+<tu tuid='admin-productcategory-index-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Category :: List</seg></tuv>
+</tu>
+<tu tuid='admin-productcategory-col-categoryname'>
+	<tuv xml:lang="en"><seg>Product Category Name</seg></tuv>
+</tu>
+//----------ADD PRODUCT CATEGORY --------------------
+<tu tuid='admin-productcategory-add-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Category :: Add Category</seg></tuv>
+</tu>
+<tu tuid='admin-productcategory-add-label-parent'>
+	<tuv xml:lang="en"><seg>Parent Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-productcategory-add-label-categoryname'>
+	<tuv xml:lang="en"><seg>Product Category Name: </seg></tuv>
+</tu>
+<tu tuid='admin-productcategory-add-label-description'>
+	<tuv xml:lang="en"><seg>Category Description</seg></tuv>
+</tu>
+<tu tuid='admin-productcategory-add-publish-warning'>
+	<tuv xml:lang="en"><seg>This user can not publish a product category</seg></tuv>
+</tu>
+<tu tuid='admin-productcategory-add-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This user can not lock/unlock a product category</seg></tuv>
+</tu>
+//----------EDIT PRODUCT CATEGORY --------------------
+<tu tuid='admin-productcategory-edit-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Category :: Edit Category</seg></tuv>
+</tu>
+<tu tuid='admin-productcategory-edit-lockalert'>
+	<tuv xml:lang="en"><seg>This category is locked. You cannot edit a locked category. Please unlock category to edit it!</seg></tuv>
+</tu>
+//----------DELETE PRODUCT CATEGORY --------------------
+<tu tuid='admin-productcategory-delete-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Category :: Delete Category</seg></tuv>
+</tu>
+<tu tuid='admin-productcategory-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This category is locked. You cannot delete a locked category. Please unlock category to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI PRODUCT CATEGORY --------------------
+<tu tuid='admin-productcategory-deletemulti-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Category :: Delete Multi Category</seg></tuv>
+</tu>
+<tu tuid='admin-productcategory-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked categories. You cannot delete a locked category. Please unlock all categories to delete multiple categories!</seg></tuv>
+</tu>
+//----------PUBLISH PRODUCT CATEGORY PAGE--------------------
+<tu tuid='admin-productcategory-publish-warning'>
+	<tuv xml:lang="en"><seg>This category is locked. You cannot publish/unpublish it. Please unlock category to publish/unpublish it!</seg></tuv>
+</tu>
+//----------INFO PRODUCT CATEGORY --------------------
+<tu tuid='admin-productcategory-info-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Category :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-productcategory-info-noproduct'>
+	<tuv xml:lang="en"><seg>There're no product in this category</seg></tuv>
+</tu>
+<tu tuid='admin-productcategory-info-haveproduct'>
+	<tuv xml:lang="en"><seg> products in this category</seg></tuv>
+</tu>
+<tu tuid='admin-productcategory-info-totalproduct'>
+	<tuv xml:lang="en"><seg>Total Product</seg></tuv>
+</tu>
+//----------SORT PRODUCT--------------------
+<tu tuid='admin-productcategory-sort-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Category :: Sort Product Category</seg></tuv>
+</tu>
+
+//******************************** ADMIN PRODUCT CATEGORY ATTRIBUTE CONTROLLER ************************************************
+//----------LIST PRODUCT CATEGORY ATTRIBUTE --------------------
+<tu tuid='admin-productcategoryattribute-index-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Attributes :: List</seg></tuv>
+</tu>
+<tu tuid='admin-productcategoryattribute-col-attributename'>
+	<tuv xml:lang="en"><seg>Product Attribute Name</seg></tuv>
+</tu>
+//----------ADD PRODUCT CATEGORY ATTRIBUTE --------------------
+<tu tuid='admin-productcategoryattribute-add-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Attributes :: Add Attribute</seg></tuv>
+</tu>
+<tu tuid='admin-productcategoryattribute-add-label-productcategory'>
+	<tuv xml:lang="en"><seg>Product Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-productcategoryattribute-add-label-attributename'>
+	<tuv xml:lang="en"><seg>Attribute Name</seg></tuv>
+</tu>
+<tu tuid='admin-productcategoryattribute-add-label-description'>
+	<tuv xml:lang="en"><seg>Category Description</seg></tuv>
+</tu>
+<tu tuid='admin-productcategoryattribute-add-publish-warning'>
+	<tuv xml:lang="en"><seg>This user can not publish a product category attribute</seg></tuv>
+</tu>
+<tu tuid='admin-productcategoryattribute-add-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This user can not lock/unlock a product category attribute</seg></tuv>
+</tu>
+//----------EDIT PRODUCT CATEGORY ATTRIBUTE --------------------
+<tu tuid='admin-productcategoryattribute-edit-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Attributes :: Edit Attribute</seg></tuv>
+</tu>
+<tu tuid='admin-productcategoryattribute-edit-lockalert'>
+	<tuv xml:lang="en"><seg>This attribute is locked. You cannot edit a locked attribute. Please unlock attribute to edit it!</seg></tuv>
+</tu>
+//----------DELETE PRODUCT CATEGORY ATTRIBUTE --------------------
+<tu tuid='admin-productcategoryattribute-delete-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Attributes :: Delete Attribute</seg></tuv>
+</tu>
+<tu tuid='admin-productcategoryattribute-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This attribute is locked. You cannot delete a locked attribute. Please unlock attribute to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI PRODUCT CATEGORY ATTRIBUTE --------------------
+<tu tuid='admin-productcategoryattribute-deletemulti-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Attributes :: Delete Multi Attributes</seg></tuv>
+</tu>
+<tu tuid='admin-productcategoryattribute-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked attributes. You cannot delete a locked attribute. Please unlock all attributes to delete multiple attributes!</seg></tuv>
+</tu>
+//----------PUBLISH PRODUCT CATEGORY ATTRIBUTE --------------------
+<tu tuid='admin-productcategoryattribute-publish-warning'>
+	<tuv xml:lang="en"><seg>This attribute is locked. You cannot publish/unpublish it. Please unlock attribute to publish/unpublish it!</seg></tuv>
+</tu>
+//----------INFO PRODUCT CATEGORY ATTRIBUTE --------------------
+<tu tuid='admin-productcategoryattribute-info-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Attributes :: Attribute Information</seg></tuv>
+</tu>
+<tu tuid='admin-productcategoryattribute-info-noproduct'>
+	<tuv xml:lang="en"><seg>There're no product in this category</seg></tuv>
+</tu>
+<tu tuid='admin-productcategoryattribute-info-haveproduct'>
+	<tuv xml:lang="en"><seg> products in this category</seg></tuv>
+</tu>
+<tu tuid='admin-productcategoryattribute-info-totalproduct'>
+	<tuv xml:lang="en"><seg>Total Product</seg></tuv>
+</tu>
+//----------SORT PRODUCT--------------------
+<tu tuid='admin-productcategoryattribute-sort-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Attributes :: Sort Product Attribute</seg></tuv>
+</tu>
+
+//******************************** ADMIN PRODUCT CONTROLLER ************************************************
+//----------LIST PRODUCT --------------------
+<tu tuid='admin-product-index-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Item :: List</seg></tuv>
+</tu>
+//----------ADD PRODUCT --------------------
+<tu tuid='admin-product-add-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Item :: Add Product</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-categoryname'>
+	<tuv xml:lang="en"><seg>Product Category</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-productname'>
+	<tuv xml:lang="en"><seg>Product Name</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-productserial'>
+	<tuv xml:lang="en"><seg>Product Serial</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-price'>
+	<tuv xml:lang="en"><seg>Price</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-productdetail'>
+	<tuv xml:lang="en"><seg>Product Detail</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-coverimage'>
+	<tuv xml:lang="en"><seg>Product Cover Image</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-publish'>
+	<tuv xml:lang="en"><seg>Publish this product</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-lockstatus'>
+	<tuv xml:lang="en"><seg>Product Lock Status</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-publish-warning'>
+	<tuv xml:lang="en"><seg>This user can not publish a product</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This user can not lock/unlock a product</seg></tuv>
+</tu>
+
+<tu tuid='admin-product-add-label-product_assessment'>
+	<tuv xml:lang="en"><seg>Product Assessment</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-product_guarantee'>
+	<tuv xml:lang="en"><seg>Product Guarantee</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-product_model'>
+	<tuv xml:lang="en"><seg>Product Model</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-product_code'>
+	<tuv xml:lang="en"><seg>Product Code</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-product_guarantee_policy'>
+	<tuv xml:lang="en"><seg>Product Guarantee Policy</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-product_price_new'>
+	<tuv xml:lang="en"><seg>Product Price New</seg></tuv>
+</tu>
+<tu tuid='admin-product-add-label-view_counter'>
+	<tuv xml:lang="en"><seg>View Counter</seg></tuv>
+</tu>
+
+//----------EDIT PRODUCT --------------------
+<tu tuid='admin-product-edit-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Item :: Edit Product</seg></tuv>
+</tu>
+<tu tuid='admin-product-edit-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This product is locked. You cannot edit a locked product. Please unlock product to edit it!</seg></tuv>
+</tu>
+//----------DELETE PRODUCT --------------------
+<tu tuid='admin-product-delete-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Item :: Delete Product</seg></tuv>
+</tu>
+<tu tuid='admin-product-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This product is locked. You cannot delete a locked product. Please unlock product to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI PRODUCT --------------------
+<tu tuid='admin-product-deletemulti-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Item :: Delete Multi Product</seg></tuv>
+</tu>
+<tu tuid='admin-product-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked products. You cannot delete a locked products. Please unlock all products to delete multiple products!</seg></tuv>
+</tu>
+//----------PUBLISH PRODUCT --------------------
+<tu tuid='admin-product-publish-warning'>
+	<tuv xml:lang="en"><seg>This product is locked. You cannot publish/unpublish it. Please unlock product to publish/unpublish it!</seg></tuv>
+</tu>
+<tu tuid='admin-product-publishmulti-warning'>
+	<tuv xml:lang="en"><seg>There are some locked products. You cannot publish/unpublish a locked product. Please unlock all products to publish/unpublish multiple products!</seg></tuv>
+</tu>
+//----------INFO PRODUCT --------------------
+<tu tuid='admin-product-info-title'>
+	<tuv xml:lang="en"><seg>Product :: Product Item :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-product-info-noproduct'>
+	<tuv xml:lang="en"><seg>There're no product in this category</seg></tuv>
+</tu>
+<tu tuid='admin-product-info-haveproduct'>
+	<tuv xml:lang="en"><seg> products in this category</seg></tuv>
+</tu>
+<tu tuid='admin-product-info-totalproduct'>
+	<tuv xml:lang="en"><seg>Total Product</seg></tuv>
+</tu>
+//----------SORT PRODUCT--------------------
+<tu tuid='admin-product-sort-title'>
+	<tuv xml:lang="en"><seg>Product :: Category Manager :: Sort Product Category</seg></tuv>
+</tu>
+
+//******************************** ADMIN GALLERY CONTROLLER ************************************************
+//----------LIST GALLERY --------------------
+<tu tuid='admin-gallery-index-title'>
+	<tuv xml:lang="en"><seg>Gallery :: Gallery Manager :: List</seg></tuv>
+</tu>
+//----------ADD GALLERY --------------------
+<tu tuid='admin-gallery-add-title'>
+	<tuv xml:lang="en"><seg>Gallery :: Gallery Manager :: Add Gallery</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-add-label-galleryname'>
+	<tuv xml:lang="en"><seg>Gallery Name</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-add-label-description'>
+	<tuv xml:lang="en"><seg>Gallery Description</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-add-label-coverimage'>
+	<tuv xml:lang="en"><seg>Gallery Cover Image</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-add-label-publish'>
+	<tuv xml:lang="en"><seg>Publish this gallery</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-add-label-lockstatus'>
+	<tuv xml:lang="en"><seg>Gallery Lock Status</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-add-publish-warning'>
+	<tuv xml:lang="en"><seg>This user can not publish a gallery</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-add-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This user can not lock/unlock a gallery</seg></tuv>
+</tu>
+//----------EDIT GALLERY --------------------
+<tu tuid='admin-gallery-edit-title'>
+	<tuv xml:lang="en"><seg>Gallery :: Gallery Manager :: Edit Gallery</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-edit-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This gallery is locked. You cannot edit a locked gallery. Please unlock gallery to edit it!</seg></tuv>
+</tu>
+//----------DELETE GALLERY --------------------
+<tu tuid='admin-gallery-delete-title'>
+	<tuv xml:lang="en"><seg>Gallery :: Gallery Manager :: Delete Gallery</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This gallery is locked. You cannot delete a locked gallery. Please unlock gallery to delete it!</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-delete-warning'>
+	<tuv xml:lang="en"><seg>Delete a gallery will also delete all images in it. Are you sure?</seg></tuv>
+</tu>
+//----------DELETE MULTI GALLERY --------------------
+<tu tuid='admin-gallery-deletemulti-title'>
+	<tuv xml:lang="en"><seg>Gallery :: Gallery Manager :: Delete Multi Gallery</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked galleries. You cannot delete a locked gallery. Please unlock all galleries to delete multiple galleries!</seg></tuv>
+</tu>
+//----------PUBLISH GALLERY --------------------
+<tu tuid='admin-gallery-publish-warning'>
+	<tuv xml:lang="en"><seg>This gallery is locked. You cannot publish/unpublish it. Please unlock gallery to publish/unpublish it!</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-publishmulti-warning'>
+	<tuv xml:lang="en"><seg>There are some locked galleries. You cannot publish/unpublish a locked gallery. Please unlock all galleries to publish/unpublish multiple products!</seg></tuv>
+</tu>
+//----------INFO GALLERY --------------------
+<tu tuid='admin-gallery-info-title'>
+	<tuv xml:lang="en"><seg>Gallery :: Gallery Manager :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-info-noproduct'>
+	<tuv xml:lang="en"><seg>There're no product in this category</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-info-haveproduct'>
+	<tuv xml:lang="en"><seg> products in this category</seg></tuv>
+</tu>
+<tu tuid='admin-gallery-info-totalproduct'>
+	<tuv xml:lang="en"><seg>Total Product</seg></tuv>
+</tu>
+
+//******************************** ADMIN GALLERY IMAGE CONTROLLER ************************************************
+//----------LIST GALLERY IMAGE --------------------
+<tu tuid='admin-galleryimage-index-title'>
+	<tuv xml:lang="en"><seg>Gallery :: Gallery Image :: List</seg></tuv>
+</tu>
+//----------ADD GALLERY IMAGE --------------------
+<tu tuid='admin-galleryimage-add-title'>
+	<tuv xml:lang="en"><seg>Gallery :: Gallery Image :: Add Image</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-add-label-imagegallery'>
+	<tuv xml:lang="en"><seg>Image Gallery</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-add-label-imagetitle'>
+	<tuv xml:lang="en"><seg>Image Title</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-add-label-detailimage'>
+	<tuv xml:lang="en"><seg>Gallery Image</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-add-label-publish'>
+	<tuv xml:lang="en"><seg>Publish this gallery</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-add-label-lockstatus'>
+	<tuv xml:lang="en"><seg>Gallery Lock Status</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-add-publish-warning'>
+	<tuv xml:lang="en"><seg>This user can not publish a gallery image</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-add-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This user can not lock/unlock a gallery image</seg></tuv>
+</tu>
+//----------EDIT GALLERY IMAGE --------------------
+<tu tuid='admin-galleryimage-edit-title'>
+	<tuv xml:lang="en"><seg>Gallery :: Gallery Image :: List</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-edit-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This gallery is locked. You cannot edit a locked gallery. Please unlock gallery to edit it!</seg></tuv>
+</tu>
+//----------DELETE GALLERY IMAGE --------------------
+<tu tuid='admin-galleryimage-delete-title'>
+	<tuv xml:lang="en"><seg>Gallery :: Gallery Image :: Delete Image</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This image is locked. You cannot delete a locked image. Please unlock image to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI GALLERY IMAGE --------------------
+<tu tuid='admin-galleryimage-deletemulti-title'>
+	<tuv xml:lang="en"><seg>Gallery :: Gallery Image :: Delete Multi Image</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked images. You cannot delete a locked image. Please unlock all images to delete multiple images!</seg></tuv>
+</tu>
+//----------PUBLISH GALLERY IMAGE --------------------
+<tu tuid='admin-galleryimage-publish-warning'>
+	<tuv xml:lang="en"><seg>This image is locked. You cannot publish/unpublish it. Please unlock image to publish/unpublish it!</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-publishmulti-warning'>
+	<tuv xml:lang="en"><seg>There are some locked images. You cannot publish/unpublish a locked image. Please unlock all images to publish/unpublish multiple products!</seg></tuv>
+</tu>
+//----------INFO GALLERY IMAGE --------------------
+<tu tuid='admin-galleryimage-info-title'>
+	<tuv xml:lang="en"><seg>Gallery :: Gallery Manager :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-info-noproduct'>
+	<tuv xml:lang="en"><seg>There're no product in this category</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-info-haveproduct'>
+	<tuv xml:lang="en"><seg> products in this category</seg></tuv>
+</tu>
+<tu tuid='admin-galleryimage-info-totalproduct'>
+	<tuv xml:lang="en"><seg>Total Product</seg></tuv>
+</tu>
+
+//******************************** ADMIN CONTACT CONTROLLER ************************************************
+//----------LIST CONTACT --------------------
+<tu tuid='admin-contact-index-title'>
+	<tuv xml:lang="en"><seg>Contact :: Contact Manager :: List</seg></tuv>
+</tu>
+<tu tuid='admin-contact-index-col-contactname'>
+	<tuv xml:lang="en"><seg>Name</seg></tuv>
+</tu>
+<tu tuid='admin-contact-index-col-email'>
+	<tuv xml:lang="en"><seg>Email</seg></tuv>
+</tu>
+<tu tuid='admin-contact-index-col-mobile'>
+	<tuv xml:lang="en"><seg>Mobile</seg></tuv>
+</tu>
+<tu tuid='admin-contact-index-col-contactcontent'>
+	<tuv xml:lang="en"><seg>Content</seg></tuv>
+</tu>
+<tu tuid='admin-contact-index-col-posttime'>
+	<tuv xml:lang="en"><seg>Post Time</seg></tuv>
+</tu>
+//----------DELETE CONTACT --------------------
+<tu tuid='admin-contact-delete-title'>
+	<tuv xml:lang="en"><seg>Contact :: Contact Manager :: Delete Contact</seg></tuv>
+</tu>
+<tu tuid='admin-contact-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This contact is locked. You cannot delete a locked contact. Please unlock contact to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI CONTACT --------------------
+<tu tuid='admin-contact-deletemulti-title'>
+	<tuv xml:lang="en"><seg>Contact :: Contact Manager :: Delete Multi Contact</seg></tuv>
+</tu>
+<tu tuid='admin-contact-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked contacts. You cannot delete a locked contact. Please unlock all contacts to delete multiple contacts!</seg></tuv>
+</tu>
+//----------PUBLISH CONTACT --------------------
+<tu tuid='admin-contact-publish-warning'>
+	<tuv xml:lang="en"><seg>This contact is locked. You cannot publish/unpublish it. Please unlock contact to publish/unpublish it!</seg></tuv>
+</tu>
+<tu tuid='admin-contact-publishmulti-warning'>
+	<tuv xml:lang="en"><seg>There are some locked contacts. You cannot publish/unpublish a locked contact. Please unlock all contacts to publish/unpublish multiple contacts!</seg></tuv>
+</tu>
+
+//******************************** ADMIN TEMPLATE CONTROLLER ************************************************
+//----------ADMIN ADVERTISE IMAGE --------------------
+<tu tuid='admin-template-advertise-title'>
+	<tuv xml:lang="en"><seg>System :: Template Manager :: Advertise Image</seg></tuv>
+</tu>
+<tu tuid='admin-template-advertise-image'>
+	<tuv xml:lang="en"><seg>Advertise Image</seg></tuv>
+</tu>
+<tu tuid='admin-template-advertise-image-new'>
+	<tuv xml:lang="en"><seg>Upload new Advertise image</seg></tuv>
+</tu>
+<tu tuid='admin-template-advertise-image-link'>
+	<tuv xml:lang="en"><seg>Advertise image link</seg></tuv>
+</tu>
+//----------ADMIN BANNER SLIDE --------------------
+<tu tuid='admin-template-banner-title'>
+	<tuv xml:lang="en"><seg>System :: Template Manager :: Banner</seg></tuv>
+</tu>
+<tu tuid='admin-template-banner-image'>
+	<tuv xml:lang="en"><seg>Banner Slide Image</seg></tuv>
+</tu>
+<tu tuid='admin-template-banner-image-new'>
+	<tuv xml:lang="en"><seg>Upload new banner image</seg></tuv>
+</tu>
+//----------ADMIN LOGO --------------------
+<tu tuid='admin-template-logo-title'>
+	<tuv xml:lang="en"><seg>System :: Template Manager :: Company Logo</seg></tuv>
+</tu>
+<tu tuid='admin-template-logo-image'>
+	<tuv xml:lang="en"><seg>Current Logo</seg></tuv>
+</tu>
+<tu tuid='admin-template-banner-image-new'>
+	<tuv xml:lang="en"><seg>Upload new Logo image</seg></tuv>
+</tu>
+//----------ADMIN COMPNAY MAP --------------------
+<tu tuid='admin-template-companymap-title'>
+	<tuv xml:lang="en"><seg>System :: Template Manager :: Company Map</seg></tuv>
+</tu>
+<tu tuid='admin-template-map-image'>
+	<tuv xml:lang="en"><seg>Current Map</seg></tuv>
+</tu>
+<tu tuid='admin-template-map-image-new'>
+	<tuv xml:lang="en"><seg>Upload new map image</seg></tuv>
+</tu>
+//----------ADMIN VIDEO --------------------
+<tu tuid='admin-template-video-title'>
+	<tuv xml:lang="en"><seg>System :: Template Manager :: Homepage Video</seg></tuv>
+</tu>
+<tu tuid='admin-template-video'>
+	<tuv xml:lang="en"><seg>Current Video</seg></tuv>
+</tu>
+<tu tuid='admin-template-video-link-new'>
+	<tuv xml:lang="en"><seg>Enter new video (embed) link:</seg></tuv>
+</tu>
+//----------ADMIN DOCUMENT FILES --------------------
+<tu tuid='admin-template-documents-title'>
+	<tuv xml:lang="en"><seg>System :: Template Manager :: Manage Documents</seg></tuv>
+</tu>
+<tu tuid='admin-template-documents-new'>
+	<tuv xml:lang="en"><seg>Upload new document</seg></tuv>
+</tu>
+<tu tuid='admin-template-documents-name'>
+	<tuv xml:lang="en"><seg>Document Name</seg></tuv>
+</tu>
+
+//******************************** ADMIN TOUR CATEGORY CONTROLLER ************************************************
+//----------LIST TOUR CATEGORY--------------------
+<tu tuid='admin-tourcategory-index-title'>
+	<tuv xml:lang="en"><seg>Tour :: Category Manager :: List</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-col-categoryname'>
+	<tuv xml:lang="en"><seg>Category Name</seg></tuv>
+</tu>
+//----------ADD TOUR CATEGORY--------------------
+<tu tuid='admin-tourcategory-add-title'>
+	<tuv xml:lang="en"><seg>Tour :: Category Manager :: Add Category</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-addform-label-categoryname'>
+	<tuv xml:lang="en"><seg>Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-addform-label-parentcategory'>
+	<tuv xml:lang="en"><seg>Parent Category</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-addform-label-publish'>
+	<tuv xml:lang="en"><seg>Publish this Tour Category</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-addform-label-lockstatus'>
+	<tuv xml:lang="en"><seg>Tour Category Lock Status</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-add-publish-warning'>
+	<tuv xml:lang="en"><seg>This user can not publish/unpublish Tour Category</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-add-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This user can not lock/unlock Tour Category</seg></tuv>
+</tu>
+//----------EDIT TOUR CATEGORY--------------------
+<tu tuid='admin-tourcategory-edit-title'>
+	<tuv xml:lang="en"><seg>Tour :: Category Manager :: Edit</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-edit-lockalert'>
+	<tuv xml:lang="en"><seg>This Tour category is locked. You cannot edit a locked Tour category. Please unlock Tour category to edit it!</seg></tuv>
+</tu>
+//----------DELETE TOUR CATEGORY--------------------
+<tu tuid='admin-tourcategory-delete-title'>
+	<tuv xml:lang="en"><seg>Tour :: Category Manager :: Delete Category</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-addform-label-categoryname'>
+	<tuv xml:lang="en"><seg>Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This Tour category is locked. You cannot delete a locked Tour category. Please unlock Tour category to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI TOUR CATEGORY--------------------
+<tu tuid='admin-tourcategory-deletemulti-title'>
+	<tuv xml:lang="en"><seg>Tour :: Category Manager :: Delete Multi Category</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-delform-label-categoryname'>
+	<tuv xml:lang="en"><seg>Tour Category Name</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked Tour categories. You cannot delete a locked Tour categories. Please unlock all Tour categories to delete multiple Tour categories!</seg></tuv>
+</tu>
+//----------SORT TOUR CATEGORY--------------------
+<tu tuid='admin-tourcategory-sort-title'>
+	<tuv xml:lang="en"><seg>Tour :: Category Manager :: Sort Tour Category</seg></tuv>
+</tu>
+//----------INFO TOUR CATEGORY--------------------
+<tu tuid='admin-tourcategory-info-title'>
+	<tuv xml:lang="en"><seg>Tour :: Category Manager :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-info-nonews'>
+	<tuv xml:lang="en"><seg>There're no Tour in this category</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-info-havenews'>
+	<tuv xml:lang="en"><seg> Tour in this category</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-info-nochild'>
+	<tuv xml:lang="en"><seg>There're no child in this category</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-info-havechild'>
+	<tuv xml:lang="en"><seg> child in this category</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-info-totaltour'>
+	<tuv xml:lang="en"><seg>Total Tour</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-info-totalchild'>
+	<tuv xml:lang="en"><seg>Total Child Category</seg></tuv>
+</tu>
+//----------PUBLISH TOUR CATEGORY--------------------
+<tu tuid='admin-tourcategory-publish-warning'>
+	<tuv xml:lang="en"><seg>This Tour category is locked. You cannot publish/unpublish it. Please unlock Tour category to publish/unpublish it!</seg></tuv>
+</tu>
+<tu tuid='admin-tourcategory-publishmulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked Tour categories. You cannot publish/unpublish a locked Tour categories. Please unlock all Tour categories to publish/unpublish multiple Tour categories!</seg></tuv>
+</tu>
+
+//******************************** ADMIN TOUR CONTROLLER ************************************************
+//----------LIST TOUR --------------------
+<tu tuid='admin-tour-index-title'>
+	<tuv xml:lang="en"><seg>Tour :: Tour Item :: List</seg></tuv>
+</tu>
+<tu tuid='admin-tour-col-tourtitle'>
+	<tuv xml:lang="en"><seg>Tour Title</seg></tuv>
+</tu>
+<tu tuid='admin-tour-col-tourcategory'>
+	<tuv xml:lang="en"><seg>Tour Category</seg></tuv>
+</tu>
+//----------ADD TOUR --------------------
+<tu tuid='admin-tour-add-title'>
+	<tuv xml:lang="en"><seg>Tour :: Tour Item :: Add Product</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-tourcategory'>
+	<tuv xml:lang="en"><seg>Tour Category</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-tourtitle'>
+	<tuv xml:lang="en"><seg>Tour Name</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-tourbrief'>
+	<tuv xml:lang="en"><seg>Tour Brief</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-tourcontent'>
+	<tuv xml:lang="en"><seg>Tour Content</seg></tuv>
+</tu>
+
+<tu tuid='admin-tour-add-label-tourduration'>
+	<tuv xml:lang="en"><seg>Tour Duration</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-tourprice'>
+	<tuv xml:lang="en"><seg>Tour Price</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-tourstarttime'>
+	<tuv xml:lang="en"><seg>Tour Start Time</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-tourstartlocation'>
+	<tuv xml:lang="en"><seg>Tour Start Location</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-tourpath'>
+	<tuv xml:lang="en"><seg>Tour Path</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-homepage'>
+	<tuv xml:lang="en"><seg>Show this tour on homepage</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-tourserial'>
+	<tuv xml:lang="en"><seg>Tour Serial</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-price'>
+	<tuv xml:lang="en"><seg>Price</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-tourdetail'>
+	<tuv xml:lang="en"><seg>Tour Detail</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-coverimage'>
+	<tuv xml:lang="en"><seg>Tour Cover Image</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-publish'>
+	<tuv xml:lang="en"><seg>Publish this Tour</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-label-lockstatus'>
+	<tuv xml:lang="en"><seg>Tour Lock Status</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-publish-warning'>
+	<tuv xml:lang="en"><seg>This user can not publish a Tour</seg></tuv>
+</tu>
+<tu tuid='admin-tour-add-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This user can not lock/unlock a Tour</seg></tuv>
+</tu>
+//----------EDIT TOUR --------------------
+<tu tuid='admin-tour-edit-title'>
+	<tuv xml:lang="en"><seg>Tour :: Tour Item :: Edit Tour</seg></tuv>
+</tu>
+<tu tuid='admin-tour-edit-lockstatus-warning'>
+	<tuv xml:lang="en"><seg>This Tour is locked. You cannot edit a locked Tour. Please unlock Tour to edit it!</seg></tuv>
+</tu>
+//----------DELETE TOUR --------------------
+<tu tuid='admin-tour-delete-title'>
+	<tuv xml:lang="en"><seg>Tour :: Tour Item :: Delete Tour</seg></tuv>
+</tu>
+<tu tuid='admin-tour-delete-lockalert'>
+	<tuv xml:lang="en"><seg>This Tour is locked. You cannot delete a locked Tour. Please unlock Tour to delete it!</seg></tuv>
+</tu>
+//----------DELETE MULTI TOUR --------------------
+<tu tuid='admin-tour-deletemulti-title'>
+	<tuv xml:lang="en"><seg>Tour :: Tour Item :: Delete Multi Tour</seg></tuv>
+</tu>
+<tu tuid='admin-tour-deletemulti-lockalert'>
+	<tuv xml:lang="en"><seg>There are some locked Tours. You cannot delete a locked Tour. Please unlock all Tours to delete multiple Tours!</seg></tuv>
+</tu>
+//----------PUBLISH TOUR --------------------
+<tu tuid='admin-tour-publish-warning'>
+	<tuv xml:lang="en"><seg>This Tour is locked. You cannot publish/unpublish it. Please unlock Tour to publish/unpublish it!</seg></tuv>
+</tu>
+<tu tuid='admin-tour-publishmulti-warning'>
+	<tuv xml:lang="en"><seg>There are some locked Tours. You cannot publish/unpublish a locked Tour. Please unlock all Tours to publish/unpublish multiple Tours!</seg></tuv>
+</tu>
+//----------INFO TOUR --------------------
+<tu tuid='admin-tour-info-title'>
+	<tuv xml:lang="en"><seg>Tour :: Tour Item :: Information</seg></tuv>
+</tu>
+<tu tuid='admin-tour-info-notour'>
+	<tuv xml:lang="en"><seg>There're no Tour in this category</seg></tuv>
+</tu>
+<tu tuid='admin-tour-info-havetour'>
+	<tuv xml:lang="en"><seg> Tours in this category</seg></tuv>
+</tu>
+<tu tuid='admin-tour-info-totaltour'>
+	<tuv xml:lang="en"><seg>Total Tour</seg></tuv>
+</tu>

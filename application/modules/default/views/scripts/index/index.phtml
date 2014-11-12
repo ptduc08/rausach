@@ -1,0 +1,105 @@
+
+      <div class="row list-product">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-product-title">Sản phẩm mới</div>
+        
+		 <?php 
+			$productList = $this->Items;
+			if (!empty($productList)) {$dem=0;
+			  foreach($productList as $key=>$val) {$dem++;
+          //var_dump($val);
+				$val = $this->cmsReplaceString($val);
+				$product_id = $val['id'];
+				$product_name = $val['product_name'];
+				$product_brief = $val['product_brief'];
+				$price = $val['price'];
+				$category_id = $val['category_id'];
+				$cover_image = FILES_URL . '/products/cover-images/original/' . $val['cover_image'];
+				$filter = new Zend_Filter();
+				$multiFilter = $filter->addFilter(new Zend_Filter_StringToLower(array('encoding'=>'UTF-8')))
+							->addFilter(new Zend_Filter_StringTrim())
+							->addFilter(new Zend_Filter_Alnum(true))
+							->addFilter(new Zendvn_Filter_RemoveCircumflex())
+							->addFilter(new Zend_Filter_Word_SeparatorToDash(' '));
+						
+				$productUrlOptions = array('module'=>'default','controller'=>'san-pham','action'=>'san-pham-chi-tiet',
+						'title'=>$multiFilter->filter($product_name),'id'=>$product_id,'category_id'=>$category_id);
+						
+				$product_link = $this->url($productUrlOptions,'product-detail');
+		 ?>		
+     <?php if ($dem==1||$dem==4)echo ' <div class="container">';?>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 product <?php if ($dem==1||$dem==4)echo 'first';?>">
+            <div class="col-md-12 text-center product-image">
+              <div>
+                <img class="img-responsive" src="<?php echo $cover_image ?>" alt="Image">
+                <a href="<?php echo $product_link; ?>">&nbsp;</a>
+              </div>
+            </div>
+            <div class="col-md-12 product-info">
+              <h4><?php echo $product_name; ?></h4>
+              <div>
+                <span class="price"><?php echo $price; ?></span>                
+              </div>
+              <button type="button" class="btn">Quà tặng</button>
+            </div>
+          </div>
+          <?php if ($dem==3||$dem==6)echo '</div>';?>
+		<?php 
+          }
+        }
+		?>	
+       
+      </div>
+
+
+      <div class="row list-product">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-product-title">Sản phẩm bán chạy</div>
+       
+<?php 
+      $productMost_View = $this->most_view;
+      if (!empty($productMost_View)) {
+        $dem=0;
+        foreach($productMost_View as $key=>$val) {
+          $dem++;
+          //var_dump($val);
+        $val = $this->cmsReplaceString($val);
+        $product_id = $val['id'];
+        $product_name = $val['product_name'];
+        $product_brief = $val['product_brief'];
+        $price = $val['price'];
+        $category_id = $val['category_id'];
+        $cover_image = FILES_URL . '/products/cover-images/original/' . $val['cover_image'];
+        $filter = new Zend_Filter();
+        $multiFilter = $filter->addFilter(new Zend_Filter_StringToLower(array('encoding'=>'UTF-8')))
+              ->addFilter(new Zend_Filter_StringTrim())
+              ->addFilter(new Zend_Filter_Alnum(true))
+              ->addFilter(new Zendvn_Filter_RemoveCircumflex())
+              ->addFilter(new Zend_Filter_Word_SeparatorToDash(' '));
+            
+        $productUrlOptions = array('module'=>'default','controller'=>'san-pham','action'=>'san-pham-chi-tiet',
+            'title'=>$multiFilter->filter($product_name),'id'=>$product_id,'category_id'=>$category_id);
+            
+        $product_link = $this->url($productUrlOptions,'product-detail');
+     ?>   		
+      <?php if ($dem==1||$dem==4)echo ' <div class="container">';?>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 product <?php if ($dem==1||$dem==4)echo 'first';?>">
+            <div class="col-md-12 text-center product-image">
+              <div><img class="img-responsive" src="<?php echo $cover_image ?>" alt="Image"><a href="<?php echo $product_link; ?>">&nbsp;</a></div>
+            </div>
+            <div class="col-md-12 product-info">
+              <h4><?php echo $product_name; ?></h4>
+              <div>
+                <span class="price"><?php echo $price; ?></span>               
+              </div>
+              <button type="button" class="btn">Quà tặng</button>
+            </div>
+          </div>
+           <?php if ($dem==3||$dem==6)echo '</div>';?>
+    <?php 
+          }
+        }
+    ?>          
+       
+      </div>
+
+
+     

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+	<header creationtoolversion="1.0.0" datatype="winres" segtype="sentence"
+         adminlang="en-us" srclang="de-at" o-tmf="abc"
+         creationtool="XYZTool" >
+	</header>
+<body>
+//******************************** VIETNAMESE ***********************************
+
+//******************************** HE THONG MENU ***********************
+<tu tuid='menu-homepage'>
+	<tuv xml:lang="en"><seg>homepage</seg></tuv>
+</tu>
+<tu tuid='menu-introduce'>
+	<tuv xml:lang="en"><seg>about</seg></tuv>
+</tu>
+<tu tuid='menu-service'>
+	<tuv xml:lang="en"><seg>services</seg></tuv>
+</tu>
+<tu tuid='menu-product'>
+	<tuv xml:lang="en"><seg>products</seg></tuv>
+</tu>
+<tu tuid='menu-news'>
+	<tuv xml:lang="en"><seg>news</seg></tuv>
+</tu>
+<tu tuid='menu-contact'>
+	<tuv xml:lang="en"><seg>contact</seg></tuv>
+</tu>

@@ -1,0 +1,13 @@
+<?php echo $this->doctype(); ?>
+<html>
+<head>
+	<?php echo $this->headTitle(); ?>
+	<?php echo $this->headMeta(); ?>
+	<?php echo $this->headLink(); ?>
+	<?php echo $this->headScript(); ?>
+	
+</head>
+	<h2>Template</h2>
+	<?php echo '<br/>' .__FILE__; ?>
+	<?php echo $this->layout()->content; ?>
+</html>

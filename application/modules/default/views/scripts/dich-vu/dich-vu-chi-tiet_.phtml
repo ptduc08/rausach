@@ -1,0 +1,36 @@
+<div class="content _right">
+	<?php 
+		$thisArticle = $this->cmsReplaceString($this->Item);
+		$article_id = $thisArticle['id'];
+		$category_id = $thisArticle['category_id'];
+		$category_name = $thisArticle['category_name'];
+		$article_title = $thisArticle['article_title'];
+		$article_content = $thisArticle['article_content'];
+		
+		$filter = new Zend_Filter();
+		$multiFilter = $filter->addFilter(new Zend_Filter_StringToLower(array('encoding'=>'UTF-8')))
+							  ->addFilter(new Zend_Filter_StringTrim())
+							  ->addFilter(new Zend_Filter_Alnum(true))
+							  ->addFilter(new Zendvn_Filter_RemoveCircumflex())
+							  ->addFilter(new Zend_Filter_Word_SeparatorToDash(' '));
+		
+		$categoryUrlOptions = array('module'=>'default','controller'=>'tin-tuc','action'=>'index',
+				'title'=>$multiFilter->filter($category_name),'id'=>$category_id);
+		$category_link = $this->url($categoryUrlOptions,'news-category');
+	?>  
+    	<h2 class="ti_cat ti_thuexe">
+    		<a href="<?php echo $category_link; ?>"><?php echo $category_name; ?></a>
+    		<small class="arowtin"></small><?php echo $article_title; ?>
+    	</h2>
+       	
+        <h3 class="ti_cat name_cat_tour titin"><?php echo $article_title; ?></h3>
+        <div class="contents">
+			<?php echo $article_content; ?>
+        </div>
+        
+        <h4 class="tinlienquan">Các tin tức khác</h4>
+        <ul class="tinlienquan">
+        	<?php echo $this->blkRelativeArticle($category_id,$article_id); ?>
+        </ul>	
+        
+    </div>

@@ -1,0 +1,115 @@
+<?php
+	//----- INPUT ELEMENT ---------------------------------------
+	//----- Lay du lieu truyen tu controller sang dua vao cac input cua form
+	//----- neu chua co thi tu khoi tao du lieu cho cac input cua form
+	$formdata = $this->FormData;
+	$formstyle = $this->FormStyle;
+	
+	//----- Lay dinh dang truyen tu controller sang dua vao cac input cua form
+	//----- neu chua co thi tu khoi tao dinh dang cho cac input cua form
+	if ($formstyle == null) {
+		$formstyle['imageupload'] = '';
+	}
+
+	$ssFilter = $this->arrParam['ssFilter'];
+	$action_link 	= $this->baseUrl($this->currentController . '/filter/type/order');
+	$curControllerLink = $this->baseUrl($this->currentController);
+	
+	$lblBannerImage = $this->translate('admin-template-banner-image-new');
+	
+	$imageSize = $this->imageSize('production','bannerSlideImage');
+	$strRecommendSize = ' (recommend image size: ' .$imageSize['width'] .'px-' .$imageSize['height'] .'px)';
+	
+	$banner_image 	= $this->formFile('imageupload',array('style'=>$formstyle['imageupload'])) .$strRecommendSize;
+	
+	//----- thong bao loi -----
+	$errors = '';
+	if (count($this->messageError) > 0) {
+		$errors = $this->formErrors($this->messageError,array('id'=>'errors'));
+	}
+	
+	$arrInput = array(
+			array('label'=>$this->translate('admin-template-banner-image-new'),'input'=>$banner_image),
+	);
+	
+	//----- lay danh sach cac file anh co trong thu muc templates/banner-slide
+	$dir = new DirectoryIterator(FILES_PATH . '/templates/banner-slide/');
+	$arrBannerImages = array();
+	foreach ($dir as $fileInfo) {
+		if (!$fileInfo->isDot()) {
+			$arrBannerImages[] = $fileInfo->getFilename();
+		}
+	}
+?>
+
+<form name="appForm" method="post" action="" enctype="multipart/form-data">
+	<?php echo $this->render('/admin-template/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php echo $this->render('/admin-template/sublink/index.php'); ?>
+	
+	<?php echo $errors; ?>
+	
+	<!--------------------------------------- BEGIN: CONTENT ----------------------------------->
+	<div id="element-box">
+		<div class="t">
+			<div class="t">
+				<div class="t"></div>
+			</div>
+		</div>
+		<div class="m">
+		<!--------------------------------------- BEGIN: ELEMENT BOX ----------------------------------->
+
+		<div id="filters">
+			<div id="adminfieldset">
+				<div class="adminheader">Detail</div>
+				<?php echo $this->partialLoop('row.php',$arrInput); ?>
+			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<!--------------------------------------- Area 4: In du lieu lay tu database ------------------->
+		<table class="adminlist">
+			<thead>
+				
+				<tr>
+					<th><?php echo $lblBannerImage; ?></th>
+					<th width="90">Control</th>
+				</tr>
+			</thead>
+				<?php
+					if (count($arrBannerImages) > 0) {
+						foreach ($arrBannerImages as $key=>$val) {
+							$banner_image_name = $val;
+							$banner_image_url = '<img src="' . FILES_URL . '/templates/banner-slide/' . $banner_image_name .'"/>' ;
+							
+							$linkDelete = $this->baseUrl($this->currentController . '/banner-delete/image/' . $banner_image_name);
+							$btnDelete = $this->cmsIconButton('Delete Item',$this->imgUrl .'/icon_del.png',$linkDelete);
+							$strControlIconButton = $btnDelete;
+				?>
+				
+				<tr class="even">
+					<td align="left"><?php echo $banner_image_url; ?></td>
+					<td align="center" onclick="return confirm('Bạn có chắc chắn xóa ảnh này?')">
+						<?php echo $strControlIconButton; ?>
+					</td>
+				</tr>
+				
+				<?php
+						}
+					}
+				?>
+					
+		</table>
+	<!--------------------------------------- END Area 4: In du lieu lay tu database ------------------->		                                
+
+	<!--------------------------------------- END: ELEMENT BOX ----------------------------------->
+                              <div class="clr"></div>
+		</div>
+		<div class="b">
+			<div class="b">
+				<div class="b"></div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------- END: CONTENT ----------------------------------->
+</form>

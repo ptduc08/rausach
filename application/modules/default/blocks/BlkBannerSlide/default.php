@@ -1,0 +1,1 @@
+<img src="<?php echo $blockView->imgUrl . '/slide/slide1.png'; ?>" alt="First slide" class="img-thumbnail banner_image">

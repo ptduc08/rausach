@@ -1,0 +1,64 @@
+  		 	<?php
+		if (!empty($this->Item)) {
+			$thisArticle = $this->cmsReplaceString($this->Item);
+			//var_dump($thisArticle);
+			$article_id = $thisArticle['id'];
+			$category_id = $thisArticle['category_id'];
+			$category_name= $thisArticle['category_name'];
+			$article_brief = $thisArticle['article_brief'];
+			$article_title = $thisArticle['article_title'];
+			$article_content = $thisArticle['article_content'];
+			$created_time	= date('d/m/Y',strtotime($thisArticle['created_time']));
+			$view_counter = $thisArticle['view_counter'];
+			$cover_image = FILES_URL . '/news/cover-images/medium/' . $thisArticle['cover_image'];
+      
+		}
+	?>  
+      <div class="row">
+        <ol class="breadcrumb">
+          <li>
+            <a href="/index">Trang chủ</a>
+          </li>
+          <li>
+            <a href="/default/tin-tuc">Tin tức</a>
+          </li>
+          <li>
+            <a href="#"><?php echo $category_name; ?></a>
+          </li>
+          <li class="active"><?php echo $article_title; ?></li>
+        </ol>
+      </div>
+
+
+
+      <div class="row">
+
+        <div id="news" class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <div class="item">
+            <h3><?php echo $article_title; ?></h3>
+            <span class="item-date">
+            	<?php echo $created_time; ?> &nbsp; | &nbsp;<?php echo $view_counter;?> views &nbsp; | &nbsp; 
+            	<?php echo $category_name; ?>
+            </span>
+            <p><?php echo $article_brief; ?></p>
+            <img src="<?php echo $cover_image; ?>" alt="" />
+            <p><?php echo $article_content; ?></p>
+          </div>
+        </div>
+
+
+        <div id="right-news" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
+    			<div class="news">
+
+    			 <?php echo $this->blkNewsCategory(); ?>
+
+    			 <?php echo $this->blkRelativeArticle(); ?>
+    			 
+    			<div id="adv">
+                <a href="#">
+                  <img src="<?php echo $this->imgUrl; ?>/news17.jpg" class="img-responsive" alt="">
+                </a>
+          </div>
+          </div>
+        </div>
+      </div>

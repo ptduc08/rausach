@@ -1,0 +1,45 @@
+<?php echo $this->doctype(Zend_View_Helper_Doctype::HTML5); ?>
+<html lang="en">
+<head>
+	<?php echo $this->headTitle(); ?>
+	<?php echo $this->headMeta(); ?>
+	<?php echo $this->headLink(); ?>
+	<?php echo $this->headScript(); ?>
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="img/computer.ico">
+</head>
+<body>
+	
+	<div class="row wrapper">
+		<div class="col-md-8 col-md-offset-2 main-content">
+			
+			<!-- *********************************** header (logo + main menu) ******************** -->
+			<?php $active=2; include("includes/header.php"); ?>
+			<!-- *********************************** end header *********************************** -->
+	
+			<!-- *********************************** banner slide Carousel ************************ -->
+			<?php include("includes/banner-slide.php"); ?>
+			<!-- *********************************** end banner slide Carousel ******************** -->
+			
+			<!-- ******************************** noi dung chinh ********************************** -->
+			<?php echo $this->layout()->content; ?>
+			<!-- ******************************** End noi dung chinh ****************************** -->
+			
+			<!-- *********************************** Footer ***************************** -->
+			<?php include("includes/footer.php"); ?>
+			<!-- *********************************** End Footer ************************* -->
+		
+		</div>
+	</div>
+
+</body>
+</html>

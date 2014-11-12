@@ -1,0 +1,52 @@
+<div class="content _right">
+
+	<?php 
+		$thisCategory = $this->cmsReplaceString($this->thisCategory);
+		$category_name = $thisCategory['category_name'];
+		$category_description = $thisCategory['description'];
+	?>
+	
+	<h2 class="ti_cat ti_thuexe"><?php echo $category_name; ?></h2>
+	<div class="introthuexe">
+		<?php echo $category_description; ?>
+	</div>
+	
+	<?php 
+	$serviceList = $this->serviceList;
+	if (count($serviceList) > 0) {
+		foreach ($serviceList as $key=>$val) {
+			$val = $this->cmsReplaceString($val);
+			$service_id 		= $val['id'];
+			$service_title		= $val['service_title'];
+			$service_brief 		= $val['service_brief'];
+			$cover_image 		= FILES_URL . '/services/cover-images/medium/' . $val['cover_image'];
+				
+			$filter = new Zend_Filter();
+			$multiFilter = $filter->addFilter(new Zend_Filter_StringToLower(array('encoding'=>'UTF-8')))
+								 ->addFilter(new Zend_Filter_StringTrim())
+								 ->addFilter(new Zend_Filter_Alnum(true))
+								 ->addFilter(new Zendvn_Filter_RemoveCircumflex())
+								 ->addFilter(new Zend_Filter_Word_SeparatorToDash(' '));
+				
+			$serviceUrlOptions = array('module'=>'default','controller'=>'dich-vu','action'=>'dich-vu-chi-tiet',
+					'title'=>$multiFilter->filter($service_title),'id'=>$service_id);
+				
+			$service_link = $this->url($serviceUrlOptions,'service');
+	?>
+	
+	<div class="chitiettuor tour_box">
+		<img src="<?php echo $cover_image; ?>" />
+			<div class="boxchitiettour _right">
+				<a href="<?php echo $service_link; ?>" title="chi tiet"><?php echo $service_title; ?></a>
+                <p><?php echo $service_brief; ?></p>
+                <a href="<?php echo $service_link; ?>" title="chi tiet" class="giathuexe">Giá: Liên hệ</a>
+            </div>
+		<div class="clear"></div>
+	</div>
+	
+	<?php 
+		}
+	}
+	?>
+	
+    </div>

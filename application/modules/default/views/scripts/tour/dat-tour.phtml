@@ -1,0 +1,169 @@
+<?php
+	//----- INPUT ELEMENT ---------------------------------------
+	//----- Lay du lieu truyen tu controller sang dua vao cac input cua form
+	//----- neu chua co thi tu khoi tao du lieu cho cac input cua form
+	$formdata = $this->FormData;
+	$formstyle = $this->FormStyle;
+	if ($formdata == null) {
+		$formdata['tour_name'] = '';
+		$formdata['tour_room1_count'] = '';
+		$formdata['tour_room2_count'] = '';
+		$formdata['tour_room3_count'] = '';
+		$formdata['tour_startdate'] = '';
+		$formdata['tour_enddate'] = '';
+		$formdata['tour_requirement'] = '';
+		$formdata['tour_customer_name'] = '';
+		$formdata['tour_customer_email'] = '';
+		$formdata['tour_customer_mobile'] = '';
+		$formdata['tour_customer_adult_count'] = '';
+		$formdata['tour_customer_child_count'] = '';
+		$formdata['tour_customer_address'] = '';
+	} else {
+		$formdata = $this->cmsReplaceString($formdata);
+	}
+	//----- Lay dinh dang truyen tu controller sang dua vao cac input cua form
+	//----- neu chua co thi tu khoi tao dinh dang cho cac input cua form
+	if ($formstyle == null) {
+		$formstyle['tour_name'] = '';
+		$formstyle['tour_startdate'] = '';
+		$formstyle['tour_enddate'] = '';
+		$formstyle['tour_customer_name'] = '';
+		$formstyle['tour_customer_email'] = '';
+		$formstyle['tour_customer_mobile'] = '';
+		$formstyle['tour_customer_address'] = '';
+	}
+	
+	//----- thong bao loi -----
+	$errors = '';
+	if (count($this->messageError) > 0) {
+		$errors = $this->formErrors($this->messageError,array('id'=>'contact_errors'));
+	}
+?>
+
+<div class="content _right">
+	<?php 
+	$thisItem = $this->cmsReplaceString($this->thisItem);
+	$category_name 		= $thisItem['category_name'];
+	$tour_title 		= $thisItem['title'];
+	$tour_brief			= $thisItem['brief'];
+	$tour_content		= $thisItem['content'];
+	$tour_price 		= $thisItem['price'];
+	$tour_duration 		= $thisItem['duration'];
+	$tour_startlocation = $thisItem['start_location'];
+	$tour_starttime 	= $thisItem['start_time'];
+	$tour_path 			= $thisItem['tour_path'];
+	$cover_image 		= FILES_URL . '/tour/cover-images/medium/' . $thisItem['cover_image'];
+	?>
+	<h2 class="ti_cat"><?php echo $category_name; ?></h2>
+        <h3 class="ti_cat name_cat_tour"><?php echo $tour_title; ?></h3>
+        <div class="chitiettuor">
+        	<img src="<?php echo $cover_image; ?>" />
+            <div class="boxchitiettour _right">
+                <h4><span>Giá từ:</span><strong><?php echo $tour_price; ?></strong></h4>
+                <h4><span>Thời gian: </span><small><?php echo $tour_duration; ?></small></h4>
+                <h4><span>Khởi hành từ:</span><small><?php echo $tour_startlocation; ?></small></h4>
+                <h4><span>Ngày khởi hành:</span><small><?php echo $tour_starttime; ?></small></h4>
+                <h4><span>Địa điểm tham quan:</span><small><?php echo $tour_path; ?></small></h4>
+                
+            </div>
+            <div class="clear"></div>
+            <p class="tomtattour">
+            	<?php echo $tour_brief; ?>
+            </p>
+            <p class="thoigiantour">
+            	Chương trình khởi hành vào: <?php echo $tour_starttime; ?>
+            </p>
+        </div>
+        
+        <div class="dattour">
+        	<h4 class="tieudedattour">Yêu cầu Đặt tour</h4>
+            <p class="thongbaodattour">
+            	Xin cảm ơn Quý khách đã dành thời gian vào thăm website và lựa chọn dịch vụ của chúng tôi. Mời Quý khách điền thông tin vào phần dưới đây, Chúng tôi sẽ xử lý yêu cầu và liên hệ với Quý khách trong thời gian sớm nhất. Xin cảm ơn! 
+            </p>
+            <p><?php echo $errors; ?></p>
+			<form action="" method="post">
+            <h5 class="tieudetable">Thông tin về Tour</h5>
+            <table>
+            	<tr>
+                	<td width="140px">Tên tour:</td>
+                    <td colspan="3"><input class="chico1" name="tour_name" value="<?php echo $tour_title; ?>" style="<?php echo $formstyle['tour_name']; ?>"/></td>
+                </tr>
+                <tr>
+                	<td>Yêu cầu khách sạn::</td>
+                    <td colspan="3">
+                    	<select name="tour_hotel_type" class="khachsan">
+                        	<option value="2 Sao" <?php if ($formdata['tour_hotel_type']=='2 Sao') {echo "selected";} ?>>2 Sao</option>
+                            <option value="3 Sao" <?php if ($formdata['tour_hotel_type']=='3 Sao') {echo "selected";} ?>>3 Sao</option>
+                            <option value="4 Sao" <?php if ($formdata['tour_hotel_type']=='4 Sao') {echo "selected";} ?>>4 Sao</option>
+                            <option value="5 Sao" <?php if ($formdata['tour_hotel_type']=='5 Sao') {echo "selected";} ?>>5 Sao</option>
+                        </select>	
+                    </td>
+                </tr>
+                <tr>
+                	<td>Số phòng Đơn:</td>
+                    <td><input name="tour_room1_count" class="phong1" value="<?php echo $formdata['tour_room1_count']; ?>" /></td>
+                    <td>Đôi:<input name="tour_room2_count" class="phong2" value="<?php echo $formdata['tour_room2_count']; ?>" /></td>
+                    <td>Ba:<input name="tour_room3_count" class="phong3" value="<?php echo $formdata['tour_room3_count']; ?>" /></td>
+                </tr>
+                <tr>
+                	<td>Ngày khởi hành:</td>
+                    <td><input name="tour_startdate" class="ngaykhoihanh1" id="ngaydang" value="<?php echo $formdata['tour_startdate']; ?>" style="<?php echo $formstyle['tour_startdate']; ?>" /></td>
+                    <td>Ngày kết thúc:</td>
+                    <td><input name="tour_enddate" class="ngaykhoihanh1" value="<?php echo $formdata['tour_enddate']; ?>" style="<?php echo $formstyle['tour_enddate']; ?>" /></td>
+                </tr>
+                <tr>
+                	<td>Yêu cầu: <br /> (Để việc Đặt tour được thực hiện tốt nhất có thể, xin Quý khách mô tả yêu cầu thật chi tiết):</td>
+                    <td colspan="3"><textarea name="tour_requirement" style="<?php echo $formstyle['tour_requirement']; ?>"><?php echo $formdata['tour_requirement']; ?></textarea></td>
+                </tr>
+            </table>
+            
+            <h5 class="tieudetable">Thông tin về Quý khách</h5>
+            <table>
+            	<tr>
+                	<td width="140px">Họ tên:</td>
+                    <td colspan="3">
+                    <select name="tour_customer_initial">
+                    	<option value="Mr." <?php if ($formdata['tour_customer_initial']=='Mr.') {echo "selected";} ?>>Mr.</option>
+		
+                        <option value="Mrs." <?php if ($formdata['tour_customer_initial']=='Mrs.') {echo "selected";} ?>>Mrs.</option>
+                        
+                        <option value="Mss." <?php if ($formdata['tour_customer_initial']=='Mss.') {echo "selected";} ?>>Mss.</option>
+                        
+                        <option value="Dr." <?php if ($formdata['tour_customer_initial']=='Dr.') {echo "selected";} ?>>Dr.</option>
+                    </select>
+                    <input name="tour_customer_name" class="hotenkhach" value="<?php echo $formdata['tour_customer_name']; ?>" style="<?php echo $formstyle['tour_customer_name']; ?>" />
+                    </td>
+                </tr>
+                <tr>
+                	<td>E-mail: </td>
+                    <td colspan="3">
+                    	<input class="chico1" name="tour_customer_email" value="<?php echo $formdata['tour_customer_email']; ?>" style="<?php echo $formstyle['tour_customer_email']; ?>" />	
+                    </td>
+                </tr>
+                <tr>
+                	<td>Mobile: </td>
+                    <td colspan="3">
+                    	<input class="chico1" name="tour_customer_mobile" value="<?php echo $formdata['tour_customer_mobile']; ?>" style="<?php echo $formstyle['tour_customer_mobile']; ?>" />	
+                    </td>
+                </tr>
+                <tr>
+                	<td>Số lượng Người lớn:</td>
+                    <td><input name="tour_customer_adult_count" class="nguoilon" id="khithat" value="<?php echo $formdata['tour_customer_adult_count']; ?>" style="<?php echo $formstyle['tour_customer_adult_count']; ?>" /></td>
+                    <td colspan="2">Trẻ em:<input name="tour_customer_child_count" class="treem" value="<?php echo $formdata['tour_customer_child_count']; ?>" style="<?php echo $formstyle['tour_customer_child_count']; ?>" />(Trẻ em dưới 12 tuổi)</td>
+                </tr>
+                <tr>
+                	<td>Địa chỉ Liên hệ: </td>
+                    <td colspan="3">
+                    	<input class="chico1" name="tour_customer_address" value="<?php echo $formdata['tour_customer_address']; ?>" style="<?php echo $formstyle['tour_customer_address']; ?>" />	
+                    </td>
+                </tr>
+                <tr>
+                	<td></td>
+                    <td colspan="2"><input type="submit" name="tentour" value="Gửi" />
+                    <input type="reset" name="tentour" value="Làm lại" />	</td>
+          </tr>
+            </table>
+            </form>
+        </div>
+        
+    </div>

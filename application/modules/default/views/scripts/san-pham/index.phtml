@@ -1,0 +1,261 @@
+      <div class="row">
+        <ol class="breadcrumb">
+          <li>
+            <a href="/index">Trang chủ</a>
+          </li>
+          
+          <li class="">Sản phẩm</li>
+          <li class="active"><?php echo $this->categoryName ?></li>
+        </ol>
+      </div>
+
+      <div id="slideshow-product" class="row">
+        <div id="carousel-id" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-id" data-slide-to="0" class=""></li>
+                <li data-target="#carousel-id" data-slide-to="1" class=""></li>
+                <li data-target="#carousel-id" data-slide-to="2" class="active"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item">
+                    <img src="<?php echo $this->imgUrl; ?>/slideshow_bg.png">
+                    <div class="container">
+                        <div class="product-image"><img src="<?php echo $this->imgUrl; ?>/sp45.png" alt="Image"></div>
+                        <div class="carousel-caption">
+                            <h1>Asus zenbook ux301</h1>
+                            <p>ultra thin, ultra light, ultra fast</p>
+                            <p><a class="btn btn-primary" href="details.html" role="button">SHOP NOW</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="<?php echo $this->imgUrl; ?>/slideshow_bg.png">
+                    <div class="container">
+                        <div class="product-image"><img src="<?php echo $this->imgUrl; ?>/sp45.png" alt="Image"></div>
+                        <div class="carousel-caption">
+                            <h1>Asus zenbook ux301</h1>
+                            <p>ultra thin, ultra light, ultra fast</p>
+                            <p><a class="btn btn-primary" href="details.html" role="button">SHOP NOW</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item active">
+                    <img src="<?php echo $this->imgUrl; ?>/slideshow_bg.png">
+                    <div class="container">
+                        <div class="product-image"><img src="<?php echo $this->imgUrl; ?>/sp45.png" alt="Image"></div>
+                        <div class="carousel-caption">
+                            <h1>Asus zenbook ux301</h1>
+                            <p>ultra thin, ultra light, ultra fast</p>
+                            <p><a class="btn btn-primary" href="details.html" role="button">SHOP NOW</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
+      </div>
+
+      <div id="product-sort" class="row">
+        <h2>ASUS</h2>
+        <div>
+           <div class="title">Đã chọn:</div>
+          <?php 
+         if(isset($this->cateFilter)){ 
+                      $filter_str= $this->currentController .'/delfilter'.'/cate';
+                      $filter_name='';  
+                      switch ($this->cateFilter) {
+                      case 1:
+                          $filter_name="Mới nhất";
+                           $filter_str.='/1';
+                          break;
+                      case 2:
+                          $filter_name="Xem nhiều nhất";
+                            $filter_str.='/2';
+                          break;
+                     }
+                     $filter_link =$this->baseUrl($filter_str);
+                     ?>
+                     <div class="mbtn">
+                    <div class="mbtn-left"></div>
+                    <div class="mbtn-center"><?php echo $filter_name;?> 
+                      <a href="<?php echo $filter_link;?>"><img src="<?php echo $this->imgUrl; ?>/close.png" alt="" /></a>
+                    </div>
+                    <div class="mbtn-right"></div>
+                </div>
+                     <?php
+           
+          }
+         
+          if(isset($this->priceFilter)){
+         
+             
+             $filter_str= $this->currentController .'/delfilter'.'/price';
+                  $filter_name='';  
+                
+                switch ($this->priceFilter) {
+                case 1:
+                    $filter_name="Dưới 5 Triệu";
+                     $filter_str.='/1';
+                    break;
+                case 2:
+                    $filter_name="Từ 5 đến 10 Triệu";
+                      $filter_str.='/2';
+                    break;
+                case 3:
+                    $filter_name="Từ 10 đến 15 Triệu";
+                     $filter_str.='/3';
+                    break;
+                 case 4:
+                    $filter_name="Từ 15 đến 20 Triệu";
+                     $filter_str.='/4';
+                    break;   
+                 case 5:
+                    $filter_name="Trên 20 Triệu";
+                     $filter_str.='/5';
+                    break;       
+               }
+               $filter_link =$this->baseUrl($filter_str);
+               ?>
+               <div class="mbtn">
+              <div class="mbtn-left"></div>
+              <div class="mbtn-center"><?php echo $filter_name;?> 
+                <a href="<?php echo $filter_link;?>"><img src="<?php echo $this->imgUrl; ?>/close.png" alt="" /></a>
+              </div>
+              <div class="mbtn-right"></div>
+          </div>
+               <?php
+           
+          }
+          ?>
+         
+          
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 product-sort-details">
+          <table class="table table-hover">
+            <tbody>
+              <tr>
+                <td class="type-sort">Danh mục nhất</td>
+                    <td>
+                        <a href="<?php echo $this->baseUrl($this->currentController.'/addfilter/cate/1');?>">
+                        Mới nhất
+                         </a>
+                    </td>
+                    <td>
+                        <a href="<?php echo $this->baseUrl($this->currentController.'/addfilter/cate/2');?>">
+                        Xem nhiều nhất
+                        </a>
+                    </td>
+                
+              </tr>
+              <tr>
+                <td class="type-sort">Khoảng giá</td>
+                <td>
+                    <a href="<?php echo $this->baseUrl($this->currentController.'/addfilter/price/1');?>">
+                    Dưới 5 Triệu
+                     </a>
+                </td>
+                <td>
+                    <a href="<?php echo $this->baseUrl($this->currentController.'/addfilter/price/2');?>">
+                    Từ 5 Triệu - 10 Triệu
+                    </a>
+                </td>
+                <td>
+                    <a href="<?php echo $this->baseUrl($this->currentController.'/addfilter/price/3');?>">
+                    Từ 10 Triệu - 15 Triệu
+                    </a>
+                </td>
+                <td>
+                    <a href="<?php echo $this->baseUrl($this->currentController.'/addfilter/price/4');?>">
+                    Từ 15 Triệu - 20 Triệu
+                    </a>
+                </td>
+                <td>
+                    <a href="<?php echo $this->baseUrl($this->currentController.'/addfilter/price/5');?>">
+                    Trên 20 triệu
+                    </a>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        <div class="product-sort-hide">
+          Thu gọn <img src="<?php echo $this->imgUrl; ?>/down.png" alt="" />
+        </div>
+      </div>
+
+      <div class="row list-product">       
+        <div class="container">
+      <?php 
+        $productList = $this->Items;
+        if (!empty($productList)) {
+          $dem=0;
+          foreach($productList as $key=>$val) {
+            $dem++;
+            $val = $this->cmsReplaceString($val);
+            $product_id = $val['id'];
+            $product_name = $val['product_name'];
+            $product_brief = $val['product_brief'];
+            $price = $val['price'];
+            $category_id = $val['category_id'];
+            $cover_image = FILES_URL . '/products/cover-images/large/' . $val['cover_image'];
+            $filter = new Zend_Filter();
+            $multiFilter = $filter->addFilter(new Zend_Filter_StringToLower(array('encoding'=>'UTF-8')))
+                        ->addFilter(new Zend_Filter_StringTrim())
+                        ->addFilter(new Zend_Filter_Alnum(true))
+                        ->addFilter(new Zendvn_Filter_RemoveCircumflex())
+                        ->addFilter(new Zend_Filter_Word_SeparatorToDash(' '));
+                    
+            $productUrlOptions = array('module'=>'default','controller'=>'san-pham','action'=>'san-pham-chi-tiet',
+                    'title'=>$multiFilter->filter($product_name),'id'=>$product_id,'category_id'=>$category_id);
+                   
+            $product_link = $this->url($productUrlOptions,'product-detail');
+      ?>
+         
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 product <?php if ($dem==1||$dem==4||$dem==7)echo 'first';?>">
+            <div class="col-md-12 text-center product-image">
+              <div><img src="<?php echo $cover_image ?>" alt="Image"><a href="<?php echo $product_link; ?>">&nbsp;</a></div>
+            </div>
+            <div class="col-md-12 product-info">
+              <h4><?php echo $product_name ; ?></h4>
+              <p><?php echo $product_brief; ?></p>
+              <div>
+                <span class="price red2"><?php echo $price; ?></span>
+              </div>
+            </div>
+          </div>
+           
+      <?php 
+          }
+              }
+           else {
+      ?>
+        <div class = "col-md-12">
+          <div class="alert alert-danger">Không có sản phẩm nào thuộc mục này!</div>
+        </div>
+        
+      <?php 
+        }
+      ?>
+        </div>
+</div>
+      <div class="row">
+
+          <!-- ********************************** phan trang **************************************-->
+        <?php 
+          $paginator = $this->paginator;
+          if(!empty($paginator) && ($paginator->count()) > 1) {
+        ?>
+        <ul class="pagination pagination">
+          <?php $currentUrl = $this->baseUrl($this->currentController . '/index'); ?>
+          <?php echo $this->paginationControl($this->paginator,'Sliding','pagination.phtml',array('currentUrl'=>$currentUrl)); ?>
+        </ul>
+        <?php } ?>
+  <!-- ********************************** End phan trang **********************************-->
+     
+      </div>
+                            
+                            
+                            

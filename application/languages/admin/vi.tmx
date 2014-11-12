@@ -1,0 +1,260 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+	<header creationtoolversion="1.0.0" datatype="winres" segtype="sentence"
+         adminlang="en-us" srclang="de-at" o-tmf="abc"
+         creationtool="XYZTool" >
+	</header>
+<body>
+//******************************** VIETNAMESE ***********************************
+//
+//******************************** HEADER ***************************************
+<tu tuid='header-title'>
+	<tuv xml:lang="vi"><seg>KHU VỰC QUẢN TRỊ WEBSITE</seg></tuv>
+</tu>
+<tu tuid='header-version'>
+	<tuv xml:lang="vi"><seg>Phiên bản 1.0</seg></tuv>
+</tu>
+<tu tuid='header-logout'>
+	<tuv xml:lang="vi"><seg>Thoát</seg></tuv>
+</tu>
+
+//******************************** FOOTER ***************************************
+<tu tuid='footer-copyright'>
+	<tuv xml:lang="vi"><seg>Bản quyền thuộc về A WEB DESIGN CO</seg></tuv>
+</tu>
+
+//******************************** HE THONG MENU ***********************
+<tu tuid='menu-main'>
+	<tuv xml:lang="vi"><seg>Main</seg></tuv>
+</tu>
+<tu tuid='menu-main-frontend'>
+	<tuv xml:lang="vi"><seg>Front End</seg></tuv>
+</tu>
+<tu tuid='menu-main-backend'>
+	<tuv xml:lang="vi"><seg>Back End</seg></tuv>
+</tu>
+//--------------------- menu Member ---------------------------
+<tu tuid='menu-member'>
+	<tuv xml:lang="vi"><seg>Thành viên</seg></tuv>
+</tu>
+<tu tuid='menu-member-groupmanager'>
+	<tuv xml:lang="vi"><seg>Quản lý nhóm</seg></tuv>
+</tu>
+<tu tuid='menu-member-usermanager'>
+	<tuv xml:lang="vi"><seg>Quản lý người dùng</seg></tuv>
+</tu>
+<tu tuid='menu-member-permission'>
+	<tuv xml:lang="vi"><seg>Cấp quyền</seg></tuv>
+</tu>
+//--------------------- menu System ---------------------------
+<tu tuid='menu-system'>
+	<tuv xml:lang="vi"><seg>Hệ thống</seg></tuv>
+</tu>
+<tu tuid='menu-system-languagemanager'>
+	<tuv xml:lang="vi"><seg>Quản lý ngôn ngữ</seg></tuv>
+</tu>
+<tu tuid='menu-system-documents'>
+	<tuv xml:lang="vi"><seg>Quản lý tài liệu</seg></tuv>
+</tu>
+
+//******************************** HE THONG NUT CHUC NANG ***********************
+<tu tuid='button-add'>
+	<tuv xml:lang="vi"><seg>Thêm</seg></tuv>
+</tu>
+<tu tuid='button-edit'>
+	<tuv xml:lang="vi"><seg>Sửa</seg></tuv>
+</tu>
+<tu tuid='button-delete'>
+	<tuv xml:lang="vi"><seg>Xóa</seg></tuv>
+</tu>
+<tu tuid='button-sort'>
+	<tuv xml:lang="vi"><seg>Sắp xếp</seg></tuv>
+</tu>
+<tu tuid='button-active'>
+	<tuv xml:lang="vi"><seg>Kích hoạt</seg></tuv>
+</tu>
+<tu tuid='button-inactive'>
+	<tuv xml:lang="vi"><seg>Vô hiệu hóa</seg></tuv>
+</tu>
+<tu tuid='button-save'>
+	<tuv xml:lang="vi"><seg>Lưu</seg></tuv>
+</tu>
+<tu tuid='button-accept'>
+	<tuv xml:lang="vi"><seg>Đồng ý</seg></tuv>
+</tu>
+<tu tuid='button-cancel'>
+	<tuv xml:lang="vi"><seg>Hủy bỏ</seg></tuv>
+</tu>
+<tu tuid='button-back'>
+	<tuv xml:lang="vi"><seg>Quay lại</seg></tuv>
+</tu>
+
+//******************************** HE THONG SUB LINK ***********************
+<tu tuid='sublink-groupmanager'>
+	<tuv xml:lang="vi"><seg>Quản lý nhóm</seg></tuv>
+</tu>
+<tu tuid='sublink-usermanager'>
+	<tuv xml:lang="vi"><seg>Quản lý người dùng</seg></tuv>
+</tu>
+<tu tuid='sublink-permission'>
+	<tuv xml:lang="vi"><seg>Cấp phép</seg></tuv>
+</tu>
+
+//******************************** Public controller *******************
+<tu tuid='admin-public-error-title'>
+	<tuv xml:lang="vi"><seg>Thông báo :: Có lỗi!</seg></tuv>
+</tu>
+<tu tuid='admin-public-noacess-title'>
+	<tuv xml:lang="vi"><seg>Thông báo :: Từ chối truy cập!</seg></tuv>
+</tu>
+<tu tuid='admin-public-login-title'>
+	<tuv xml:lang="vi"><seg>Thông báo :: Đăng nhập</seg></tuv>
+</tu>
+<tu tuid='admin-public-logout-title'>
+	<tuv xml:lang="vi"><seg>Thông báo :: Thoát</seg></tuv>
+</tu>
+<tu tuid='admin-public-signin'>
+	<tuv xml:lang="vi"><seg>Đăng nhập</seg></tuv>
+</tu>
+
+//******************************** ADMINGROUP CONTROLLER *******************
+<tu tuid='admin-admingroup-index-title'>
+	<tuv xml:lang="vi"><seg>Thành viên :: Quản lý nhóm :: Danh sách nhóm</seg></tuv>
+</tu>
+<tu tuid='admin-admingroup-col-groupname'>
+	<tuv xml:lang="vi"><seg>Tên nhóm</seg></tuv>
+</tu>
+<tu tuid='admin-admingroup-col-status'>
+	<tuv xml:lang="vi"><seg>Trạng thái</seg></tuv>
+</tu>
+<tu tuid='admin-admingroup-col-acp'>
+	<tuv xml:lang="vi"><seg>ACP</seg></tuv>
+</tu>
+<tu tuid='admin-admingroup-col-order'>
+	<tuv xml:lang="vi"><seg>Thứ tự</seg></tuv>
+</tu>
+<tu tuid='admin-admingroup-col-members'>
+	<tuv xml:lang="vi"><seg>Số thành viên</seg></tuv>
+</tu>
+//----------ADD GROUP--------------------
+<tu tuid='admin-group-add-title'>
+	<tuv xml:lang="vi"><seg>Thành viên :: Quản lý nhóm :: Thêm nhóm</seg></tuv>
+</tu>
+<tu tuid='admin-addgroup-addform-label-groupname'>
+	<tuv xml:lang="vi"><seg>Group Name</seg></tuv>
+</tu>
+<tu tuid='admin-addgroup-addform-label-groupacp'>
+	<tuv xml:lang="vi"><seg>Access ACP</seg></tuv>
+</tu>
+<tu tuid='admin-addgroup-addform-label-groupdefault'>
+	<tuv xml:lang="vi"><seg>Default Group</seg></tuv>
+</tu>
+<tu tuid='admin-addgroup-addform-label-status'>
+	<tuv xml:lang="vi"><seg>Status</seg></tuv>
+</tu>
+<tu tuid='admin-addgroup-addform-label-order'>
+	<tuv xml:lang="vi"><seg>Order</seg></tuv>
+</tu>
+<tu tuid='admin-addgroup-addform-label-permission'>
+	<tuv xml:lang="vi"><seg>Permission</seg></tuv>
+</tu>
+
+//******************************** AdminUser controller *******************
+<tu tuid='admin-adminuser-index-title'>
+	<tuv xml:lang="vi"><seg>Thành viên :: Quản lý user :: Danh sách user</seg></tuv>
+</tu>
+<tu tuid='admin-adminuser-col-username'>
+	<tuv xml:lang="vi"><seg>Username</seg></tuv>
+</tu>
+<tu tuid='admin-adminuser-col-status'>
+	<tuv xml:lang="vi"><seg>Trạng thái</seg></tuv>
+</tu>
+<tu tuid='admin-adminuser-col-email'>
+	<tuv xml:lang="vi"><seg>Email</seg></tuv>
+</tu>
+<tu tuid='admin-adminuser-col-regdate'>
+	<tuv xml:lang="vi"><seg>Ngày đăng ký</seg></tuv>
+</tu>
+<tu tuid='admin-adminuser-col-group'>
+	<tuv xml:lang="vi"><seg>Thuộc nhóm</seg></tuv>
+</tu>
+//------------------------------
+<tu tuid='admin-adduser-index-title'>
+	<tuv xml:lang="vi"><seg>Thành viên :: Quản lý user :: Thêm user</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-group'>
+	<tuv xml:lang="vi"><seg>Thuộc nhóm</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-username'>
+	<tuv xml:lang="vi"><seg>Username</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-password'>
+	<tuv xml:lang="vi"><seg>Password</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-repassword'>
+	<tuv xml:lang="vi"><seg>Nhập lại Password</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-avatar'>
+	<tuv xml:lang="vi"><seg>Hình ảnh đại diện</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-email'>
+	<tuv xml:lang="vi"><seg>Email</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-firstname'>
+	<tuv xml:lang="vi"><seg>Tên</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-lastname'>
+	<tuv xml:lang="vi"><seg>Họ</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-birthday'>
+	<tuv xml:lang="vi"><seg>Ngày sinh</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-status'>
+	<tuv xml:lang="vi"><seg>Trạng thái</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-sign'>
+	<tuv xml:lang="vi"><seg>Chữ ký</seg></tuv>
+</tu>
+<tu tuid='admin-adduser-addform-label-registerdate'>
+	<tuv xml:lang="vi"><seg>Ngày đăng ký</seg></tuv>
+</tu>
+//------------------------------
+<tu tuid='admin-userinfo-index-title'>
+	<tuv xml:lang="vi"><seg>Thành viên :: Quản lý user :: Thông tin chi tiết</seg></tuv>
+</tu>
+<tu tuid='admin-userinfo-inactive'>
+	<tuv xml:lang="vi"><seg>Không kích hoạt</seg></tuv>
+</tu>
+<tu tuid='admin-userinfo-active'>
+	<tuv xml:lang="vi"><seg>Kích hoạt</seg></tuv>
+</tu>
+//------------------------------
+<tu tuid='admin-edituser-index-title'>
+	<tuv xml:lang="vi"><seg>Thành viên :: Quản lý user :: Sửa user</seg></tuv>
+</tu>
+<tu tuid='admin-edituser-editform-label-username-detail'>
+	<tuv xml:lang="vi"><seg> (Bạn không thể thay đổi username)</seg></tuv>
+</tu>
+<tu tuid='admin-edituser-editform-label-avatar-detail'>
+	<tuv xml:lang="vi"><seg> (Browse để upload hình đại diện khác)</seg></tuv>
+</tu>
+//------------------------------
+<tu tuid='admin-deleteuser-index-title'>
+	<tuv xml:lang="vi"><seg>Thành viên :: Quản lý User :: Xóa User</seg></tuv>
+</tu>
+<tu tuid='admin-deleteuser-confirm-question'>
+	<tuv xml:lang="vi"><seg>Bạn có chắc chắn muốn xóa phần tử này không ?</seg></tuv>
+</tu>
+//----------MULTI DELETE USER--------------------
+<tu tuid='admin-multideleteuser-index-title'>
+	<tuv xml:lang="vi"><seg>Thành viên :: Quản lý User :: Xóa nhiều User</seg></tuv>
+</tu>
+<tu tuid='admin-deletemultiuser-confirm-question'>
+	<tuv xml:lang="vi"><seg>Bạn có chắc chắn muốn xóa những phần tử này không ?</seg></tuv>
+</tu>
+
+//******************************** AdminLanguage controller ****************
+<tu tuid='admin-changeLanguage-index-title'>
+	<tuv xml:lang="vi"><seg>System :: Language Manager :: List</seg></tuv>
+</tu>

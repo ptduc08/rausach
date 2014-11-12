@@ -1,0 +1,93 @@
+<?php
+	//----- Lay du lieu thong tin user truyen tu controller sang
+	//----- neu chua co thi tu khoi tao du lieu thong tin user
+	$formdata = $this->Item;
+
+	if ($formdata == null) {
+		$formdata['category_id'] = 0;
+		$formdata['article_title'] = '';
+		$formdata['article_brief'] = '';
+		$formdata['article_content'] = '';
+		$formdata['cover_image'] = '';
+		$formdata['publish'] = 0;
+		$formdata['order'] = 0;
+		$formdata['created_by'] = '';
+		$formdata['created_time'] = '0000-00-00 00:00:00';
+		$formdata['last_modified_by'] = '';
+		$formdata['last_modified_time'] = '0000-00-00 00:00:00';
+		$formdata['publish_by'] = '';
+		$formdata['publish_time'] = '0000-00-00 00:00:00';
+		$formdata['hit_counter'] = 0;
+	} else {
+		$formdata = $this->cmsReplaceString($formdata);
+	}
+	
+	$articleCategory = $formdata['articleCategory'];
+	$strCategory = '';
+	if (count($articleCategory) > 0 ) {
+		foreach ($articleCategory as $key=>$val) {
+			$category_id = $val['category_id'];
+			$category_link = $this->baseUrl('/admin/admin-news-category/info/id/' . $category_id);
+			$category_name = $val['category_name'];
+			$style = 'margin: 5px; padding: 1px 5px; background-color: #d8d8d8;';
+			$strCategory .= '<a style="' . $style .'" href="' . $category_link .'">' . $category_name . '</a>';
+		}
+	}
+	
+	$article_title 	= $formdata['article_title'];
+	$article_brief 	= $formdata['article_brief'];
+	$article_content = $formdata['article_content'];
+	$publish		= $formdata['publish'];
+	if ($publish == 0) {
+		$publish = $this->translate('admin-cw-publish');
+	} else {
+		$publish = $this->translate('admin-cw-nopublish');
+	}
+	$order 	= $formdata['order'];
+	
+	//----- CREATE: cover image option --------------------------
+	$cover_image 	= FILES_URL . '/news/cover-images/small/' . $formdata['cover_image'];
+	$cover_image	= '<img src="' . $cover_image .'"/><br/>';
+	
+	$arrInput = array(
+					array('label'=>$this->translate('admin-newsarticle-add-label-newscategory'),'input'=>$strCategory),
+					array('label'=>$this->translate('admin-newsarticle-add-label-newstitle'),'input'=>$article_title),
+					array('label'=>$this->translate('admin-newsarticle-add-label-newsbrief'),'input'=>$article_brief),
+					array('label'=>$this->translate('admin-newsarticle-add-label-newscontent'),'input'=>$article_content),
+					array('label'=>$this->translate('admin-newsarticle-add-label-newscoverimage'),'input'=>$cover_image),
+					array('label'=>$this->translate('admin-cw-publish'),'input'=>$publish),
+					array('label'=>$this->translate('admin-cw-order'),'input'=>$order),
+			);
+	
+?>
+
+<form name="appForm" method="post" action="" enctype="multipart/form-data">
+	<?php echo $this->render('/admin-news-article/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php //echo $this->render('/admin-news-article/sublink/index.php'); ?>
+	
+	<!--------------------------------------- BEGIN: CONTENT ----------------------------------->
+	<div id="element-box">
+		<div class="t">
+			<div class="t">
+				<div class="t"></div>
+			</div>
+		</div>
+		<div class="m">
+
+	<!--------------------------------------- form add group ----------------------------------->
+			<div id="adminfieldset">
+
+				<?php echo $this->partialLoop('row.php',$arrInput); ?>
+				
+			</div>
+			<div class="clr"></div>
+		</div>
+		<div class="b">
+			<div class="b">
+				<div class="b"></div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------- END: CONTENT ----------------------------------->
+</form>
