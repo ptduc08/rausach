@@ -1,0 +1,148 @@
+<?php
+$productList =$this->productList;
+$cart=$this->cart;
+$dem=0;
+$total=0;
+/*
+
+*/
+?>
+
+<!-- Cart -->
+<div class="col-lg-12 col-md-12 col-sm-12">
+	<div class="col-lg-12 col-sm-12">
+		<span class="title">THÔNG TIN GIỎ HÀNG</span>
+		<p>Sản phẩm trong giỏ hàng mà Quý khách đang chọn bao gồm:</p>
+	</div>
+	<form method="post" action="/rausach/cart/recaculatecart">
+
+		<div class="col-lg-12 col-sm-12 hero-feature">
+			<table class="table table-bordered tbl-cart">
+				<thead>
+					<tr>
+						<td>TT</td>
+						<td class="hidden-xs">Ảnh</td>
+						<td>Tên sản phẩm</td>
+						<td>ĐVT</td>
+						<td class="td-qty">Số lượng</td>
+						<td>Đơn giá</td>
+						<td>Thành tiền</td>
+						<td>Tác vụ</td>
+					</tr>
+				</thead>
+				<tbody>
+
+					<?php
+					foreach ( $productList as $key => $value) {
+							$dem++;
+							$product_id=$value['id'];
+							$name=$value['product_name'];
+							$cover_image = FILES_URL . '/products/cover-images/small/' . $value['cover_image'];
+
+							$quantity=$cart['quantity'][$product_id];
+							$price=$value['price'];
+							$unit=$value['unit'];
+							$money=$quantity*$price;
+							$total+=$money;
+							$delete_cart_link= $this->baseUrl('cart/deletecart/id/'.$product_id);
+
+							?>
+					<tr>
+						<td><?php echo $dem;?></td>
+						<td class="hidden-xs"><a href="detail.html"> <img
+								src="<?php echo $cover_image; ?>"
+								alt="Age Of Wisdom Tan Graphic Tee" title="" width="47"
+								height="47">
+						</a>
+						</td>
+						<td width="20%"><a href="detail.html"><?php echo $name;?> </a>
+						</td>
+
+						<td width="10%"><?php echo $unit;?></td>
+						<td width="20%"><input type="text"
+							class="input-qty form-control text-center"
+							name="qty[<?php echo $product_id ;?>]"
+							value="<?php echo $quantity;?>" />
+						</td>
+						<td class="price"><?php echo $price;?></td>
+						<td><?php echo $money;?></td>
+						<td><a href="<?php echo $delete_cart_link;?>"><span
+								class="glyphicon glyphicon-trash"></span> </a></td>
+					</tr>
+
+					<?php
+							}
+							?>
+
+
+					<tr>
+						<td colspan="6" align="right">Giá bán trước thuế:</td>
+						<td class="total" colspan="2"><b><?php echo $total;?> </b>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="6" align="right">Phí vận chuyển:</td>
+						<td class="total" colspan="2"><b>25,000</b>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="6" align="right">VAT 10%:</td>
+						<td class="total" colspan="2"><b>810,000</b>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="6" align="right">Tổng cộng:</td>
+						<td class="total" colspan="2"><b>8,935,000</b>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="btn-group btns-cart">
+				<button type="button" class="cart"
+					onclick="window.location='catalogue.html'">Chọn thêm sản phẩm</button>
+				<input type="submit" class="cart" value="Cập nhật thay đổi" />
+
+			</div>
+			
+			<div class="form-group">
+				<h4>
+					- Quý khách có thể điều chỉnh số lượng của sản phẩm đã chọn trong
+					giỏ hàng. Sau đó cần phải ấn nút CẬP NHẬT THAY ĐỔI để kiểm tra lại
+					số tiền tương ứng với số lượng mới được cập nhật. <br>- Quý khách
+					có thể ấn nút CHỌN THÊM SẢN PHẨM nếu muốn chọn thêm sản phẩm khác
+					trước khi gửi đơn hàng.
+				</h4>
+			</div>
+			
+			<div class="form-group" style="margin-bottom:3px;">
+				<div class="col-sm-offset-5 col-sm-10">
+					<button type="submit" class="btn-bk">Gửi đơn hàng</button>
+
+				</div>
+			</div>
+			<br>
+			<!--/form-group-->
+			<div class="form-group">
+				<h4>
+					- Quý khách có thể điều chỉnh số lượng cần mua tại cột “Số lượng”.
+					<br>- Quý khách mua hàng có số tiền thanh toán lớn hơn 800.000 VNĐ
+					được miễn phí vận chuyển trong nội thành phạm vi bán kính 5 Km. <br>-
+					Nếu địa điểm nhận hàng có khoảng cách xa trên 5 km (tính từ Văn
+					phòng giao dịch – Phố Quốc Tử Giám, Hà Nội) hoặc số tiền thanh toán
+					nhỏ hơn 800.000 VND, Quý khách vui lòng thanh toán thêm phí vận
+					chuyển 35.000 VND/ Tổng đơn hàng. <br>- Đối với sản phẩm Con giống
+					và một số hàng hóa Thực phẩm sạch đặc biệt sẽ tính chi phí vận
+					chuyển theo phát sinh thực tế.
+				</h4>
+			</div>
+		</div>
+	</form>
+	<!-- end form-->
+
+</div>
+<!-- End Cart -->
+
+
+
+
+<br>

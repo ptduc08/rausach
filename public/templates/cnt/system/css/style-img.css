@@ -1,0 +1,88 @@
+﻿.center-title
+	    {  
+			width:auto;
+			/* height:40px; */
+            color:#c64d06;
+            text-transform:uppercase;
+            font-size:36px;
+            text-align:left;
+           padding: 0px 0 0px 15px;
+            line-height:38px;
+            
+	    }
+	    .center-title h1
+	    {  
+            color:#c64d06;
+            text-transform:uppercase;
+            font-size:32px;
+            font-weight:normal;
+            padding:0;
+            margin:0;
+	    }
+	    .sales
+	    {color:#c64d06;text-transform:uppercase;font-size:14px;}
+	               
+     .center-body
+	    {  
+            height:auto;
+			width:100%;
+            padding:0 20px 15px 10px;
+            text-align:left;
+            vertical-align:top;
+	    }  
+	    .center-body a
+	    {
+	        color:#a63402;
+	        }
+	        
+	     .center-title a
+	    {
+	        color:#fff;
+	        }   
+	     .center-body h3
+	     {
+	         margin:0;
+	         padding:2px;
+	         color:#08382A;
+	         font-weight:bold;
+	         }
+	    .center-body h1, h2
+	     {
+	         margin:0;
+	         padding:3px 0 8px 5px;
+	         color:#08382A;
+	         font-size:14px;
+	         }
+	    .center-body h1:hover, h2:hover
+	     {
+	         color:#b24302;
+	         }
+        
+	     .text-center
+	     { text-align:center; /* border:1px solid #c0c0c0; */}   
+	     
+	     .center-title1
+	    {  
+			width:auto;
+			height:40px;
+            color:#c64d06;
+            text-transform:uppercase;
+            font-size:36px;
+            text-align:left;
+            padding:35px 0 0px 0px;
+            line-height:38px;
+	    }
+.img-news
+  {border: 1px solid #aec537; width:220px; height:153px;}
+  .img-album
+  {border: 1px solid #aec537;  width:220px; height:153px;}
+  .img-doitac
+  {border: 1px solid #aec537; width:100px; height:87px; margin-top:3px;}
+  .img-pro
+  {border: 1px solid #aec537; width:220px; height:153px;}
+  .img-pro2
+  {border: 1px solid #aec537; width:55px; height:38px;}
+  .img-pro-detail
+  {border: 1px solid #aec537; width:488px; height:340px; margin:0 0 0 5px;}
+  .ImgThumb
+  {border: 1px solid #aec537; width:111px; height:85px;}

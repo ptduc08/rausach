@@ -1,0 +1,164 @@
+<?php
+//----- Lay du lieu thong tin user truyen tu controller sang
+//----- neu chua co thi tu khoi tao du lieu thong tin user
+$formdata = $this->Item;
+/*
+ $id = $value['id'];
+$customer_name = $value['name'];
+$mobile = $value['mobile'];
+$email = $value['email'];
+$information = $value['information'];
+$total= $value['total'];
+$status= $value['status'];
+	
+$address=$value['address'];
+$created_time	= date('d/m/Y H:i:s',strtotime($value['created_time']));
+$limit_time	= 'dang test';*/
+if ($formdata == null) {
+	$formdata['name'] = 0;
+	$formdata['mobile'] = '';
+	$formdata['email'] = '';
+	$formdata['information'] = '';
+	$formdata['status'] = 0;
+	$formdata['address'] = 0;
+	$formdata['order'] = 0;
+	$formdata['limit_time'] = '';
+	$formdata['created_time'] = '0000-00-00 00:00:00';
+
+} else {
+	$formdata = $this->cmsReplaceString($formdata);
+}
+
+
+
+$name 	= $formdata['name'];
+$mobile	= $formdata['mobile'];
+$email	= $formdata['email'];
+$address = $formdata['address'];
+$information 	= $formdata['information'];
+$status		 	= $formdata['status'];
+$limit_time = $formdata['limit_time'];
+$created_time 	= $formdata['created_time'];
+
+
+$arrInput = array(
+		array('label'=>'Họ và tên','input'=>$name),
+		array('label'=>'Địa chỉ','input'=>$address,'style'=>'font-size: 15pt;'),
+		array('label'=>'email','input'=>$email),
+		array('label'=>'Địa chỉ','input'=>$mobile,'style'=>'font-size: 15pt;'),
+		array('label'=>'Thông tin','input'=>$information),
+		array('label'=>'Trạng thái','input'=>$status,'style'=>'font-size: 15pt;'),
+		array('label'=>'Thời gian nhận hàng','input'=>$limit_time),
+		array('label'=>'Thời gian tạo','input'=>$created_time,'style'=>'font-size: 15pt;'),
+);
+
+?>
+<?php 
+$AllProductOrders=$this->AllProductOrders;
+
+?>
+
+<table class="table table-bordered tbl-cart">
+	<thead>
+		<tr>
+			<td>TT</td>
+			<td class="hidden-xs">Ảnh</td>
+			<td>Tên sản phẩm</td>
+			<td>ĐVT</td>
+			<td class="td-qty">Số lượng</td>
+			<td>Đơn giá</td>
+			<td>Thành tiền</td>
+			<td>Tác vụ</td>
+		</tr>
+	</thead>
+	<tbody>
+
+		<?php
+		$total=0;
+		$dem=0;
+		foreach ($AllProductOrders as $key => $value) {
+						$dem++;
+						$produc_id=$value['product_id'];
+						$produc_name=$value['product_name'];
+						$quantity=$value['amount'];
+						$price=$value['price'];
+						$cover_image = FILES_URL . '/products/cover-images/small/' . $value['cover_image'];
+						$money=$quantity*$price;
+						$total+=$money;
+
+						?>
+		<tr>
+			<td><?php echo $dem;?></td>
+			<td class="hidden-xs"><a href="detail.html"> <img
+					src="<?php echo $cover_image; ?>"
+					alt="Age Of Wisdom Tan Graphic Tee" title="" width="47" height="47">
+			</a>
+			</td>
+			<td width="20%"><a href="detail.html"><?php echo $produc_name;?> </a>
+			</td>
+
+			<td width="10%">Đôi (2 con)</td>
+			<td width="20%">
+				<div class="input-group bootstrap-touchspin" style="">
+					<span class="input-group-btn">
+						<button class="btn btn-default bootstrap-touchspin-down"
+							type="button">-</button>
+					</span> <span class="input-group-addon bootstrap-touchspin-prefix"></span>
+					<input type="text" class="input-qty form-control text-center"
+						value="<?php echo $quantity;?>" /> <span
+						class="input-group-addon bootstrap-touchspin-postfix"></span> <span
+						class="input-group-btn">
+						<button class="btn btn-default bootstrap-touchspin-up"
+							type="button">+</button>
+					</span>
+				</div>
+			</td>
+			<td class="price"><?php echo $price;?></td>
+			<td><?php echo $money;?></td>
+			<td><span class="glyphicon glyphicon-trash"></span></td>
+		</tr>
+
+		<?php
+							}
+							?>
+
+
+		<tr>
+			<td colspan="6" align="right">Giá bán trước thuế:</td>
+			<td class="total" colspan="2"><b><?php echo $total;?> </b>
+			</td>
+		</tr>
+
+	</tbody>
+</table>
+<form
+	name="appForm" method="post" action="" enctype="multipart/form-data">
+	<?php echo $this->render('/admin-product/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php //echo $this->render('/admin-product/sublink/index.php'); ?>
+
+	<!--------------------------------------- BEGIN: CONTENT ----------------------------------->
+	<div id="element-box">
+		<div class="t">
+			<div class="t">
+				<div class="t"></div>
+			</div>
+		</div>
+		<div class="m">
+
+			<!--------------------------------------- form add group ---------------------------------->
+			<div id="adminfieldset">
+
+				<?php echo $this->partialLoop('row.php',$arrInput); ?>
+
+			</div>
+			<div class="clr"></div>
+		</div>
+		<div class="b">
+			<div class="b">
+				<div class="b"></div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------- END: CONTENT ---------------------------------->
+</form>

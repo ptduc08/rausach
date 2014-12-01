@@ -1,0 +1,199 @@
+<?php
+$productList =$this->productList;
+$cart=$this->cart;
+$dem=0;
+$total=0;
+/*
+
+*/
+?>
+<?php
+//----- INPUT ELEMENT ---------------------------------------
+//----- Lay du lieu truyen tu controller sang dua vao cac input cua form
+//----- neu chua co thi tu khoi tao du lieu cho cac input cua form
+$formdata = $this->FormData;
+$formstyle = $this->FormStyle;
+if ($formdata == null) {
+	$formdata['name'] = '';
+	$formdata['email'] = '';
+	$formdata['address'] = '';
+	$formdata['mobile'] = '';
+	$formdata['limit_time'] = '';
+	$formdata = $this->cmsReplaceString($formdata);
+}
+if (empty($formdata['information'])||!isset($formdata['information'])) {
+	$formdata['information'] = '';
+}
+
+//----- Lay dinh dang truyen tu controller sang dua vao cac input cua form
+//----- neu chua co thi tu khoi tao dinh dang cho cac input cua form
+if ($formstyle == null) {
+	$formstyle['name'] = '';
+	$formstyle['mobile'] = '';
+	$formstyle['email'] = '';
+	$formstyle['address'] = '';
+	$formstyle['mobile'] = '';
+	$formstyle['information'] = '';
+}
+
+$name		= $this->formText('name',$formdata['name'],array('class'=>'txtmedium','style'=>$formstyle['name']));
+$address		= $this->formText('address',$formdata['address'],array('class'=>'txtmedium','style'=>$formstyle['address']));
+$mobile		= $this->formText('mobile',$formdata['mobile'],array('class'=>'txtmedium','style'=>$formstyle['mobile']));
+$email		= $this->formText('email',$formdata['email'],array('class'=>'txtmedium','style'=>$formstyle['email']));
+$information		= $this->formText('information',$formdata['information'],array('class'=>'txtmedium','style'=>$formstyle['information']));
+//$order	 		= $this->formText('order',$formdata['order'],array('class'=>//'txtshort','style'=>$formstyle['order']));
+
+
+
+$arrInput = array(
+		array('label'=>'Họ và tên','input'=>$name),
+		array('label'=>'Địa chỉ','input'=>$address),
+		array('label'=>'Mobile','input'=>$mobile),
+		array('label'=>'email','input'=>$email),
+		array('label'=>'Thông tin thêm','input'=>$information),
+);
+
+//----- thong bao loi -----
+$errors = '';
+if (count($this->messageError) > 0) {
+	$errors = $this->formErrors($this->messageError,array('id'=>'errors'));
+}
+
+
+?>
+
+<form
+	name="appForm" method="post" action="" enctype="multipart/form-data">
+	<div class="clr"></div>
+	<!-- show cart-->
+	<div class="col-lg-12 col-sm-12 hero-feature">
+		<table class="table table-bordered tbl-cart">
+			<thead>
+				<tr>
+					<td>TT</td>
+					<td class="hidden-xs">Ảnh</td>
+					<td>Tên sản phẩm</td>
+					<td>ĐVT</td>
+					<td class="td-qty">Số lượng</td>
+					<td>Đơn giá</td>
+					<td>Thành tiền</td>
+					<td>Tác vụ</td>
+				</tr>
+			</thead>
+			<tbody>
+
+				<?php
+				foreach ( $productList as $key => $value) {
+							$dem++;
+							$product_id=$value['id'];
+							$name=$value['product_name'];
+							$cover_image = FILES_URL . '/products/cover-images/small/' . $value['cover_image'];
+
+							$quantity=$cart['quantity'][$product_id];
+							$price=$value['price'];
+							$money=$quantity*$price;
+							$total+=$money;
+							?>
+				<tr>
+					<td><?php echo $dem;?></td>
+					<td class="hidden-xs"><a href="detail.html"> <img
+							src="<?php echo $cover_image; ?>"
+							alt="Age Of Wisdom Tan Graphic Tee" title="" width="47"
+							height="47">
+					</a>
+					</td>
+					<td width="20%"><a href="detail.html"><?php echo $name;?> </a>
+					</td>
+
+					<td width="10%">Đôi (2 con)</td>
+					<td width="20%">
+						<div class="input-group bootstrap-touchspin" style="">
+							<input type="text" class="input-qty form-control text-center"
+								name="qty[<?php echo $product_id ;?>]"
+								value="<?php echo $quantity;?>" readonly="readonly" />
+					
+					</td>
+					<td class="price"><?php echo $price;?></td>
+					<td><?php echo $money;?></td>
+					<td><span class="glyphicon glyphicon-trash"></span></td>
+				</tr>
+
+				<?php
+							}
+							?>
+
+
+				<tr>
+					<td colspan="6" align="right">Giá bán trước thuế:</td>
+					<td class="total" colspan="2"><b><?php echo $total;?> </b> <input
+						type="hidden" name="total" value="<?php echo $total;?>">
+				
+				</tr>
+				<tr>
+					<td colspan="6" align="right">Phí vận chuyển:</td>
+					<td class="total" colspan="2"><b>25,000</b>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="6" align="right">VAT 10%:</td>
+					<td class="total" colspan="2"><b>810,000</b>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="6" align="right">Tổng cộng:</td>
+					<td class="total" colspan="2"><b>8,935,000</b>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<div class="form-group"></div>
+	</div>
+	<!-- end show cart-->
+	<?php
+	if(!empty($errors)) {
+	?>
+	<div class="alert alert-danger">
+		<?php echo $errors; ?>
+	</div>
+	<?php 
+		}
+		?>
+
+	<!--------------------------------------- BEGIN: CONTENT ---------------------------------->
+	<div id="element-box">
+		<div class="t">
+			<div class="t">
+				<div class="t"></div>
+			</div>
+		</div>
+		<div class="m">
+
+			<!--------------------------------------- form add group ---------------------------------->
+			<div id="adminfieldset">
+
+				<?php echo $this->partialLoop('row.php',$arrInput); ?>
+				<div id="row" class="row">
+                    <div class="col-lg-2">
+                        <strong>Time</strong>
+                    </div>
+                    <div class="col-lg-10">
+                        <input type="text" name="limit_time" value="" id="date"/>
+                        <script>
+                            $('#date').datepicker();
+                        </script>
+                    </div>
+                </div>
+			</div>
+			<div class="clr"></div>
+		</div>
+		<div class="b">
+			<div class="b">
+				<div class="b"></div>
+			</div>
+		</div>
+	</div>
+	<input type="submit" name="ok" action="">
+	<!--------------------------------------- END: CONTENT ---------------------------------->
+</form>

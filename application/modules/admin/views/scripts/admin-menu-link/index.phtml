@@ -1,0 +1,146 @@
+<?php
+$ssFilter = $this->arrParam['ssFilter'];
+$action_link 	= $this->baseUrl($this->currentController . '/filter/type/order');
+$curControllerLink = $this->baseUrl($this->currentController);
+$lblCategoryName = $this->cmsSortLink('pc.category_name',$this->arrParam,$this->translate('admin-productcategory-col-categoryname'),$this->imgUrl,$action_link);
+$lblCategoryID = $this->cmsSortLink('pc.id',$this->arrParam,'ID',$this->imgUrl,$action_link);
+$lblCategoryPublish = $this->cmsSortLink('pc.publish',$this->arrParam,$this->translate('admin-cw-publish'),$this->imgUrl,$action_link);
+$lblCategoryPublishTime = $this->cmsSortLink('pc.publish_time',$this->arrParam,$this->translate('admin-cp-publishtime'),$this->imgUrl,$action_link);
+$lblCategoryOrder = $this->cmsSortLink('pc.order',$this->arrParam,$this->translate('admin-cw-order'),$this->imgUrl,$action_link);
+$lblCategoryLockStatus = $this->cmsSortLink('pc.lock_status',$this->arrParam,$this->translate('admin-cp-lockstatus'),$this->imgUrl,$action_link);
+
+//--------------------------------------- CREATE: SEARCH AREA -------------------------------
+$keywords 		= $this->formText('keywords',$ssFilter['keywords'],array('class'=>'txtshort'));
+$linkSearch 	= $this->baseUrl($this->currentController . '/filter/type/search/key/1');
+
+$btnSearch 		= $this->formButton('search-now','Search',
+		array('onclick'=>"OnSubmitForm('" .$linkSearch ."');"));
+$linkResetSearch = $this->baseUrl($this->currentController . '/filter/type/search/key/0');
+$btnResetSearch = $this->formButton('clear-keywords','Clear',
+		array('onclick'=>"OnSubmitForm('" .$linkResetSearch ."');"));
+$strSearch = $keywords . ' ' . $btnSearch . ' ' .$btnResetSearch ;
+
+//----- thong bao loi -----
+$errors = '';
+if (count($this->OrderErrorMessage) > 0) {
+	$errors = $this->formErrors($this->OrderErrorMessage,array('id'=>'errors'));
+}
+
+?>
+
+<form
+	name="appForm" method="post" action="">
+	<?php echo $this->render('/admin-product-category/toolbar/index.php'); ?>
+	<div class="clr"></div>
+	<?php //echo $this->render('/admin-product-category/sublink/index.php'); ?>
+
+	<!-- ------------------------------------ table Admin verion 2 ------------------------- -->
+	<div class="panel panel-default adminlist">
+		<!-- /.panel-heading -->
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover"
+					id="dataTables-object">
+					<thead>
+						<tr>
+							<th class="col_cid"><input type="checkbox" name="checkbox"
+								id="checkbox" onclick="checkedAll()">
+							</th>
+							<th><?php echo 'ID'; ?></th>
+							<th><?php echo 'Parent Id'; ?></th>
+							<th><?php echo 'Ten link'; ?></th>
+							<th class="col_publish_time"><?php echo 'URL'; ?></th>
+							<th class="col_order"><?php echo 'Order'; ?></th>
+							<th class="col_publish"><?php echo $this->translate('admin-cw-publish'); ?>
+							</th>
+							<th class="col_control">Control</th>
+
+						</tr>
+					</thead>
+					<tbody>
+
+						<?php
+						//----- sap xep lai danh sach cac category theo quan he cha-con, dua vao mang $newArray
+						$sourceArr = $this->Items;
+
+						$objRecursive = new Zendvn_System_Recursive();
+						$newArray = array();
+						$objRecursive->recursive_menu($sourceArr, 0, 1, $newArray);
+
+						foreach ($newArray as $key => $value) {
+							$value = $this->cmsReplaceString($value);
+							$id = $value['id'];
+							$parent_id = $value['parent_id'];
+							$link_name = $value['link_name'];
+							if ($value['level'] == 1) {
+								$link_name = $value['link_name'];
+							} else {
+								$string = '- - - - - ';
+								$newString = '';
+								for ($i=1; $i< $value['level']; $i++) {
+									$newString .= $string;
+								}
+								$link_name = $newString .$value['link_name'];
+							}
+							$url_link=$value['url'];
+							$publish = $value['publish'];
+							if ($publish == 1) {
+								$linkPublish = $this->baseUrl($this->currentController .'/publish/type/inactive/id/' .$id);
+								$publish = $this->cmsIconButton('Stop Publish this Category','fa fa-check',$linkPublish,'css');
+							} else {
+								$linkPublish = $this->baseUrl($this->currentController .'/publish/type/active/id/' .$id);
+								$publish = $this->cmsIconButton('Publish this Category','fa fa-minus-circle',$linkPublish,'css');
+							}
+							//----- neu doi tuong bi khoa thi vo hieu hoa o textbox order
+							if ($value['publish'] == 1) {
+								$order = $this->formText('order[' .$value['id'] .']',$value['order'],
+										array('style'=> 'width: 30px; text-align: center;'));
+							} else if ($value['publish'] == 0) {
+								$order = $this->formText('order[' .$value['id'] .']',$value['order'],
+										array('style'=> 'width: 30px; text-align: center;','disabled'=>true));
+							}
+
+							$linkInfo = $this->baseUrl($this->currentController . '/info/id/' .$id);
+							$btnInfo = $this->cmsIconButton('View information','fa fa-info-circle fa-lg',$linkInfo,'css');
+							$linkEdit = $this->baseUrl($this->currentController . '/edit/id/' .$id);
+							$btnEdit = $this->cmsIconButton('Edit Item','fa fa-edit fa-lg',$linkEdit,'css');
+							$linkDelete = $this->baseUrl($this->currentController . '/delete/id/' .$id);
+							$btnDelete = $this->cmsIconButton('Delete Item','fa fa-times-circle fa-lg',$linkDelete,'css');
+							$strControlIconButton = $btnInfo . ' ' . $btnEdit . ' ' .$btnDelete;
+
+							$cid = $this->formCheckbox('cid[]',$value['id']);
+							?>
+
+						<tr class="odd gradeX even">
+							<td align="center"><?php echo $cid; ?></td>
+							<td align="center"><?php echo $id; ?></td>
+							<td align="center"><?php echo $parent_id; ?></td>
+							<td align="left"><?php echo $link_name; ?></td>
+							<td align="center"><?php echo $url_link; ?></td>
+							<td align="center"><?php echo $order;?></td>
+							<td align="center"><?php echo $publish; ?></td>
+							<td align="center"><?php echo $strControlIconButton; ?></td>
+						</tr>
+
+						<?php 
+				} // ------------- dong vong lap foreach ----------------
+				?>
+
+					</tbody>
+				</table>
+			</div>
+			<!-- /.table-responsive -->
+		</div>
+		<!-- /.panel-body -->
+	</div>
+	<!-- -------------------------------- End table Admin verion 2 ------------------------- -->
+
+
+</form>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script>
+    $(document).ready(function() {
+        $('#dataTables-object').dataTable();
+    });
+</script>

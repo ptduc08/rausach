@@ -1,0 +1,33 @@
+<?php
+$cover_image1  = $this->formFile('cover_image1',array('style'=>'')) . $this->translate('admin-cp-uploadnewcoverimage');
+$cover_image2  = $this->formFile('cover_image2',array('style'=>'')) . $this->translate('admin-cp-uploadnewcoverimage');
+$cover_image3  = $this->formFile('cover_image3',array('style'=>'')) . $this->translate('admin-cp-uploadnewcoverimage');
+$cover_image4  = $this->formFile('cover_image4',array('style'=>'')) . $this->translate('admin-cp-uploadnewcoverimage');
+$cover_image5  = $this->formFile('cover_image5',array('style'=>'')) . $this->translate('admin-cp-uploadnewcoverimage');
+?>
+
+
+<form
+	name="appForm" method="post" action="" enctype="multipart/form-data">
+	<div class="clr"></div>
+
+	<?php
+	if(!empty($errors)) {
+        ?>
+	<div class="alert alert-danger">
+		<?php echo $errors; ?>
+	</div>
+	<?php
+    }
+    ?>
+
+	<!--------------------------------------- BEGIN: CONTENT ---------------------------------->
+	<?php echo $cover_image1;?>
+	<?php echo $cover_image2;?>
+	<?php echo $cover_image3;?>
+	<?php echo $cover_image4;?>
+	<?php echo $cover_image5;?>
+	<div class="clr"></div>
+	<input type="submit" value="OK">
+	<!--------------------------------------- END: CONTENT ------------------------------>
+</form>
